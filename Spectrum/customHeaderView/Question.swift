@@ -12,10 +12,12 @@ struct Question {
     var question:String!
     var options:[String]!
     var expanded: Bool!
+    var isSelected: Bool!
     
-    init(question: String, options: [String], expanded: Bool) {
+    init(question: String, options: [String], expanded: Bool, isSelected: Bool) {
         self.question = question
         self.options = options
         self.expanded = expanded
+        self.isSelected = isSelected
     }
 }

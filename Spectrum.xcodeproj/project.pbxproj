@@ -24,6 +24,7 @@
 		1792F75C202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F758202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift */; };
 		1792F75D202C31B6008176A0 /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F759202C31B6008176A0 /* OptionEntity+CoreDataClass.swift */; };
 		1792F75E202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F75A202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift */; };
+		1792F761202C387D008176A0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F760202C387D008176A0 /* CoreDataService.swift */; };
 		17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F176882025C595006FC4E3 /* CaseViewController.swift */; };
 		17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
 		17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17FA9C89202903B200F614AA /* video_1.mp4 */; };
@@ -52,6 +53,7 @@
 		1792F758202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1792F759202C31B6008176A0 /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1792F75A202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1792F760202C387D008176A0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		17FA9C89202903B200F614AA /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				17717E312025401C00CF3B82 /* Main.storyboard */,
 				173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */,
 				17087C692025D90B001B1CC6 /* theCaseViewController.swift */,
+				1792F760202C387D008176A0 /* CoreDataService.swift */,
 				17717E372025401C00CF3B82 /* Assets.xcassets */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
 				17717E3C2025401C00CF3B82 /* Info.plist */,
@@ -210,6 +213,7 @@
 				17087C6A2025D90B001B1CC6 /* theCaseViewController.swift in Sources */,
 				1792F75C202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift in Sources */,
 				17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */,
+				1792F761202C387D008176A0 /* CoreDataService.swift in Sources */,
 				177CAAA12029427100B06F46 /* myHeaderView.swift in Sources */,
 				177CAAA5202942BB00B06F46 /* Question.swift in Sources */,
 				17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */,

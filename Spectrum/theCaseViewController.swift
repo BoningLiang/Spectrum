@@ -18,11 +18,16 @@ class theCaseViewController: UIViewController {
         Question(
             question: "What would you do differently with Melissa’s third – period class?",
             options:["Try the lab again the same way.", "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.","Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available."],
-            expanded: false),
+            expanded: false,
+            isSelected: false),
         Question(
             question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
             options:["Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", "Sure, students should have at least on opportunity to try it.","No, students are not able to understand critical thinking and apply in to real-world problems."],
-            expanded: false)]
+            expanded: false,
+            isSelected: false)]
+    
+//    var questionEntity = [QuestionEntity]()
+//    var optionEntity = [OptionEntity]()
     
     var selectIndexPath: IndexPath!
     
@@ -45,10 +50,22 @@ class theCaseViewController: UIViewController {
         
     }
     
-    func initCoreData()
-    {
-        
-    }
+//    func initCoreData(_ sender: Any)
+//    {
+//
+//
+//        let questionEntity = QuestionEntity(context: CoreDataService.context)
+//        questionEntity.questionID = "1"
+//        questionEntity.questionContent="What would you do differently with Melissa’s third – period class?"
+//        questionEntity.outCaseID="1"
+//        let optionEntity = OptionEntity(context: CoreDataService.context)
+//        optionEntity.optionID = "1"
+//        optionEntity.optionContent = "Try the lab again the same way."
+//        optionEntity.outQuestionID = "1"
+//        optionEntity.isSelected = false
+//        optionEntity.isCorrectedKey = false
+//
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +123,14 @@ extension theCaseViewController: UITableViewDataSource, UITableViewDelegate, myH
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "optionCell")
         cell?.textLabel?.text = questionArray[indexPath.section].options[indexPath.row]
-        cell?.accessoryType = (indexPath == selectIndexPath) ? .checkmark:.none
+        if(self.questionArray[indexPath.section].isSelected)
+        {
+            cell?.accessoryType = (indexPath == selectIndexPath) ? .checkmark:.checkmark
+        }
+        else
+        {
+            cell?.accessoryType = (indexPath == selectIndexPath) ? .checkmark:.none
+        }
         return cell!
     }
     
