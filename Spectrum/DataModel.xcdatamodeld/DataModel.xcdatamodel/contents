@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CaseEntity" representedClassName="CaseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="caseID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionEntity" inverseName="toCase" inverseEntity="QuestionEntity" syncable="YES"/>
+    </entity>
+    <entity name="OptionEntity" representedClassName=".OptionEntity" parentEntity="QuestionEntity" syncable="YES">
+        <attribute name="isCorrectedKey" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isSelected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="optionContent" attributeType="String" syncable="YES"/>
+        <attribute name="optionID" attributeType="String" syncable="YES"/>
+        <attribute name="outQuestionID" attributeType="String" syncable="YES"/>
+        <relationship name="toQuestion" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionEntity" inverseName="toOption" inverseEntity="QuestionEntity" syncable="YES"/>
+    </entity>
+    <entity name="QuestionEntity" representedClassName=".QuestionEntity" syncable="YES">
+        <attribute name="outCaseID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toCase" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CaseEntity" inverseName="toQuestion" inverseEntity="CaseEntity" syncable="YES"/>
+        <relationship name="toOption" toMany="YES" deletionRule="Nullify" destinationEntity="OptionEntity" inverseName="toQuestion" inverseEntity="OptionEntity" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CaseEntity" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="QuestionEntity" positionX="-54" positionY="0" width="128" height="30"/>
+        <element name="OptionEntity" positionX="-36" positionY="36" width="128" height="30"/>
+    </elements>
+</model>

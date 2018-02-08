@@ -7,23 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17087C6A2025D90B001B1CC6 /* theCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17087C692025D90B001B1CC6 /* theCaseViewController.swift */; };
+		173C9742202A1FA100C00A38 /* checkQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */; };
 		17717E2E2025401C00CF3B82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E2D2025401C00CF3B82 /* AppDelegate.swift */; };
 		17717E302025401C00CF3B82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E2F2025401C00CF3B82 /* ViewController.swift */; };
 		17717E332025401C00CF3B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E312025401C00CF3B82 /* Main.storyboard */; };
-		17717E362025401C00CF3B82 /* Spectrum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17717E342025401C00CF3B82 /* Spectrum.xcdatamodeld */; };
 		17717E382025401C00CF3B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17717E372025401C00CF3B82 /* Assets.xcassets */; };
 		17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E392025401C00CF3B82 /* LaunchScreen.storyboard */; };
+		17717E452025406A00CF3B82 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17717E442025406A00CF3B82 /* SWRevealViewController.m */; };
+		17717E4F20257A3E00CF3B82 /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E4E20257A3E00CF3B82 /* myCell.swift */; };
+		177CAAA12029427100B06F46 /* myHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA02029427100B06F46 /* myHeaderView.swift */; };
+		177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
+		177CAAA5202942BB00B06F46 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA4202942BB00B06F46 /* Question.swift */; };
+		1792F719202C12F2008176A0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */; };
+		1792F75B202C31B6008176A0 /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F757202C31B6008176A0 /* QuestionEntity+CoreDataClass.swift */; };
+		1792F75C202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F758202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift */; };
+		1792F75D202C31B6008176A0 /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F759202C31B6008176A0 /* OptionEntity+CoreDataClass.swift */; };
+		1792F75E202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F75A202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift */; };
+		17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F176882025C595006FC4E3 /* CaseViewController.swift */; };
+		17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
+		17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17FA9C89202903B200F614AA /* video_1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17087C692025D90B001B1CC6 /* theCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theCaseViewController.swift; sourceTree = "<group>"; };
+		173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkQuestionViewController.swift; sourceTree = "<group>"; };
+		176952712027357100E5EC97 /* case_study_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = case_study_1.mp4; sourceTree = "<group>"; };
 		17717E2A2025401C00CF3B82 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17717E2D2025401C00CF3B82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17717E2F2025401C00CF3B82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17717E322025401C00CF3B82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		17717E352025401C00CF3B82 /* Spectrum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spectrum.xcdatamodel; sourceTree = "<group>"; };
 		17717E372025401C00CF3B82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17717E3A2025401C00CF3B82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17717E3C2025401C00CF3B82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17717E422025406900CF3B82 /* Spectrum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spectrum-Bridging-Header.h"; sourceTree = "<group>"; };
+		17717E432025406900CF3B82 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		17717E442025406A00CF3B82 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		17717E4E20257A3E00CF3B82 /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
+		177CAAA02029427100B06F46 /* myHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myHeaderView.swift; sourceTree = "<group>"; };
+		177CAAA22029429700B06F46 /* myHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = myHeaderView.xib; sourceTree = "<group>"; };
+		177CAAA4202942BB00B06F46 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		1792F718202C12F2008176A0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		1792F757202C31B6008176A0 /* QuestionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1792F758202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1792F759202C31B6008176A0 /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1792F75A202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
+		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		17FA9C89202903B200F614AA /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +71,7 @@
 		17717E212025401C00CF3B82 = {
 			isa = PBXGroup;
 			children = (
+				17FA9C89202903B200F614AA /* video_1.mp4 */,
 				17717E2C2025401C00CF3B82 /* Spectrum */,
 				17717E2B2025401C00CF3B82 /* Products */,
 			);
@@ -56,15 +88,47 @@
 		17717E2C2025401C00CF3B82 /* Spectrum */ = {
 			isa = PBXGroup;
 			children = (
+				1792F75F202C31C3008176A0 /* coreData */,
+				1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */,
+				177CAA9F2029423A00B06F46 /* customHeaderView */,
+				17717E4E20257A3E00CF3B82 /* myCell.swift */,
 				17717E2D2025401C00CF3B82 /* AppDelegate.swift */,
 				17717E2F2025401C00CF3B82 /* ViewController.swift */,
 				17717E312025401C00CF3B82 /* Main.storyboard */,
+				173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */,
+				17087C692025D90B001B1CC6 /* theCaseViewController.swift */,
 				17717E372025401C00CF3B82 /* Assets.xcassets */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
 				17717E3C2025401C00CF3B82 /* Info.plist */,
-				17717E342025401C00CF3B82 /* Spectrum.xcdatamodeld */,
+				17717E432025406900CF3B82 /* SWRevealViewController.h */,
+				17717E442025406A00CF3B82 /* SWRevealViewController.m */,
+				17717E422025406900CF3B82 /* Spectrum-Bridging-Header.h */,
+				17F176882025C595006FC4E3 /* CaseViewController.swift */,
+				17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */,
+				176952712027357100E5EC97 /* case_study_1.mp4 */,
 			);
 			path = Spectrum;
+			sourceTree = "<group>";
+		};
+		177CAA9F2029423A00B06F46 /* customHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				177CAAA02029427100B06F46 /* myHeaderView.swift */,
+				177CAAA22029429700B06F46 /* myHeaderView.xib */,
+				177CAAA4202942BB00B06F46 /* Question.swift */,
+			);
+			path = customHeaderView;
+			sourceTree = "<group>";
+		};
+		1792F75F202C31C3008176A0 /* coreData */ = {
+			isa = PBXGroup;
+			children = (
+				1792F757202C31B6008176A0 /* QuestionEntity+CoreDataClass.swift */,
+				1792F758202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift */,
+				1792F759202C31B6008176A0 /* OptionEntity+CoreDataClass.swift */,
+				1792F75A202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift */,
+			);
+			path = coreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +163,7 @@
 				TargetAttributes = {
 					17717E292025401C00CF3B82 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -128,6 +193,8 @@
 			files = (
 				17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */,
 				17717E382025401C00CF3B82 /* Assets.xcassets in Resources */,
+				177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */,
+				17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */,
 				17717E332025401C00CF3B82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +206,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17717E362025401C00CF3B82 /* Spectrum.xcdatamodeld in Sources */,
 				17717E302025401C00CF3B82 /* ViewController.swift in Sources */,
+				17087C6A2025D90B001B1CC6 /* theCaseViewController.swift in Sources */,
+				1792F75C202C31B6008176A0 /* QuestionEntity+CoreDataProperties.swift in Sources */,
+				17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */,
+				177CAAA12029427100B06F46 /* myHeaderView.swift in Sources */,
+				177CAAA5202942BB00B06F46 /* Question.swift in Sources */,
+				17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */,
+				1792F75B202C31B6008176A0 /* QuestionEntity+CoreDataClass.swift in Sources */,
+				1792F75E202C31B6008176A0 /* OptionEntity+CoreDataProperties.swift in Sources */,
+				17717E4F20257A3E00CF3B82 /* myCell.swift in Sources */,
 				17717E2E2025401C00CF3B82 /* AppDelegate.swift in Sources */,
+				1792F75D202C31B6008176A0 /* OptionEntity+CoreDataClass.swift in Sources */,
+				1792F719202C12F2008176A0 /* DataModel.xcdatamodeld in Sources */,
+				173C9742202A1FA100C00A38 /* checkQuestionViewController.swift in Sources */,
+				17717E452025406A00CF3B82 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,12 +357,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2A5PD76DX;
 				INFOPLIST_FILE = Spectrum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = boningliang.Spectrum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spectrum/Spectrum-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -293,12 +375,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J2A5PD76DX;
 				INFOPLIST_FILE = Spectrum/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = boningliang.Spectrum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Spectrum/Spectrum-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -328,13 +412,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17717E342025401C00CF3B82 /* Spectrum.xcdatamodeld */ = {
+		1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				17717E352025401C00CF3B82 /* Spectrum.xcdatamodel */,
+				1792F718202C12F2008176A0 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 17717E352025401C00CF3B82 /* Spectrum.xcdatamodel */;
-			path = Spectrum.xcdatamodeld;
+			currentVersion = 1792F718202C12F2008176A0 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
