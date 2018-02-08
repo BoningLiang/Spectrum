@@ -16,15 +16,19 @@ class theCaseViewController: UIViewController {
     
     var questionArray = [
         Question(
+            questionID: "1",
             question: "What would you do differently with Melissa’s third – period class?",
             options:["Try the lab again the same way.", "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.","Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available."],
             expanded: false,
-            isSelected: false),
+            isSelected: false,
+            correctKeyIndex: 1),
         Question(
+            questionID: "2",
             question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
             options:["Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", "Sure, students should have at least on opportunity to try it.","No, students are not able to understand critical thinking and apply in to real-world problems."],
             expanded: false,
-            isSelected: false)]
+            isSelected: false,
+            correctKeyIndex: 0)]
     
 //    var questionEntity = [QuestionEntity]()
 //    var optionEntity = [OptionEntity]()
@@ -49,23 +53,6 @@ class theCaseViewController: UIViewController {
     @IBAction func checkAnswerAction(_ sender: Any) {
         
     }
-    
-//    func initCoreData(_ sender: Any)
-//    {
-//
-//
-//        let questionEntity = QuestionEntity(context: CoreDataService.context)
-//        questionEntity.questionID = "1"
-//        questionEntity.questionContent="What would you do differently with Melissa’s third – period class?"
-//        questionEntity.outCaseID="1"
-//        let optionEntity = OptionEntity(context: CoreDataService.context)
-//        optionEntity.optionID = "1"
-//        optionEntity.optionContent = "Try the lab again the same way."
-//        optionEntity.outQuestionID = "1"
-//        optionEntity.isSelected = false
-//        optionEntity.isCorrectedKey = false
-//
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

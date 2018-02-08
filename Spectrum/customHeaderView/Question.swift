@@ -7,17 +7,52 @@
 //
 
 import Foundation
+import CoreData
 
 struct Question {
+    var questionID:String!
     var question:String!
     var options:[String]!
     var expanded: Bool!
     var isSelected: Bool!
+    var correctKeyIndex: Int
+    var questionEntity = [QuestionEntity]()
+    var optionEntity = [OptionEntity]()
     
-    init(question: String, options: [String], expanded: Bool, isSelected: Bool) {
+    init(questionID: String, question: String, options: [String], expanded: Bool, isSelected: Bool, correctKeyIndex: Int) {
+        self.questionID = questionID
         self.question = question
         self.options = options
         self.expanded = expanded
         self.isSelected = isSelected
+        self.correctKeyIndex = correctKeyIndex // begins with 0
+        
+        // QuestionEntity
+        let questionEntity = QuestionEntity(context: CoreDataService.context)
+        questionEntity.questionID = self.questionID
+        questionEntity.questionContent = self.question
+        CoreDataService.saveContext()
+        self.questionEntity.append(questionEntity)
+        
+        //OptionEntity
+        
+        for i in 0..<options.count
+        {
+            let optionEntity = OptionEntity(context: CoreDataService.context)
+            optionEntity.optionID = questionID + "_" + i.description
+            optionEntity.optionContent = options[i]
+            optionEntity.isSelected = false
+            if(i == correctKeyIndex)
+            {
+                optionEntity.isCorrectedKey = true
+            }
+            else
+            {
+                optionEntity.isCorrectedKey = false
+            }
+            optionEntity.outQuestionID = questionID
+            CoreDataService.saveContext()
+            self.optionEntity.append(optionEntity)
+        }
     }
 }

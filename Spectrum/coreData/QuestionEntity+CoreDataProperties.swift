@@ -20,9 +20,6 @@ extension QuestionEntity {
     @NSManaged public var questionContent: String?
     @NSManaged public var questionID: String?
     @NSManaged public var outCaseID: String?
-    @NSManaged public var toOption: NSSet?
-    @NSManaged public var toCase: CaseEntity?
-
 }
 
 // MARK: Generated accessors for toOption
