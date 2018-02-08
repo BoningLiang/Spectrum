@@ -16,16 +16,18 @@ struct Question {
     var expanded: Bool!
     var isSelected: Bool!
     var correctKeyIndex: Int
+    var selectedKey: Int
     var questionEntity = [QuestionEntity]()
     var optionEntity = [OptionEntity]()
     
-    init(questionID: String, question: String, options: [String], expanded: Bool, isSelected: Bool, correctKeyIndex: Int) {
+    init(questionID: String, question: String, options: [String], expanded: Bool, isSelected: Bool, correctKeyIndex: Int, selectedKey: Int) {
         self.questionID = questionID
         self.question = question
         self.options = options
         self.expanded = expanded
         self.isSelected = isSelected
         self.correctKeyIndex = correctKeyIndex // begins with 0
+        self.selectedKey = selectedKey
         
         // QuestionEntity
         let questionEntity = QuestionEntity(context: CoreDataService.context)

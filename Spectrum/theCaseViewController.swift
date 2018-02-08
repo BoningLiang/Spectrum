@@ -21,14 +21,16 @@ class theCaseViewController: UIViewController {
             options:["Try the lab again the same way.", "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.","Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available."],
             expanded: false,
             isSelected: false,
-            correctKeyIndex: 1),
+            correctKeyIndex: 1,
+            selectedKey: -1),
         Question(
             questionID: "2",
             question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
             options:["Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", "Sure, students should have at least on opportunity to try it.","No, students are not able to understand critical thinking and apply in to real-world problems."],
             expanded: false,
             isSelected: false,
-            correctKeyIndex: 0)]
+            correctKeyIndex: 0,
+            selectedKey: -1)]
     
 //    var questionEntity = [QuestionEntity]()
 //    var optionEntity = [OptionEntity]()
@@ -127,14 +129,14 @@ extension theCaseViewController: UITableViewDataSource, UITableViewDelegate, myH
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectIndexPath = indexPath
-        self.questionArray[indexPath.section].expanded = !self.questionArray[indexPath.section].expanded
+//        self.questionArray[indexPath.section].expanded = !self.questionArray[indexPath.section].expanded
         tableView.beginUpdates()
         tableView.reloadSections([indexPath.section], with: .automatic)
         tableView.endUpdates()
     }
     
     func toggleSection(header: myHeaderView, section: Int) {
-        self.questionArray[section].expanded = !self.questionArray[section].expanded
+//        self.questionArray[section].expanded = !self.questionArray[section].expanded
         self.questionTableView.beginUpdates()
         self.questionTableView.reloadSections([section], with: .automatic)
         self.questionTableView.endUpdates()
