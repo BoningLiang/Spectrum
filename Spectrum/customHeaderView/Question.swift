@@ -17,8 +17,10 @@ struct Question {
     var isSelected: Bool!
     var correctKeyIndex: Int
     var selectedKey: Int
+//    var outCaseID: String!
     var questionEntity = [QuestionEntity]()
     var optionEntity = [OptionEntity]()
+    
     
     init(questionID: String, question: String, options: [String], expanded: Bool, isSelected: Bool, correctKeyIndex: Int, selectedKey: Int) {
         self.questionID = questionID
@@ -29,32 +31,32 @@ struct Question {
         self.correctKeyIndex = correctKeyIndex // begins with 0
         self.selectedKey = selectedKey
         
-        // QuestionEntity
-        let questionEntity = QuestionEntity(context: CoreDataService.context)
-        questionEntity.questionID = self.questionID
-        questionEntity.questionContent = self.question
-        CoreDataService.saveContext()
-        self.questionEntity.append(questionEntity)
-        
-        //OptionEntity
-        
-        for i in 0..<options.count
-        {
-            let optionEntity = OptionEntity(context: CoreDataService.context)
-            optionEntity.optionID = questionID + "_" + i.description
-            optionEntity.optionContent = options[i]
-            optionEntity.isSelected = false
-            if(i == correctKeyIndex)
-            {
-                optionEntity.isCorrectedKey = true
-            }
-            else
-            {
-                optionEntity.isCorrectedKey = false
-            }
-            optionEntity.outQuestionID = questionID
-            CoreDataService.saveContext()
-            self.optionEntity.append(optionEntity)
-        }
+//        // QuestionEntity
+//        let questionEntity = QuestionEntity(context: CoreDataService.context)
+//        questionEntity.questionID = self.questionID
+//        questionEntity.questionContent = self.question
+//        CoreDataService.saveContext()
+//        self.questionEntity.append(questionEntity)
+//
+//        //OptionEntity
+//
+//        for i in 0..<options.count
+//        {
+//            let optionEntity = OptionEntity(context: CoreDataService.context)
+//            optionEntity.optionID = questionID + "_" + i.description
+//            optionEntity.optionContent = options[i]
+//            optionEntity.isSelected = false
+//            if(i == correctKeyIndex)
+//            {
+//                optionEntity.isCorrectedKey = true
+//            }
+//            else
+//            {
+//                optionEntity.isCorrectedKey = false
+//            }
+//            optionEntity.outQuestionID = questionID
+//            CoreDataService.saveContext()
+//            self.optionEntity.append(optionEntity)
+//        }
     }
 }

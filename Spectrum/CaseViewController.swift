@@ -32,10 +32,15 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     
     var LifeCaseData = ["LC_1_1","LC_2_1","LC_3_1","LC_4_1","LC_5_1","LC_6_1"]
     
-    
+//    var caseArray = [CaseEntity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let caseArray =
+            [
+                myCase(caseID: "1", caseVideoName: "CS_1_1", caseSection: "1")
+            ]
         
         createCategoryPicker()
         createToolBar()

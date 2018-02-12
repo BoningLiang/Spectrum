@@ -17,11 +17,10 @@ extension OptionEntity {
         return NSFetchRequest<OptionEntity>(entityName: "OptionEntity")
     }
 
-    @NSManaged public var optionID: String?
-    @NSManaged public var optionContent: String?
-    @NSManaged public var outQuestionID: String?
-    @NSManaged public var isSelected: Bool
     @NSManaged public var isCorrectedKey: Bool
-    @NSManaged public var toQuestion: QuestionEntity?
+    @NSManaged public var isSelected: Bool
+    @NSManaged public var optionContent: String?
+    @NSManaged public var optionID: String?
+    @NSManaged public var outQuestionID: String?
 
 }

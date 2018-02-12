@@ -17,24 +17,8 @@ extension QuestionEntity {
         return NSFetchRequest<QuestionEntity>(entityName: "QuestionEntity")
     }
 
+    @NSManaged public var outCaseID: String?
     @NSManaged public var questionContent: String?
     @NSManaged public var questionID: String?
-    @NSManaged public var outCaseID: String?
-}
-
-// MARK: Generated accessors for toOption
-extension QuestionEntity {
-
-    @objc(addToOptionObject:)
-    @NSManaged public func addToToOption(_ value: OptionEntity)
-
-    @objc(removeToOptionObject:)
-    @NSManaged public func removeFromToOption(_ value: OptionEntity)
-
-    @objc(addToOption:)
-    @NSManaged public func addToToOption(_ values: NSSet)
-
-    @objc(removeToOption:)
-    @NSManaged public func removeFromToOption(_ values: NSSet)
 
 }

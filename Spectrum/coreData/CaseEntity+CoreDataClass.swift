@@ -1,5 +1,5 @@
 //
-//  OptionEntity+CoreDataClass.swift
+//  CaseEntity+CoreDataClass.swift
 //  Spectrum
 //
 //  Created by Boning Liang on 2/8/18.
@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 
-public class OptionEntity: NSManagedObject {
+public class CaseEntity: NSManagedObject {
 
 }
