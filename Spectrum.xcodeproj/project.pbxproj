@@ -31,6 +31,7 @@
 		17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F176882025C595006FC4E3 /* CaseViewController.swift */; };
 		17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
 		17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17FA9C89202903B200F614AA /* video_1.mp4 */; };
+		17FB5519203272C600DF3A12 /* CasesJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB5518203272C600DF3A12 /* CasesJson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		17FA9C89202903B200F614AA /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
+		17FB5518203272C600DF3A12 /* CasesJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesJson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		17717E2C2025401C00CF3B82 /* Spectrum */ = {
 			isa = PBXGroup;
 			children = (
+				17FB55172032724400DF3A12 /* json */,
 				1792F75F202C31C3008176A0 /* coreData */,
 				1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */,
 				177CAA9F2029423A00B06F46 /* customHeaderView */,
@@ -141,6 +144,14 @@
 				171ED1A7202CF6FD00B72691 /* OptionEntity+CoreDataProperties.swift */,
 			);
 			path = coreData;
+			sourceTree = "<group>";
+		};
+		17FB55172032724400DF3A12 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				17FB5518203272C600DF3A12 /* CasesJson.swift */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */,
 				1792F761202C387D008176A0 /* CoreDataService.swift in Sources */,
 				177CAAA12029427100B06F46 /* myHeaderView.swift in Sources */,
+				17FB5519203272C600DF3A12 /* CasesJson.swift in Sources */,
 				177CAAA5202942BB00B06F46 /* Question.swift in Sources */,
 				17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */,
 				171ED1A8202CF6FD00B72691 /* CaseEntity+CoreDataClass.swift in Sources */,

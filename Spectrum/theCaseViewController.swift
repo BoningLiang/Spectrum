@@ -14,23 +14,23 @@ class theCaseViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
-    var questionArray = [
+    var questionArray2 = [
         Question(
             questionID: "1",
             question: "What would you do differently with Melissa’s third – period class?",
-            options:["Try the lab again the same way.", "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.","Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available."],
-            expanded: false,
-            isSelected: false,
-            correctKeyIndex: 1,
-            selectedKey: -1),
+            options: [Option(optionID: "1",optionContent: "Try the lab again the same way.",isSelect: false,isCorrect: false),
+                      Option(optionID: "2",optionContent: "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.",isSelect: false,isCorrect: false),
+                      Option(optionID: "3",optionContent: "Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available.",isSelect: false,isCorrect: false),],
+            expanded: false),
         Question(
             questionID: "2",
             question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
-            options:["Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", "Sure, students should have at least on opportunity to try it.","No, students are not able to understand critical thinking and apply in to real-world problems."],
-            expanded: false,
-            isSelected: false,
-            correctKeyIndex: 0,
-            selectedKey: -1)]
+            options:[Option(optionID: "4",optionContent: "Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", isSelect: false,isCorrect: false),
+                     Option(optionID: "5",optionContent: "Sure, students should have at least on opportunity to try it.", isSelect: false,isCorrect: false),
+                     Option(optionID: "6",optionContent: "No, students are not able to understand critical thinking and apply in to real-world problems.", isSelect: false,isCorrect: false)],
+            expanded: false)]
+    
+    
     
 //    var questionEntity = [QuestionEntity]()
 //    var optionEntity = [OptionEntity]()
@@ -79,11 +79,11 @@ class theCaseViewController: UIViewController {
 extension theCaseViewController: UITableViewDataSource, UITableViewDelegate, myHeaderViewDelegate
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return questionArray.count
+        return questionArray2.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionArray[section].options.count
+        return questionArray2[section].options.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -105,14 +105,14 @@ extension theCaseViewController: UITableViewDataSource, UITableViewDelegate, myH
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "myHeaderView") as! myHeaderView
-        headerView.customInit(header: questionArray[section].question, section: section, delegate: self)
+        headerView.customInit(header: questionArray2[section].question, section: section, delegate: self)
         return headerView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "optionCell")
-        cell?.textLabel?.text = questionArray[indexPath.section].options[indexPath.row]
-        if(self.questionArray[indexPath.section].isSelected)
+        cell?.textLabel?.text = questionArray2[indexPath.section].options[indexPath.row].optionContent
+        if(self.questionArray2[indexPath.section].options[indexPath.row].isSelect)
         {
             cell?.accessoryType = (indexPath == selectIndexPath) ? .checkmark:.checkmark
         }
@@ -124,19 +124,34 @@ extension theCaseViewController: UITableViewDataSource, UITableViewDelegate, myH
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return questionArray[section].question
+        return questionArray2[section].question
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectIndexPath = indexPath
-//        self.questionArray[indexPath.section].expanded = !self.questionArray[indexPath.section].expanded
         tableView.beginUpdates()
+        if self.questionArray2[indexPath.section].options[indexPath.row].isSelect
+        {
+            self.questionArray2[indexPath.section].options[indexPath.row].isSelect = false
+        }
+        else
+        {
+            self.questionArray2[indexPath.section].options[indexPath.row].isSelect = true
+            for c in 0..<self.questionArray2[indexPath.section].options.count
+            {
+                if c != indexPath.row
+                {
+                    self.questionArray2[indexPath.section].options[c].isSelect = false
+                    print(c.description + self.questionArray2[indexPath.section].options[c].isSelect.description)
+                }
+            }
+        }
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
         tableView.reloadSections([indexPath.section], with: .automatic)
         tableView.endUpdates()
     }
     
     func toggleSection(header: myHeaderView, section: Int) {
-//        self.questionArray[section].expanded = !self.questionArray[section].expanded
         self.questionTableView.beginUpdates()
         self.questionTableView.reloadSections([section], with: .automatic)
         self.questionTableView.endUpdates()

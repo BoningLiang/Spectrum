@@ -9,27 +9,35 @@
 import Foundation
 import CoreData
 
+struct Option {
+    var optionID: String!
+    var optionContent: String!
+    var isSelect: Bool!
+    var isCorrect: Bool!
+    
+    init(optionID: String, optionContent: String, isSelect:Bool, isCorrect: Bool) {
+        self.optionID = optionID
+        self.optionContent = optionContent
+        self.isSelect = isSelect
+        self.isCorrect = isCorrect
+    }
+}
+
 struct Question {
     var questionID:String!
     var question:String!
-    var options:[String]!
+    var options:[Option]!
     var expanded: Bool!
-    var isSelected: Bool!
-    var correctKeyIndex: Int
-    var selectedKey: Int
 //    var outCaseID: String!
     var questionEntity = [QuestionEntity]()
     var optionEntity = [OptionEntity]()
     
     
-    init(questionID: String, question: String, options: [String], expanded: Bool, isSelected: Bool, correctKeyIndex: Int, selectedKey: Int) {
+    init(questionID: String, question: String, options: [Option], expanded: Bool) {
         self.questionID = questionID
         self.question = question
         self.options = options
         self.expanded = expanded
-        self.isSelected = isSelected
-        self.correctKeyIndex = correctKeyIndex // begins with 0
-        self.selectedKey = selectedKey
         
 //        // QuestionEntity
 //        let questionEntity = QuestionEntity(context: CoreDataService.context)
