@@ -28,6 +28,7 @@
 		1792F719202C12F2008176A0 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */; };
 		1792F761202C387D008176A0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1792F760202C387D008176A0 /* CoreDataService.swift */; };
 		17A4FF7F202CEEEC00EC075A /* myCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4FF7E202CEEEC00EC075A /* myCase.swift */; };
+		17BE177A203B5C16004B6F31 /* checkAnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */; };
 		17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F176882025C595006FC4E3 /* CaseViewController.swift */; };
 		17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
 		17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17FA9C89202903B200F614AA /* video_1.mp4 */; };
@@ -61,6 +62,7 @@
 		1792F718202C12F2008176A0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1792F760202C387D008176A0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		17A4FF7E202CEEEC00EC075A /* myCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCase.swift; sourceTree = "<group>"; };
+		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		17FA9C89202903B200F614AA /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				17717E2D2025401C00CF3B82 /* AppDelegate.swift */,
 				17717E2F2025401C00CF3B82 /* ViewController.swift */,
 				17717E312025401C00CF3B82 /* Main.storyboard */,
+				17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */,
 				173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */,
 				17087C692025D90B001B1CC6 /* theCaseViewController.swift */,
 				1792F760202C387D008176A0 /* CoreDataService.swift */,
@@ -242,6 +245,7 @@
 				171ED1A8202CF6FD00B72691 /* CaseEntity+CoreDataClass.swift in Sources */,
 				171ED1AB202CF6FD00B72691 /* QuestionEntity+CoreDataProperties.swift in Sources */,
 				17717E4F20257A3E00CF3B82 /* myCell.swift in Sources */,
+				17BE177A203B5C16004B6F31 /* checkAnsViewController.swift in Sources */,
 				171ED1AD202CF6FD00B72691 /* OptionEntity+CoreDataProperties.swift in Sources */,
 				17717E2E2025401C00CF3B82 /* AppDelegate.swift in Sources */,
 				171ED1A9202CF6FD00B72691 /* CaseEntity+CoreDataProperties.swift in Sources */,

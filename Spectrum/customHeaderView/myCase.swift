@@ -9,16 +9,34 @@
 import Foundation
 import CoreData
 
+struct TeachersNote {
+    var noteID: String!
+    var noteVideo: String!
+    var noteCover: String!
+    
+    init(noteID: String, noteVideo: String, noteCover:String) {
+        self.noteID = noteID
+        self.noteCover = noteCover
+        self.noteVideo = noteVideo
+    }
+}
+
 class myCase {
     var caseID: String!
     var caseVideoName: String!
-    var caseSection: String!
+    var caseType: String!
+    var caseCoverPic: String!
+    var teachersNote: [TeachersNote]
+    var questions: [Question]!
     var caseEntity = [CaseEntity]()
     
-    init(caseID: String, caseVideoName: String, caseSection: String) {
+    init(caseID: String, caseVideoName: String, caseType: String, caseCoverPic: String, teachersNote: [TeachersNote], questions: [Question]) {
         self.caseID = caseID
         self.caseVideoName = caseVideoName
-        self.caseSection = caseSection
+        self.caseType = caseType
+        self.caseCoverPic = caseCoverPic
+        self.questions = questions
+        self.teachersNote = teachersNote
 //        print(checkIfExistInCoreData(caseID: self.caseID))
     }
     

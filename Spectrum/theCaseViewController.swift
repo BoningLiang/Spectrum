@@ -10,6 +10,8 @@ import UIKit
 import AVKit
 import CoreData
 
+var questionArrayPublic: [Question]? = nil
+
 class theCaseViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
@@ -18,17 +20,46 @@ class theCaseViewController: UIViewController {
         Question(
             questionID: "1",
             question: "What would you do differently with Melissa’s third – period class?",
-            options: [Option(optionID: "1",optionContent: "Try the lab again the same way.",isSelect: false,isCorrect: false),
-                      Option(optionID: "2",optionContent: "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.",isSelect: false,isCorrect: false),
-                      Option(optionID: "3",optionContent: "Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available.",isSelect: false,isCorrect: false),],
+            options: [
+                Option(
+                    optionID: "1",
+                    optionContent: "Try the lab again the same way.",
+                    isSelect: false,
+                    isCorrect: true),
+                Option(
+                    optionID: "2",
+                    optionContent: "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.",
+                    isSelect: false,
+                    isCorrect: false),
+                Option(
+                    optionID: "3",
+                    optionContent: "Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available.",
+                    isSelect: false,
+                    isCorrect: false),],
+            explanation: "explanation sample 1",
             expanded: false),
         Question(
             questionID: "2",
             question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
-            options:[Option(optionID: "4",optionContent: "Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", isSelect: false,isCorrect: false),
-                     Option(optionID: "5",optionContent: "Sure, students should have at least on opportunity to try it.", isSelect: false,isCorrect: false),
-                     Option(optionID: "6",optionContent: "No, students are not able to understand critical thinking and apply in to real-world problems.", isSelect: false,isCorrect: false)],
-            expanded: false)]
+            options:[
+                Option(
+                    optionID: "4",
+                    optionContent: "Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.",
+                    isSelect: false,
+                    isCorrect: false),
+                Option(
+                    optionID: "5",
+                    optionContent: "Sure, students should have at least on opportunity to try it.",
+                    isSelect: false,
+                    isCorrect: true),
+                Option(
+                    optionID: "6",
+                    optionContent: "No, students are not able to understand critical thinking and apply in to real-world problems.",
+                    isSelect: false,
+                    isCorrect: false)],
+            explanation: "explanation sample 2",
+            expanded: false)
+    ]
     
     
     
@@ -53,7 +84,7 @@ class theCaseViewController: UIViewController {
     }
     
     @IBAction func checkAnswerAction(_ sender: Any) {
-        
+        questionArrayPublic = self.questionArray2
     }
     
     override func viewDidLoad() {

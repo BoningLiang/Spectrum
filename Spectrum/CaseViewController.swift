@@ -32,15 +32,74 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     
     var LifeCaseData = ["LC_1_1","LC_2_1","LC_3_1","LC_4_1","LC_5_1","LC_6_1"]
     
+    
+    var caseData = [
+        myCase(
+            caseID: "1",
+            caseVideoName: "CS_1_1.mp4",
+            caseType: "1",
+            caseCoverPic: "CS_1_1",
+            teachersNote: [
+                TeachersNote(noteID: "1", noteVideo: "", noteCover: "")
+            ],
+            questions: [
+                Question(
+                    questionID: "1",
+                    question: "Considering Darrens behavioral problems and his history of antagonizing fellow students, should he be permitted to continue his presentation?",
+                    options: [Option(optionID: "1",optionContent: "Yes, I should be permitted to continue his presentation. ",isSelect: false,isCorrect: true),
+                              Option(optionID: "2",optionContent: "No, I should not be permitted to continue his presentation.",isSelect: false,isCorrect: false)],
+                    explanation: "",
+                    expanded: false),
+                Question(
+                    questionID: "2",
+                    question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
+                    options:[Option(optionID: "4",optionContent: "Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", isSelect: false,isCorrect: false),
+                             Option(optionID: "5",optionContent: "Sure, students should have at least on opportunity to try it.", isSelect: false,isCorrect: false),
+                             Option(optionID: "6",optionContent: "No, students are not able to understand critical thinking and apply in to real-world problems.", isSelect: false,isCorrect: false)],
+                    explanation: "",
+                    expanded: false)
+            ]),
+        myCase(
+            caseID: "2",
+            caseVideoName: "CS_2_1.mp4",
+            caseType: "1",
+            caseCoverPic: "CS_2_1",
+            teachersNote: [
+                TeachersNote(noteID: "2", noteVideo: "Teachersnote2.mp4", noteCover: "")
+            ],
+            questions: [
+                Question(
+                        questionID: "3",
+                        question: "What would you do differently with Melissa’s third – period class?",
+                        options: [Option(optionID: "7",optionContent: "Try the lab again the same way.",isSelect: false,isCorrect: false),
+                                  Option(optionID: "8",optionContent: "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.",isSelect: false,isCorrect: false),
+                                  Option(optionID: "9",optionContent: "Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available.",isSelect: false,isCorrect: false),],
+                        explanation: "",
+                        expanded: false),
+                Question(
+                        questionID: "4",
+                        question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
+                        options:[Option(optionID: "10",optionContent: "Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", isSelect: false,isCorrect: false),
+                                 Option(optionID: "11",optionContent: "Sure, students should have at least on opportunity to try it.", isSelect: false,isCorrect: false),
+                                 Option(
+                                    optionID: "12",
+                                    optionContent: "No, students are not able to understand critical thinking and apply in to real-world problems.",
+                                    isSelect: false,
+                                    isCorrect: false)],
+                        explanation: "",
+                        expanded: false)
+                    ])
+    ]
+    
 //    var caseArray = [CaseEntity]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let caseArray =
-            [
-                myCase(caseID: "1", caseVideoName: "CS_1_1", caseSection: "1")
-            ]
+//        let caseArray =
+//            [
+//                myCase(caseID: "1", caseVideoName: "CS_1_1", caseType: "1", caseCoverPic: <#String#>)
+//            ]
         
         createCategoryPicker()
         createToolBar()
