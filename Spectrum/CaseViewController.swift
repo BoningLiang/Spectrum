@@ -208,8 +208,6 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
 }
 
 extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPickerViewDelegate, UIPickerViewDataSource{
@@ -235,7 +233,7 @@ extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPicker
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toTheCaseSegue", sender: self)
-        
+        casePublic = currentCaseData[indexPath.row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -255,9 +253,5 @@ extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPicker
         selectedCategoryRow = row
         //categoriesTextField.text = selectedCategory
     }
-    
-    
-    
-    
 }
 

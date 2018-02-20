@@ -16,6 +16,8 @@ class theCaseViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
+    //var questionArray2: [Question] = []
+    
     var questionArray3 = [
         Question(
             questionID: "1",
@@ -113,7 +115,10 @@ class theCaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.questionArray2.removeAll()
+        self.questionArray2 = (casePublic?.questions)!
+        
         selectIndexPath = IndexPath(row:-1, section:-1)
         let nib = UINib(nibName: "myHeaderView", bundle: nil)
         self.questionTableView.register(nib, forHeaderFooterViewReuseIdentifier: "myHeaderView")
