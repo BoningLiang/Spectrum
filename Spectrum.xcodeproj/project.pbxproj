@@ -111,6 +111,7 @@
 				17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */,
 				173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */,
 				17087C692025D90B001B1CC6 /* theCaseViewController.swift */,
+				17F176882025C595006FC4E3 /* CaseViewController.swift */,
 				1792F760202C387D008176A0 /* CoreDataService.swift */,
 				17717E372025401C00CF3B82 /* Assets.xcassets */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
@@ -118,7 +119,6 @@
 				17717E432025406900CF3B82 /* SWRevealViewController.h */,
 				17717E442025406A00CF3B82 /* SWRevealViewController.m */,
 				1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */,
-				17F176882025C595006FC4E3 /* CaseViewController.swift */,
 				17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */,
 				176952712027357100E5EC97 /* case_study_1.mp4 */,
 			);

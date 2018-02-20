@@ -8,6 +8,8 @@
 
 import UIKit
 
+var casePublic: myCase? = nil
+
 class CaseViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var categoriesTextField: UITextField!
@@ -32,10 +34,12 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     
     var LifeCaseData = ["LC_1_1","LC_2_1","LC_3_1","LC_4_1","LC_5_1","LC_6_1"]
     
+    var currentCaseData: [myCase] = []
     
     var caseData = [
         myCase(
             caseID: "1",
+            caseName: "Case 1",
             caseVideoName: "CS_1_1.mp4",
             caseType: "1",
             caseCoverPic: "CS_1_1",
@@ -61,9 +65,10 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
             ]),
         myCase(
             caseID: "2",
+            caseName: "Case 2",
             caseVideoName: "CS_2_1.mp4",
             caseType: "1",
-            caseCoverPic: "CS_2_1",
+            caseCoverPic: "LC_1_1",
             teachersNote: [
                 TeachersNote(noteID: "2", noteVideo: "Teachersnote2.mp4", noteCover: "")
             ],
@@ -87,8 +92,41 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
                                     isSelect: false,
                                     isCorrect: false)],
                         explanation: "",
-                        expanded: false)
-                    ])
+                        expanded: false
+                )
+            ]),
+        myCase(
+            caseID: "3",
+            caseName: "Case 3",
+            caseVideoName: "LC_1_1.mp4",
+            caseType: "2",
+            caseCoverPic: "LC_1_1",
+            teachersNote: [
+                TeachersNote(noteID: "2", noteVideo: "Teachersnote2.mp4", noteCover: "")
+            ],
+            questions: [
+                Question(
+                    questionID: "3",
+                    question: "What would you do differently with Melissa’s third – period class?",
+                    options: [Option(optionID: "7",optionContent: "Try the lab again the same way.",isSelect: false,isCorrect: false),
+                              Option(optionID: "8",optionContent: "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.",isSelect: false,isCorrect: false),
+                              Option(optionID: "9",optionContent: "Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available.",isSelect: false,isCorrect: false),],
+                    explanation: "",
+                    expanded: false),
+                Question(
+                    questionID: "4",
+                    question: "Do you agree with Melissa’s initial idea that high school biology students should have opportunities to solve real-world problems and apply concepts?",
+                    options:[Option(optionID: "10",optionContent: "Yes, problem solving teaches students to develop their own creativity, thinking skills, and communicative skills.", isSelect: false,isCorrect: false),
+                             Option(optionID: "11",optionContent: "Sure, students should have at least on opportunity to try it.", isSelect: false,isCorrect: false),
+                             Option(
+                                optionID: "12",
+                                optionContent: "No, students are not able to understand critical thinking and apply in to real-world problems.",
+                                isSelect: false,
+                                isCorrect: false)],
+                    explanation: "",
+                    expanded: false
+                )
+            ])
     ]
     
 //    var caseArray = [CaseEntity]()
@@ -103,7 +141,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         
         createCategoryPicker()
         createToolBar()
-        
+        retrieveData(typeOfCase: "1")
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
@@ -134,14 +172,16 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     @objc func barButtonAction()
     {
         dismissKeyboard()
-        if selectedCategoryRow == 0
-        {
-            self.data = CaseStudyData
-        }
-        else if selectedCategoryRow == 1
-        {
-            self.data = LifeCaseData
-        }
+//        if selectedCategoryRow == 0
+//        {
+//            self.data = CaseStudyData
+//        }
+//        else if selectedCategoryRow == 1
+//        {
+//            self.data = LifeCaseData
+//        }
+        let selectedRow: Int = selectedCategoryRow!+1
+        retrieveData(typeOfCase: selectedRow.description)
         caseTableView.reloadData()
         caseNav.title = selectedCategory
     }
@@ -152,6 +192,18 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         self.view.endEditing(true)
     }
 
+    func retrieveData(typeOfCase: String)
+    {
+        self.currentCaseData.removeAll()
+        for i in 0..<caseData.count
+        {
+            if(caseData[i].caseType == typeOfCase)
+            {
+                self.currentCaseData.append(caseData[i])
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -168,14 +220,17 @@ extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPicker
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath) as! myCell
-        let post = data[indexPath.row]
-        cell.myCellImage.image = UIImage(named: post)
+//        let post = data[indexPath.row]
+        let post = currentCaseData[indexPath.row].caseCoverPic
+        cell.myCellImage.image = UIImage(named: post!)
+        cell.myCellLabel.text = "Todo Case Study Life Experience"
 
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+//        return data.count
+        return currentCaseData.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

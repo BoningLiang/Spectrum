@@ -16,7 +16,7 @@ class theCaseViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
-    var questionArray2 = [
+    var questionArray3 = [
         Question(
             questionID: "1",
             question: "What would you do differently with Melissa’s third – period class?",
@@ -58,6 +58,30 @@ class theCaseViewController: UIViewController {
                     isSelect: false,
                     isCorrect: false)],
             explanation: "explanation sample 2",
+            expanded: false)
+    ]
+    
+    var questionArray2 = [
+        Question(
+            questionID: "1",
+            question: "What would you do differently with Melissa’s third – period class?",
+            options: [
+                Option(
+                    optionID: "1",
+                    optionContent: "Try the lab again the same way.",
+                    isSelect: false,
+                    isCorrect: true),
+                Option(
+                    optionID: "2",
+                    optionContent: "Have the lab at a later date so you can explain to the students how to us critical thinking to solve a problem.",
+                    isSelect: false,
+                    isCorrect: false),
+                Option(
+                    optionID: "3",
+                    optionContent: "Recreate the lab worksheet that gives the students step by step instructions and has the answer readily available.",
+                    isSelect: false,
+                    isCorrect: false),],
+            explanation: "explanation sample 1",
             expanded: false)
     ]
     

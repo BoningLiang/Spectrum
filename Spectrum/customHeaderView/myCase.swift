@@ -23,6 +23,7 @@ struct TeachersNote {
 
 class myCase {
     var caseID: String!
+    var caseName: String!
     var caseVideoName: String!
     var caseType: String!
     var caseCoverPic: String!
@@ -30,7 +31,7 @@ class myCase {
     var questions: [Question]!
     var caseEntity = [CaseEntity]()
     
-    init(caseID: String, caseVideoName: String, caseType: String, caseCoverPic: String, teachersNote: [TeachersNote], questions: [Question]) {
+    init(caseID: String, caseName:String, caseVideoName: String, caseType: String, caseCoverPic: String, teachersNote: [TeachersNote], questions: [Question]) {
         self.caseID = caseID
         self.caseVideoName = caseVideoName
         self.caseType = caseType

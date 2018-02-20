@@ -12,6 +12,9 @@ class myCell: UITableViewCell {
 
     @IBOutlet weak var myCellImage: UIImageView!
     
+    @IBOutlet weak var myCellLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
