@@ -40,7 +40,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         myCase(
             caseID: "1",
             caseName: "Case 1",
-            caseVideoName: "CS_1_1.mp4",
+            caseVideoName: "video_case_study_1",
             caseType: "1",
             caseCoverPic: "CS_1_1",
             teachersNote: [
@@ -66,7 +66,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         myCase(
             caseID: "2",
             caseName: "Case 2",
-            caseVideoName: "CS_2_1.mp4",
+            caseVideoName: "video_case_study_2",
             caseType: "1",
             caseCoverPic: "LC_1_1",
             teachersNote: [
@@ -98,7 +98,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         myCase(
             caseID: "3",
             caseName: "Case 3",
-            caseVideoName: "LC_1_1.mp4",
+            caseVideoName: "video_case_study_1",
             caseType: "2",
             caseCoverPic: "LC_1_1",
             teachersNote: [
@@ -233,7 +233,8 @@ extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPicker
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toTheCaseSegue", sender: self)
-        casePublic = currentCaseData[indexPath.row]
+        casePublic = self.currentCaseData[indexPath.row]
+//        caseVideoPublic = self.currentCaseData[indexPath]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

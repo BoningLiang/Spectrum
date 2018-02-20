@@ -11,6 +11,7 @@ import AVKit
 import CoreData
 
 var questionArrayPublic: [Question]? = nil
+var caseVideoPublic: String = ""
 
 class theCaseViewController: UIViewController {
     
@@ -96,7 +97,7 @@ class theCaseViewController: UIViewController {
     
     @IBAction func playButtonAction(_ sender: Any)
     {
-        if let path=Bundle.main.path(forResource:"video_1", ofType:"mp4")
+        if let path=Bundle.main.path(forResource: casePublic!.caseVideoName, ofType:"mp4")
         {
             let video = AVPlayer(url: URL(fileURLWithPath: path))
             let videoPlayer = AVPlayerViewController()

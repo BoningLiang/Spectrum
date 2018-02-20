@@ -15,6 +15,8 @@
 		171ED1AC202CF6FD00B72691 /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171ED1A6202CF6FD00B72691 /* OptionEntity+CoreDataClass.swift */; };
 		171ED1AD202CF6FD00B72691 /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171ED1A7202CF6FD00B72691 /* OptionEntity+CoreDataProperties.swift */; };
 		173C9742202A1FA100C00A38 /* checkQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */; };
+		175C3FF2203CB9C800E1AF28 /* video_case_study_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */; };
+		175C3FF3203CB9C800E1AF28 /* video_case_study_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */; };
 		17717E2E2025401C00CF3B82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E2D2025401C00CF3B82 /* AppDelegate.swift */; };
 		17717E302025401C00CF3B82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E2F2025401C00CF3B82 /* ViewController.swift */; };
 		17717E332025401C00CF3B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E312025401C00CF3B82 /* Main.storyboard */; };
@@ -31,7 +33,6 @@
 		17BE177A203B5C16004B6F31 /* checkAnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */; };
 		17F176892025C595006FC4E3 /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F176882025C595006FC4E3 /* CaseViewController.swift */; };
 		17F1768B2025C5A8006FC4E3 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
-		17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 17FA9C89202903B200F614AA /* video_1.mp4 */; };
 		17FB5519203272C600DF3A12 /* CasesJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB5518203272C600DF3A12 /* CasesJson.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +46,9 @@
 		171ED1A7202CF6FD00B72691 /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkQuestionViewController.swift; sourceTree = "<group>"; };
 		1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spectrum-Bridging-Header.h"; sourceTree = "<group>"; };
-		176952712027357100E5EC97 /* case_study_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = case_study_1.mp4; sourceTree = "<group>"; };
+		175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_case_study_1.mp4; sourceTree = "<group>"; };
+		175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_case_study_2.mp4; sourceTree = "<group>"; };
+		175C3FF1203CB93F00E1AF28 /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
 		17717E2A2025401C00CF3B82 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17717E2D2025401C00CF3B82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17717E2F2025401C00CF3B82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
-		17FA9C89202903B200F614AA /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
 		17FB5518203272C600DF3A12 /* CasesJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesJson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +85,9 @@
 		17717E212025401C00CF3B82 = {
 			isa = PBXGroup;
 			children = (
-				17FA9C89202903B200F614AA /* video_1.mp4 */,
+				175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */,
+				175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */,
+				175C3FF1203CB93F00E1AF28 /* video_1.mp4 */,
 				17717E2C2025401C00CF3B82 /* Spectrum */,
 				17717E2B2025401C00CF3B82 /* Products */,
 			);
@@ -120,7 +124,6 @@
 				17717E442025406A00CF3B82 /* SWRevealViewController.m */,
 				1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */,
 				17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */,
-				176952712027357100E5EC97 /* case_study_1.mp4 */,
 			);
 			path = Spectrum;
 			sourceTree = "<group>";
@@ -217,10 +220,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175C3FF2203CB9C800E1AF28 /* video_case_study_1.mp4 in Resources */,
+				175C3FF3203CB9C800E1AF28 /* video_case_study_2.mp4 in Resources */,
 				17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */,
 				17717E382025401C00CF3B82 /* Assets.xcassets in Resources */,
 				177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */,
-				17FA9C8A202903B300F614AA /* video_1.mp4 in Resources */,
 				17717E332025401C00CF3B82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
