@@ -21,6 +21,22 @@ struct Option {
         self.isSelect = isSelect
         self.isCorrect = isCorrect
     }
+    
+    func insertDataToCoreData(outQuestionID:String)
+    {
+        let newOptionEntity:OptionEntity = OptionEntity(context: CoreDataService.context)
+        
+        newOptionEntity.optionID = self.optionID
+        newOptionEntity.optionContent = self.optionContent
+        newOptionEntity.isSelected = self.isSelect
+        newOptionEntity.isCorrect = self.isCorrect
+        newOptionEntity.outQuestionID = outQuestionID
+        
+        if(CoreDataController.insertData(entity: newOptionEntity))
+        {
+            print("Successfully insert option")
+        }
+    }
 }
 
 struct Question {
@@ -68,5 +84,25 @@ struct Question {
 //            CoreDataService.saveContext()
 //            self.optionEntity.append(optionEntity)
 //        }
+    }
+    
+    func insertDataToCoreData(outCaseID:String)
+    {
+        let newQuestionEntity:QuestionEntity = QuestionEntity(context: CoreDataService.context)
+        
+        newQuestionEntity.questionID = self.questionID
+        newQuestionEntity.questionContent = self.question
+        newQuestionEntity.explanation = self.explanation
+        newQuestionEntity.outCaseID = outCaseID
+        
+        if(CoreDataController.insertData(entity: newQuestionEntity))
+        {
+            print("Successfully insert question")
+        }
+        
+        for i in 0..<self.options.count
+        {
+            self.options[i].insertDataToCoreData(outQuestionID: self.questionID)
+        }
     }
 }

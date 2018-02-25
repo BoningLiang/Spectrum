@@ -2,7 +2,7 @@
 //  OptionEntity+CoreDataProperties.swift
 //  Spectrum
 //
-//  Created by Boning Liang on 2/8/18.
+//  Created by Boning Liang on 2/23/18.
 //  Copyright © 2018 Boning Liang. All rights reserved.
 //
 //
@@ -17,7 +17,7 @@ extension OptionEntity {
         return NSFetchRequest<OptionEntity>(entityName: "OptionEntity")
     }
 
-    @NSManaged public var isCorrectedKey: Bool
+    @NSManaged public var isCorrect: Bool
     @NSManaged public var isSelected: Bool
     @NSManaged public var optionContent: String?
     @NSManaged public var optionID: String?

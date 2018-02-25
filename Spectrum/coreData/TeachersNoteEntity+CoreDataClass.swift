@@ -1,5 +1,5 @@
 //
-//  QuestionEntity+CoreDataClass.swift
+//  TeachersNoteEntity+CoreDataClass.swift
 //  Spectrum
 //
 //  Created by Boning Liang on 2/23/18.
@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-
-public class QuestionEntity: NSManagedObject {
+@objc(TeachersNoteEntity)
+public class TeachersNoteEntity: NSManagedObject {
 
 }

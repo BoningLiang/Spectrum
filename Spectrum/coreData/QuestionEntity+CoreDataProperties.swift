@@ -2,7 +2,7 @@
 //  QuestionEntity+CoreDataProperties.swift
 //  Spectrum
 //
-//  Created by Boning Liang on 2/8/18.
+//  Created by Boning Liang on 2/23/18.
 //  Copyright © 2018 Boning Liang. All rights reserved.
 //
 //
@@ -20,5 +20,6 @@ extension QuestionEntity {
     @NSManaged public var outCaseID: String?
     @NSManaged public var questionContent: String?
     @NSManaged public var questionID: String?
+    @NSManaged public var explanation: String?
 
 }

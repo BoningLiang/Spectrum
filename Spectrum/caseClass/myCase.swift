@@ -19,6 +19,22 @@ struct TeachersNote {
         self.noteCover = noteCover
         self.noteVideo = noteVideo
     }
+    
+    func insertDataToCoreData(outCaseID:String)
+    {
+        let newTeachersNoteEntity:TeachersNoteEntity = TeachersNoteEntity(context: CoreDataService.context)
+        
+        newTeachersNoteEntity.noteID = self.noteID
+        newTeachersNoteEntity.noteVideo = self.noteVideo
+        newTeachersNoteEntity.noteCover = self.noteCover
+        newTeachersNoteEntity.outCaseID = outCaseID
+        
+        if(CoreDataController.insertData(entity: newTeachersNoteEntity))
+        {
+            print("Successfully insert teachers note")
+        }
+    }
+    
 }
 
 class myCase {
@@ -31,7 +47,7 @@ class myCase {
     var caseVideoScreenshot: String!
     var teachersNote: [TeachersNote]
     var questions: [Question]!
-    var caseEntity = [CaseEntity]()
+
     
     init(caseID: String, caseName:String, caseDescription: String, caseVideoName: String, caseType: String, caseCoverPic: String,caseVideoScreenshot: String, teachersNote: [TeachersNote], questions: [Question]) {
         self.caseID = caseID
@@ -45,6 +61,53 @@ class myCase {
         self.caseVideoScreenshot = caseVideoScreenshot
 //        print(checkIfExistInCoreData(caseID: self.caseID))
     }
+    
+    func insertDataToCoreData()
+    {
+        let newCaseEntity:CaseEntity = CaseEntity(context: CoreDataService.context)
+        
+        newCaseEntity.setValue(self.caseID, forKey: "caseID")
+        newCaseEntity.setValue(self.caseDescription, forKey: "caseDescription")
+        newCaseEntity.setValue(self.caseCoverPic, forKey: "caseCoverPic")
+        newCaseEntity.setValue(self.caseName, forKey: "caseName")
+        newCaseEntity.setValue(self.caseType, forKey: "caseType")
+        newCaseEntity.setValue(self.caseType, forKey: "caseSection")
+        newCaseEntity.setValue(self.caseVideoName, forKey: "caseVideoName")
+        newCaseEntity.setValue(self.caseVideoScreenshot, forKey: "caseVideoScreenshot")
+        
+        if(CoreDataController.insertData(entity: newCaseEntity))
+        {
+            print("Successfully insert case data")
+        }
+        
+        for i in 0..<self.teachersNote.count
+        {
+            self.teachersNote[i].insertDataToCoreData(outCaseID: self.caseID)
+        }
+        
+        for i in 0..<self.questions.count
+        {
+            self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
+        }
+    }
+    
+//    func fetchCoreData() -> Bool
+//    {
+//        print("fetching coredata")
+//        let fetchRequest: NSFetchRequest<CaseEntity> = CaseEntity.fetchRequest()
+//        do{
+//            let caseEntity = try CoreDataService.context.fetch(fetchRequest)
+//            self.caseEntity = caseEntity
+//        }catch{
+//            print("Fetch request fails")
+//        }
+//        for i in 0..<caseEntity.count
+//        {
+//            print(self.caseEntity[i].caseName)
+//        }
+//        print("fetching coredata finished")
+//        return false
+//    }
     
 //    func checkIfExistInCoreData(caseID: String) -> Bool
 //    {
