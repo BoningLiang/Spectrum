@@ -100,9 +100,10 @@ class theCaseViewController: UIViewController {
     
     @IBAction func playButtonAction(_ sender: Any)
     {
-        if let path=Bundle.main.path(forResource: casePublic!.caseVideoName, ofType:"mp4")
+        if let videoURL = URL(string: baseVideoURL + casePublic!.caseVideoName + ".mp4")
+//        if let path=Bundle.main.path(forResource: casePublic!.caseVideoName, ofType:"mp4")
         {
-            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            let video = AVPlayer(url: videoURL)
             let videoPlayer = AVPlayerViewController()
             videoPlayer.player = video
             

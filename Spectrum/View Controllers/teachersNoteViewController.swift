@@ -9,6 +9,8 @@
 import UIKit
 import AVKit
 
+let baseVideoURL:String = "http://auburn.edu/~bzl0048/spectrum/videos/"
+
 class teachersNoteViewController: UIViewController {
     @IBOutlet weak var videoCoverImage: UIImageView!
     
@@ -24,9 +26,11 @@ class teachersNoteViewController: UIViewController {
     }
     
     @IBAction func playButtonAction(_ sender: Any) {
-        if let path=Bundle.main.path(forResource: casePublic!.teachersNote[0].noteVideo, ofType:"mp4")
+        if let videoURL = URL(string: baseVideoURL+casePublic!.teachersNote[0].noteVideo+".mp4")
+//        if let path=Bundle.main.path(forResource: casePublic!.teachersNote[0].noteVideo, ofType:"mp4")
         {
-            let video = AVPlayer(url: URL(fileURLWithPath: path))
+            print(videoURL.description)
+            let video = AVPlayer(url: videoURL)
             let videoPlayer = AVPlayerViewController()
             videoPlayer.player = video
             
