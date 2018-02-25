@@ -39,7 +39,12 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     
     var currentCaseData: [myCase] = []
     
+    var caseDataFromCoreData: [myCase] = []
+    var caseDataFromAUServer: [myCase] = []
+    
     var caseDataFromServerSimplify: [String: String] = [:]
+    
+    
     
     var caseDataFromServer = [
         myCase(
@@ -199,6 +204,9 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        initData()
+        
+        testLoadData()
         
         createCategoryPicker()
         createToolBar()
@@ -211,10 +219,10 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         caseTableView.delegate = self
         categoriesTextField.delegate = self
         
-        for theCaseDataFromServer in self.caseDataFromServer
-        {
-            theCaseDataFromServer.insertDataToCoreData()
-        }
+//        for theCaseDataFromServer in self.caseDataFromServer
+//        {
+//            theCaseDataFromServer.insertDataToCoreData()
+//        }
         
 //        let resultCaseEntities:[CaseEntity] = CoreDataController.selectAllCaseEntity()
 //
@@ -248,6 +256,33 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
 //        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 //
 //        print(urls[urls.count-1] as URL)
+    }
+    
+    func testLoadData()
+    {
+        ServerController.requestData(withRequest: "sample2.json") { (results:[myCase]?) in
+            if let caseData = results {
+                self.caseDataFromServer = caseData
+                DispatchQueue.main.async {
+                    for i in 0..<self.caseDataFromServer.count
+                    {
+                        print("Case from server: " + self.caseDataFromServer[i].caseName)
+                    }
+                }
+            }
+        }
+    }
+    
+    func initData()
+    {
+        self.caseDataFromAUServer = self.retrieveAndUpdateDataFromServer()
+        self.caseDataFromCoreData = myCase.getAllCasesFromCoreData()
+    }
+    
+    func retrieveAndUpdateDataFromServer() -> [myCase]
+    {
+        
+        return [myCase]()
     }
     
     func createCategoryPicker()

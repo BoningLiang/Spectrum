@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1715CC3220410150002952BA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA4202942BB00B06F46 /* Question.swift */; };
 		1715CC3320410150002952BA /* myCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4FF7E202CEEEC00EC075A /* myCase.swift */; };
-		1715CC3420410150002952BA /* CasesJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB5518203272C600DF3A12 /* CasesJson.swift */; };
 		1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */; };
 		1715CC3E20410151002952BA /* myHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA02029427100B06F46 /* myHeaderView.swift */; };
 		1715CC3F20410151002952BA /* myHeaderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
@@ -42,6 +41,7 @@
 		17717E382025401C00CF3B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17717E372025401C00CF3B82 /* Assets.xcassets */; };
 		17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E392025401C00CF3B82 /* LaunchScreen.storyboard */; };
 		177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
+		17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6BCD62043580D00D18CC2 /* serverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +76,7 @@
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
-		17FB5518203272C600DF3A12 /* CasesJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesJson.swift; sourceTree = "<group>"; };
+		17F6BCD62043580D00D18CC2 /* serverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverController.swift; sourceTree = "<group>"; };
 		17FFFB16203FE8B400C40983 /* teachersNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teachersNoteViewController.swift; sourceTree = "<group>"; };
 		17FFFB18203FF14600C40983 /* descriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = descriptionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,22 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1715CC0720406393002952BA /* caseClass */ = {
+		1715CC0720406393002952BA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				177CAAA4202942BB00B06F46 /* Question.swift */,
 				17A4FF7E202CEEEC00EC075A /* myCase.swift */,
 			);
-			path = caseClass;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		1715CC5720422C89002952BA /* coreDataManagement */ = {
+		1715CC5720422C89002952BA /* Core Data Management */ = {
 			isa = PBXGroup;
 			children = (
 				1792F760202C387D008176A0 /* CoreDataService.swift */,
 				1715CC5820422CAC002952BA /* CoreDataController.swift */,
 			);
-			path = coreDataManagement;
+			path = "Core Data Management";
 			sourceTree = "<group>";
 		};
 		1715CC5A204275FE002952BA /* View Controllers */ = {
@@ -146,11 +146,11 @@
 		17717E2C2025401C00CF3B82 /* Spectrum */ = {
 			isa = PBXGroup;
 			children = (
+				17F6BCD52043577200D18CC2 /* Server Connection */,
 				1715CC5A204275FE002952BA /* View Controllers */,
-				1715CC5720422C89002952BA /* coreDataManagement */,
+				1715CC5720422C89002952BA /* Core Data Management */,
 				17717E2B2025401C00CF3B82 /* Products */,
-				1715CC0720406393002952BA /* caseClass */,
-				17FB55172032724400DF3A12 /* json */,
+				1715CC0720406393002952BA /* Classes */,
 				1792F75F202C31C3008176A0 /* coreData */,
 				177CAA9F2029423A00B06F46 /* customHeaderView */,
 				1799FFE0203F1D7600B407D1 /* videos */,
@@ -197,12 +197,12 @@
 			path = videos;
 			sourceTree = "<group>";
 		};
-		17FB55172032724400DF3A12 /* json */ = {
+		17F6BCD52043577200D18CC2 /* Server Connection */ = {
 			isa = PBXGroup;
 			children = (
-				17FB5518203272C600DF3A12 /* CasesJson.swift */,
+				17F6BCD62043580D00D18CC2 /* serverController.swift */,
 			);
-			path = json;
+			path = "Server Connection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +282,6 @@
 				1715CC3220410150002952BA /* Question.swift in Sources */,
 				1715CC69204288E3002952BA /* QuestionEntity+CoreDataClass.swift in Sources */,
 				1715CC3320410150002952BA /* myCase.swift in Sources */,
-				1715CC3420410150002952BA /* CasesJson.swift in Sources */,
 				1715CC5D20428689002952BA /* TeachersNoteEntity+CoreDataClass.swift in Sources */,
 				1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */,
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
@@ -291,6 +290,7 @@
 				1715CC5920422CAC002952BA /* CoreDataController.swift in Sources */,
 				1715CC4720410151002952BA /* Assets.xcassets in Sources */,
 				1715CC4820410151002952BA /* myCell.swift in Sources */,
+				17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */,
 				1715CC68204288E3002952BA /* OptionEntity+CoreDataProperties.swift in Sources */,
 				1715CC4920410151002952BA /* AppDelegate.swift in Sources */,
 				1715CC4A20410151002952BA /* ViewController.swift in Sources */,

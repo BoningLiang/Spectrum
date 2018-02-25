@@ -81,7 +81,7 @@ class myCase {
 //        }
     }
     
-    func getAllCasesFromCoreData() -> [myCase] {
+    class func getAllCasesFromCoreData() -> [myCase] {
         var resultCases: [myCase] = []
         let caseEntities = CoreDataController.selectAllCaseEntity()
         
