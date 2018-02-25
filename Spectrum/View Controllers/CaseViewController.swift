@@ -211,13 +211,38 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         caseTableView.delegate = self
         categoriesTextField.delegate = self
         
-//        caseDataFromServer[0].insertDataToCoreData()
-        
-        let resultCaseEntities:[CaseEntity] = CoreDataController.selectAllFromCaseEntity()
-        
-        for resultCaseEntity in resultCaseEntities{
-            print(resultCaseEntity.caseName)
+        for theCaseDataFromServer in self.caseDataFromServer
+        {
+            theCaseDataFromServer.insertDataToCoreData()
         }
+        
+//        let resultCaseEntities:[CaseEntity] = CoreDataController.selectAllCaseEntity()
+//
+//        if resultCaseEntities.isEmpty {
+//
+//        }
+//        else{
+//            for resultCaseEntity in resultCaseEntities
+//            {
+//                print(resultCaseEntity.caseName)
+//                print(resultCaseEntity.caseID)
+//            }
+//        }
+        
+//        let resultCaseEntities:[CaseEntity] = CoreDataController.selectCaseWithID(id: "1")
+//        
+//        if resultCaseEntities.isEmpty {
+//            
+//        }
+//        else{
+//            for resultCaseEntity in resultCaseEntities
+//            {
+//                print(resultCaseEntity.caseName)
+//                print(resultCaseEntity.caseID)
+//            }
+//        }
+        
+        
         
         
 //        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

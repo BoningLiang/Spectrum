@@ -2,7 +2,7 @@
 //  QuestionEntity+CoreDataClass.swift
 //  Spectrum
 //
-//  Created by Boning Liang on 2/23/18.
+//  Created by Boning Liang on 2/25/18.
 //  Copyright © 2018 Boning Liang. All rights reserved.
 //
 //

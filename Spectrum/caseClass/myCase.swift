@@ -20,16 +20,17 @@ struct TeachersNote {
         self.noteVideo = noteVideo
     }
     
-    func insertDataToCoreData(outCaseID:String)
+    func insertDataToCoreData(outCaseID: String)
     {
-        let newTeachersNoteEntity:TeachersNoteEntity = TeachersNoteEntity(context: CoreDataService.context)
+        let context = CoreDataService.context
+        let newTeachersNoteEntity = NSEntityDescription.insertNewObject(forEntityName: "TeachersNoteEntity", into: context) as! TeachersNoteEntity
         
         newTeachersNoteEntity.noteID = self.noteID
         newTeachersNoteEntity.noteVideo = self.noteVideo
         newTeachersNoteEntity.noteCover = self.noteCover
         newTeachersNoteEntity.outCaseID = outCaseID
         
-        if(CoreDataController.insertData(entity: newTeachersNoteEntity))
+        if(CoreDataController.insertData())
         {
             print("Successfully insert teachers note")
         }
@@ -59,36 +60,22 @@ class myCase {
         self.questions = questions
         self.teachersNote = teachersNote
         self.caseVideoScreenshot = caseVideoScreenshot
-//        print(checkIfExistInCoreData(caseID: self.caseID))
     }
     
     func insertDataToCoreData()
     {
-        let newCaseEntity:CaseEntity = CaseEntity(context: CoreDataService.context)
+        CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType)
         
-        newCaseEntity.setValue(self.caseID, forKey: "caseID")
-        newCaseEntity.setValue(self.caseDescription, forKey: "caseDescription")
-        newCaseEntity.setValue(self.caseCoverPic, forKey: "caseCoverPic")
-        newCaseEntity.setValue(self.caseName, forKey: "caseName")
-        newCaseEntity.setValue(self.caseType, forKey: "caseType")
-        newCaseEntity.setValue(self.caseType, forKey: "caseSection")
-        newCaseEntity.setValue(self.caseVideoName, forKey: "caseVideoName")
-        newCaseEntity.setValue(self.caseVideoScreenshot, forKey: "caseVideoScreenshot")
-        
-        if(CoreDataController.insertData(entity: newCaseEntity))
-        {
-            print("Successfully insert case data")
-        }
-        
+
         for i in 0..<self.teachersNote.count
         {
             self.teachersNote[i].insertDataToCoreData(outCaseID: self.caseID)
         }
-        
-        for i in 0..<self.questions.count
-        {
-            self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
-        }
+//
+//        for i in 0..<self.questions.count
+//        {
+//            self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
+//        }
     }
     
 //    func fetchCoreData() -> Bool

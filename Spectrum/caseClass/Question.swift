@@ -32,7 +32,7 @@ struct Option {
         newOptionEntity.isCorrect = self.isCorrect
         newOptionEntity.outQuestionID = outQuestionID
         
-        if(CoreDataController.insertData(entity: newOptionEntity))
+        if(CoreDataController.insertData())
         {
             print("Successfully insert option")
         }
@@ -95,7 +95,7 @@ struct Question {
         newQuestionEntity.explanation = self.explanation
         newQuestionEntity.outCaseID = outCaseID
         
-        if(CoreDataController.insertData(entity: newQuestionEntity))
+        if(CoreDataController.insertData())
         {
             print("Successfully insert question")
         }
