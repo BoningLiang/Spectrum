@@ -156,13 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spectrum Educational Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkW-a2-fX3">
-                                <rect key="frame" x="16" y="94" width="205" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Spectrum Educational Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbr-Aa-Pp9">
-                                <rect key="frame" x="16" y="276.5" width="244" height="21"/>
+                                <rect key="frame" x="16" y="94" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -174,26 +168,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-lQ-DN4">
-                                <rect key="frame" x="16" y="291" width="343" height="171"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-lQ-DN4">
+                                <rect key="frame" x="16" y="306" width="343" height="129"/>
                                 <string key="text">By using Spectrum Education tool, it provides extensive training of teachers which will help them in understanding digital Media and know better strategies for successful classroom management. The teachers will be well versed with teaching skills,instructional strategies,curricula and assessment practices. Our goal is to reinforce best practices for classroom management and to create an online learning environment to support pre-service and in-dervice teachers.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why Spectrum Educational Tool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbr-Aa-Pp9">
+                                <rect key="frame" x="16" y="277" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gbr-Aa-Pp9" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="24d-bf-Q0x"/>
-                            <constraint firstItem="dgY-lQ-DN4" firstAttribute="top" secondItem="gbr-Aa-Pp9" secondAttribute="bottom" constant="8" id="CVB-FJ-9ke"/>
-                            <constraint firstItem="YfR-3J-Fa3" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="HQh-aG-nZS"/>
-                            <constraint firstItem="BkW-a2-fX3" firstAttribute="top" secondItem="d2T-YM-Bxu" secondAttribute="top" constant="30" id="Ibs-WW-KYc"/>
-                            <constraint firstItem="BkW-a2-fX3" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="NAO-rm-axH"/>
-                            <constraint firstItem="dgY-lQ-DN4" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="OXJ-il-TM5"/>
-                            <constraint firstItem="gbr-Aa-Pp9" firstAttribute="top" secondItem="YfR-3J-Fa3" secondAttribute="bottom" constant="8" id="Y1n-DO-EfS"/>
-                            <constraint firstItem="YfR-3J-Fa3" firstAttribute="top" secondItem="BkW-a2-fX3" secondAttribute="bottom" constant="10" id="ZTW-Eb-8tU"/>
-                            <constraint firstItem="d2T-YM-Bxu" firstAttribute="trailing" secondItem="dgY-lQ-DN4" secondAttribute="trailing" constant="16" id="gw7-Yg-It3"/>
-                            <constraint firstItem="d2T-YM-Bxu" firstAttribute="trailing" secondItem="YfR-3J-Fa3" secondAttribute="trailing" constant="16" id="y08-PB-lk5"/>
+                            <constraint firstItem="BkW-a2-fX3" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="498-sW-lEU"/>
+                            <constraint firstItem="YfR-3J-Fa3" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="DTo-NF-pff"/>
+                            <constraint firstItem="d2T-YM-Bxu" firstAttribute="trailing" secondItem="dgY-lQ-DN4" secondAttribute="trailing" constant="16" id="FQf-XS-dQU"/>
+                            <constraint firstItem="d2T-YM-Bxu" firstAttribute="trailing" secondItem="YfR-3J-Fa3" secondAttribute="trailing" constant="16" id="MtB-OY-P96"/>
+                            <constraint firstItem="YfR-3J-Fa3" firstAttribute="top" secondItem="BkW-a2-fX3" secondAttribute="bottom" constant="10" id="P9E-ee-Lwv"/>
+                            <constraint firstItem="d2T-YM-Bxu" firstAttribute="trailing" secondItem="BkW-a2-fX3" secondAttribute="trailing" constant="16" id="Tel-SQ-XHH"/>
+                            <constraint firstItem="gbr-Aa-Pp9" firstAttribute="top" secondItem="YfR-3J-Fa3" secondAttribute="bottom" constant="8.5" id="aEq-e3-1Ka"/>
+                            <constraint firstItem="gbr-Aa-Pp9" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="bsM-QV-dW9"/>
+                            <constraint firstItem="BkW-a2-fX3" firstAttribute="top" secondItem="d2T-YM-Bxu" secondAttribute="top" constant="30" id="jTd-gU-0v9"/>
+                            <constraint firstItem="d2T-YM-Bxu" firstAttribute="trailing" secondItem="gbr-Aa-Pp9" secondAttribute="trailing" constant="16" id="oQd-Jv-4ew"/>
+                            <constraint firstItem="dgY-lQ-DN4" firstAttribute="leading" secondItem="d2T-YM-Bxu" secondAttribute="leading" constant="16" id="qYp-ub-D6O"/>
+                            <constraint firstItem="dgY-lQ-DN4" firstAttribute="top" secondItem="gbr-Aa-Pp9" secondAttribute="bottom" constant="8" id="toW-Wn-9fK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="d2T-YM-Bxu"/>
                     </view>
@@ -355,13 +357,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Case Studies" id="wIQ-3E-1gc">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="B6c-VI-1dC"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ab3-CC-Jhv">
-                            <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Other" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" id="Vxd-IK-agV">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="Ab3-CC-Jhv">
+                            <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Other" textAlignment="right" minimumFontSize="17" id="Vxd-IK-agV">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </barButtonItem>
@@ -466,7 +468,6 @@
                             <constraint firstItem="ckg-zl-Eiy" firstAttribute="centerX" secondItem="OgA-fS-Rpa" secondAttribute="centerX" id="p0S-8T-QeS"/>
                             <constraint firstItem="4Lj-X0-qhB" firstAttribute="trailing" secondItem="li7-FC-WpF" secondAttribute="trailing" id="pOa-9c-kFu"/>
                             <constraint firstItem="li7-FC-WpF" firstAttribute="bottom" secondItem="GPq-mV-tLB" secondAttribute="bottom" constant="10" id="tR1-ys-aYR"/>
-                            <constraint firstItem="GPq-mV-tLB" firstAttribute="centerX" secondItem="OgA-fS-Rpa" secondAttribute="centerX" id="vOI-nf-g4I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="li7-FC-WpF"/>
                     </view>
