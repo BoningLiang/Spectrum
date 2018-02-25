@@ -64,7 +64,10 @@ class myCase {
     
     func insertDataToCoreData()
     {
-        CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType)
+        if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType))
+        {
+            print("insert success.")
+        }
         
 
         for i in 0..<self.teachersNote.count
@@ -76,6 +79,62 @@ class myCase {
 //        {
 //            self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
 //        }
+    }
+    
+    func getAllCasesFromCoreData() -> [myCase] {
+        var resultCases: [myCase] = []
+        let caseEntities = CoreDataController.selectAllCaseEntity()
+        
+        for caseEntity in caseEntities
+        {
+            let teachersNoteEntities = CoreDataController.selectTeachersNoteWithForeignCaseID(foreignCaseID: caseEntity.caseID)
+            var resultTeachersNotes:[TeachersNote] = []
+            for teachersNoteEntity in teachersNoteEntities
+            {
+                let resultTeachersNote:TeachersNote = TeachersNote(
+                    noteID: teachersNoteEntity.noteID!,
+                    noteVideo: teachersNoteEntity.noteVideo!,
+                    noteCover: teachersNoteEntity.noteCover!)
+                resultTeachersNotes.append(resultTeachersNote)
+            }
+            
+            let questionEntities = CoreDataController.selectQuestionWithforeignCaseID(foreignCaseID: caseEntity.caseID)
+            var resultQuestions:[Question] = []
+            for questionEntity in questionEntities
+            {
+                let optionEntities = CoreDataController.selectOptionWithForeignQuestionID(foreignQuestionID: questionEntity.questionID!)
+                var resultOptions:[Option] = []
+                for optionEntity in optionEntities
+                {
+                    let resultOption = Option(
+                        optionID: optionEntity.optionID!,
+                        optionContent: optionEntity.optionContent!,
+                        isSelect: optionEntity.isSelected,
+                        isCorrect: optionEntity.isCorrect)
+                    resultOptions.append(resultOption)
+                }
+                
+                let resultQuestion = Question(
+                    questionID: questionEntity.questionID!,
+                    question: questionEntity.questionContent!,
+                    options: resultOptions,
+                    explanation: questionEntity.explanation,
+                    expanded: false)
+                resultQuestions.append(resultQuestion)
+            }
+            let resultCase:myCase = myCase(
+                caseID: caseEntity.caseID,
+                caseName: caseEntity.caseName,
+                caseDescription: caseEntity.caseDescription!,
+                caseVideoName: caseEntity.caseVideoName!,
+                caseType: caseEntity.caseType!,
+                caseCoverPic: caseEntity.caseCoverPic!,
+                caseVideoScreenshot: caseEntity.caseVideoScreenshot!,
+                teachersNote: resultTeachersNotes,
+                questions: resultQuestions)
+            resultCases.append(resultCase)
+        }
+        return resultCases
     }
     
 //    func fetchCoreData() -> Bool

@@ -205,6 +205,27 @@ class CoreDataController: NSObject {
         }
     }
     
+    class func selectQuestionWithforeignCaseID(foreignCaseID: String) -> [QuestionEntity]
+    {
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = QuestionEntity.fetchRequest()
+        var result = [QuestionEntity]()
+        let context = CoreDataService.context
+        var subPredicates = [NSPredicate]()
+        let predicate = NSPredicate(format: "outCaseID == %@", foreignCaseID)
+        subPredicates.append(predicate)
+        if subPredicates.count>0 {
+            let compoundPredicates = NSCompoundPredicate.init(type: .and, subpredicates: subPredicates)
+            fetchRequest.predicate = compoundPredicates
+        }
+        do {
+            result = try context.fetch(fetchRequest) as! [QuestionEntity]
+            return result
+        } catch {
+            print("Fetch QuestionEntity fail!")
+            return result
+        }
+    }
+    
     class func selectTeachersNoteWithID(id: String) -> [TeachersNoteEntity]
     {
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = TeachersNoteEntity.fetchRequest()
@@ -226,6 +247,27 @@ class CoreDataController: NSObject {
         }
     }
     
+    class func selectTeachersNoteWithForeignCaseID(foreignCaseID: String) -> [TeachersNoteEntity]
+    {
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = TeachersNoteEntity.fetchRequest()
+        var result = [TeachersNoteEntity]()
+        let context = CoreDataService.context
+        var subPredicates = [NSPredicate]()
+        let predicate = NSPredicate(format: "outCaseID == %@", foreignCaseID)
+        subPredicates.append(predicate)
+        if subPredicates.count>0 {
+            let compoundPredicates = NSCompoundPredicate.init(type: .and, subpredicates: subPredicates)
+            fetchRequest.predicate = compoundPredicates
+        }
+        do {
+            result = try context.fetch(fetchRequest) as! [TeachersNoteEntity]
+            return result
+        } catch {
+            print("Fetch TeachersNoteEntity fail!")
+            return result
+        }
+    }
+    
     class func selectOptionWithID(id: String) -> [OptionEntity]
     {
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = OptionEntity.fetchRequest()
@@ -233,6 +275,27 @@ class CoreDataController: NSObject {
         let context = CoreDataService.context
         var subPredicates = [NSPredicate]()
         let predicate = NSPredicate(format: "optionID == %@", id)
+        subPredicates.append(predicate)
+        if subPredicates.count>0 {
+            let compoundPredicates = NSCompoundPredicate.init(type: .and, subpredicates: subPredicates)
+            fetchRequest.predicate = compoundPredicates
+        }
+        do {
+            result = try context.fetch(fetchRequest) as! [OptionEntity]
+            return result
+        } catch {
+            print("Fetch OptionEntity fail!")
+            return result
+        }
+    }
+    
+    class func selectOptionWithForeignQuestionID(foreignQuestionID: String) -> [OptionEntity]
+    {
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = OptionEntity.fetchRequest()
+        var result = [OptionEntity]()
+        let context = CoreDataService.context
+        var subPredicates = [NSPredicate]()
+        let predicate = NSPredicate(format: "outQuestionID == %@", foreignQuestionID)
         subPredicates.append(predicate)
         if subPredicates.count>0 {
             let compoundPredicates = NSCompoundPredicate.init(type: .and, subpredicates: subPredicates)
