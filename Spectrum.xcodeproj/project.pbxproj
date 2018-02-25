@@ -13,13 +13,6 @@
 		1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */; };
 		1715CC3E20410151002952BA /* myHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA02029427100B06F46 /* myHeaderView.swift */; };
 		1715CC3F20410151002952BA /* myHeaderView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
-		1715CC4020410151002952BA /* video_case_study_1.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */; };
-		1715CC4120410151002952BA /* video_case_study_2.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */; };
-		1715CC4220410151002952BA /* video_1.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 175C3FF1203CB93F00E1AF28 /* video_1.mp4 */; };
-		1715CC4320410151002952BA /* case_CR_11_TN.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 1799FFE3203F251400B407D1 /* case_CR_11_TN.mp4 */; };
-		1715CC4420410151002952BA /* case_CR_11.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 1799FFE2203F251400B407D1 /* case_CR_11.mp4 */; };
-		1715CC4520410151002952BA /* case_MZL_10_TN.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 1799FFE1203F251400B407D1 /* case_MZL_10_TN.mp4 */; };
-		1715CC4620410151002952BA /* case_MZL_10.mp4 in Sources */ = {isa = PBXBuildFile; fileRef = 1799FFE4203F251400B407D1 /* case_MZL_10.mp4 */; };
 		1715CC4720410151002952BA /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 17717E372025401C00CF3B82 /* Assets.xcassets */; };
 		1715CC4820410151002952BA /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E4E20257A3E00CF3B82 /* myCell.swift */; };
 		1715CC4920410151002952BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17717E2D2025401C00CF3B82 /* AppDelegate.swift */; };
@@ -45,16 +38,10 @@
 		1715CC68204288E3002952BA /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC62204288E3002952BA /* OptionEntity+CoreDataProperties.swift */; };
 		1715CC69204288E3002952BA /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC63204288E3002952BA /* QuestionEntity+CoreDataClass.swift */; };
 		1715CC6A204288E3002952BA /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC64204288E3002952BA /* QuestionEntity+CoreDataProperties.swift */; };
-		175C3FF2203CB9C800E1AF28 /* video_case_study_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */; };
-		175C3FF3203CB9C800E1AF28 /* video_case_study_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */; };
 		17717E332025401C00CF3B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E312025401C00CF3B82 /* Main.storyboard */; };
 		17717E382025401C00CF3B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17717E372025401C00CF3B82 /* Assets.xcassets */; };
 		17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E392025401C00CF3B82 /* LaunchScreen.storyboard */; };
 		177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
-		1799FFE5203F254B00B407D1 /* case_CR_11_TN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1799FFE3203F251400B407D1 /* case_CR_11_TN.mp4 */; };
-		1799FFE6203F254B00B407D1 /* case_CR_11.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1799FFE2203F251400B407D1 /* case_CR_11.mp4 */; };
-		1799FFE7203F254B00B407D1 /* case_MZL_10_TN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1799FFE1203F251400B407D1 /* case_MZL_10_TN.mp4 */; };
-		1799FFE8203F254B00B407D1 /* case_MZL_10.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1799FFE4203F251400B407D1 /* case_MZL_10.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,9 +57,6 @@
 		1715CC64204288E3002952BA /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkQuestionViewController.swift; sourceTree = "<group>"; };
 		1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spectrum-Bridging-Header.h"; sourceTree = "<group>"; };
-		175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_case_study_1.mp4; sourceTree = "<group>"; };
-		175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_case_study_2.mp4; sourceTree = "<group>"; };
-		175C3FF1203CB93F00E1AF28 /* video_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_1.mp4; sourceTree = "<group>"; };
 		17717E2A2025401C00CF3B82 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17717E2D2025401C00CF3B82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17717E2F2025401C00CF3B82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,10 +72,6 @@
 		177CAAA4202942BB00B06F46 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1792F718202C12F2008176A0 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1792F760202C387D008176A0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
-		1799FFE1203F251400B407D1 /* case_MZL_10_TN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = case_MZL_10_TN.mp4; sourceTree = "<group>"; };
-		1799FFE2203F251400B407D1 /* case_CR_11.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = case_CR_11.mp4; sourceTree = "<group>"; };
-		1799FFE3203F251400B407D1 /* case_CR_11_TN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = case_CR_11_TN.mp4; sourceTree = "<group>"; };
-		1799FFE4203F251400B407D1 /* case_MZL_10.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = case_MZL_10.mp4; sourceTree = "<group>"; };
 		17A4FF7E202CEEEC00EC075A /* myCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCase.swift; sourceTree = "<group>"; };
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
@@ -213,13 +193,6 @@
 		1799FFE0203F1D7600B407D1 /* videos */ = {
 			isa = PBXGroup;
 			children = (
-				175C3FEE203CB75800E1AF28 /* video_case_study_1.mp4 */,
-				175C3FEF203CB75800E1AF28 /* video_case_study_2.mp4 */,
-				175C3FF1203CB93F00E1AF28 /* video_1.mp4 */,
-				1799FFE3203F251400B407D1 /* case_CR_11_TN.mp4 */,
-				1799FFE2203F251400B407D1 /* case_CR_11.mp4 */,
-				1799FFE1203F251400B407D1 /* case_MZL_10_TN.mp4 */,
-				1799FFE4203F251400B407D1 /* case_MZL_10.mp4 */,
 			);
 			path = videos;
 			sourceTree = "<group>";
@@ -292,12 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1799FFE5203F254B00B407D1 /* case_CR_11_TN.mp4 in Resources */,
-				1799FFE6203F254B00B407D1 /* case_CR_11.mp4 in Resources */,
-				1799FFE7203F254B00B407D1 /* case_MZL_10_TN.mp4 in Resources */,
-				1799FFE8203F254B00B407D1 /* case_MZL_10.mp4 in Resources */,
-				175C3FF2203CB9C800E1AF28 /* video_case_study_1.mp4 in Resources */,
-				175C3FF3203CB9C800E1AF28 /* video_case_study_2.mp4 in Resources */,
 				17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */,
 				17717E382025401C00CF3B82 /* Assets.xcassets in Resources */,
 				177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */,
@@ -321,14 +288,7 @@
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
 				1715CC3F20410151002952BA /* myHeaderView.xib in Sources */,
 				1715CC6A204288E3002952BA /* QuestionEntity+CoreDataProperties.swift in Sources */,
-				1715CC4020410151002952BA /* video_case_study_1.mp4 in Sources */,
-				1715CC4120410151002952BA /* video_case_study_2.mp4 in Sources */,
 				1715CC5920422CAC002952BA /* CoreDataController.swift in Sources */,
-				1715CC4220410151002952BA /* video_1.mp4 in Sources */,
-				1715CC4320410151002952BA /* case_CR_11_TN.mp4 in Sources */,
-				1715CC4420410151002952BA /* case_CR_11.mp4 in Sources */,
-				1715CC4520410151002952BA /* case_MZL_10_TN.mp4 in Sources */,
-				1715CC4620410151002952BA /* case_MZL_10.mp4 in Sources */,
 				1715CC4720410151002952BA /* Assets.xcassets in Sources */,
 				1715CC4820410151002952BA /* myCell.swift in Sources */,
 				1715CC68204288E3002952BA /* OptionEntity+CoreDataProperties.swift in Sources */,
