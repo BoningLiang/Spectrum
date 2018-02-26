@@ -10,19 +10,19 @@ import UIKit
 import CoreData
 
 class CoreDataController: NSObject {
-//    class func insertData(entity: NSManagedObject, data: [String: String]) -> Bool {
-//        for (key, value) in data {
-//            entity.setValue(value, forKey: key)
-//        }
-//        let context = entity.managedObjectContext
-//
-//        do {
-//            try context?.save()
-//            return true
-//        } catch {
-//            return false
-//        }
-//    }
+    class func insertData(entity: NSManagedObject, data: [String: String]) -> Bool {
+        for (key, value) in data {
+            entity.setValue(value, forKey: key)
+        }
+        let context = entity.managedObjectContext
+
+        do {
+            try context?.save()
+            return true
+        } catch {
+            return false
+        }
+    }
     
     class func insertDataToCaseEntity(caseID: String, caseSection: String, caseVideoName: String, caseName: String, caseDescription: String, caseCoverPic: String, caseVideoScreenshot: String, caseType: String) -> Bool {
         
@@ -74,16 +74,6 @@ class CoreDataController: NSObject {
         } catch {
             return false
         }
-    }
-    
-    class func insertDataToQuestionEntity()
-    {
-        //todo
-    }
-    
-    class func insertDataToOptionEntity()
-    {
-        //todo
     }
     
 //    class func selectAllData(data: NSManagedObject) -> [NSObject]
@@ -394,5 +384,61 @@ class CoreDataController: NSObject {
         } catch {
             return false
         }
+    }
+    
+    class func getAllCasesFromCoreData() -> [myCase] {
+        var resultCases: [myCase] = []
+        let caseEntities = CoreDataController.selectAllCaseEntity()
+        
+        for caseEntity in caseEntities
+        {
+            let teachersNoteEntities = CoreDataController.selectTeachersNoteWithForeignCaseID(foreignCaseID: caseEntity.caseID)
+            var resultTeachersNotes:[TeachersNote] = []
+            for teachersNoteEntity in teachersNoteEntities
+            {
+                let resultTeachersNote:TeachersNote = TeachersNote(
+                    noteID: teachersNoteEntity.noteID!,
+                    noteVideo: teachersNoteEntity.noteVideo!,
+                    noteCover: teachersNoteEntity.noteCover!)
+                resultTeachersNotes.append(resultTeachersNote)
+            }
+            
+            let questionEntities = CoreDataController.selectQuestionWithforeignCaseID(foreignCaseID: caseEntity.caseID)
+            var resultQuestions:[Question] = []
+            for questionEntity in questionEntities
+            {
+                let optionEntities = CoreDataController.selectOptionWithForeignQuestionID(foreignQuestionID: questionEntity.questionID!)
+                var resultOptions:[Option] = []
+                for optionEntity in optionEntities
+                {
+                    let resultOption = Option(
+                        optionID: optionEntity.optionID!,
+                        optionContent: optionEntity.optionContent!,
+                        isSelect: optionEntity.isSelected,
+                        isCorrect: optionEntity.isCorrect)
+                    resultOptions.append(resultOption)
+                }
+                
+                let resultQuestion = Question(
+                    questionID: questionEntity.questionID!,
+                    question: questionEntity.questionContent!,
+                    options: resultOptions,
+                    explanation: questionEntity.explanation,
+                    expanded: false)
+                resultQuestions.append(resultQuestion)
+            }
+            let resultCase:myCase = myCase(
+                caseID: caseEntity.caseID,
+                caseName: caseEntity.caseName,
+                caseDescription: caseEntity.caseDescription!,
+                caseVideoName: caseEntity.caseVideoName!,
+                caseType: caseEntity.caseType!,
+                caseCoverPic: caseEntity.caseCoverPic!,
+                caseVideoScreenshot: caseEntity.caseVideoScreenshot!,
+                teachersNote: resultTeachersNotes,
+                questions: resultQuestions)
+            resultCases.append(resultCase)
+        }
+        return resultCases
     }
 }

@@ -60,117 +60,23 @@ class myCase {
         self.questions = questions
         self.teachersNote = teachersNote
         self.caseVideoScreenshot = caseVideoScreenshot
+        self.insertDataToCoreData()
     }
     
     func insertDataToCoreData()
     {
         if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType))
         {
-            print("insert success.")
-        }
-        
-
-        for i in 0..<self.teachersNote.count
-        {
-            self.teachersNote[i].insertDataToCoreData(outCaseID: self.caseID)
-        }
-//
-//        for i in 0..<self.questions.count
-//        {
-//            self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
-//        }
-    }
-    
-    class func getAllCasesFromCoreData() -> [myCase] {
-        var resultCases: [myCase] = []
-        let caseEntities = CoreDataController.selectAllCaseEntity()
-        
-        for caseEntity in caseEntities
-        {
-            let teachersNoteEntities = CoreDataController.selectTeachersNoteWithForeignCaseID(foreignCaseID: caseEntity.caseID)
-            var resultTeachersNotes:[TeachersNote] = []
-            for teachersNoteEntity in teachersNoteEntities
+            for i in 0..<self.teachersNote.count
             {
-                let resultTeachersNote:TeachersNote = TeachersNote(
-                    noteID: teachersNoteEntity.noteID!,
-                    noteVideo: teachersNoteEntity.noteVideo!,
-                    noteCover: teachersNoteEntity.noteCover!)
-                resultTeachersNotes.append(resultTeachersNote)
+                self.teachersNote[i].insertDataToCoreData(outCaseID: self.caseID)
             }
             
-            let questionEntities = CoreDataController.selectQuestionWithforeignCaseID(foreignCaseID: caseEntity.caseID)
-            var resultQuestions:[Question] = []
-            for questionEntity in questionEntities
+            for i in 0..<self.questions.count
             {
-                let optionEntities = CoreDataController.selectOptionWithForeignQuestionID(foreignQuestionID: questionEntity.questionID!)
-                var resultOptions:[Option] = []
-                for optionEntity in optionEntities
-                {
-                    let resultOption = Option(
-                        optionID: optionEntity.optionID!,
-                        optionContent: optionEntity.optionContent!,
-                        isSelect: optionEntity.isSelected,
-                        isCorrect: optionEntity.isCorrect)
-                    resultOptions.append(resultOption)
-                }
-                
-                let resultQuestion = Question(
-                    questionID: questionEntity.questionID!,
-                    question: questionEntity.questionContent!,
-                    options: resultOptions,
-                    explanation: questionEntity.explanation,
-                    expanded: false)
-                resultQuestions.append(resultQuestion)
+                self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
             }
-            let resultCase:myCase = myCase(
-                caseID: caseEntity.caseID,
-                caseName: caseEntity.caseName,
-                caseDescription: caseEntity.caseDescription!,
-                caseVideoName: caseEntity.caseVideoName!,
-                caseType: caseEntity.caseType!,
-                caseCoverPic: caseEntity.caseCoverPic!,
-                caseVideoScreenshot: caseEntity.caseVideoScreenshot!,
-                teachersNote: resultTeachersNotes,
-                questions: resultQuestions)
-            resultCases.append(resultCase)
+            print("insert success.")
         }
-        return resultCases
     }
-    
-//    func fetchCoreData() -> Bool
-//    {
-//        print("fetching coredata")
-//        let fetchRequest: NSFetchRequest<CaseEntity> = CaseEntity.fetchRequest()
-//        do{
-//            let caseEntity = try CoreDataService.context.fetch(fetchRequest)
-//            self.caseEntity = caseEntity
-//        }catch{
-//            print("Fetch request fails")
-//        }
-//        for i in 0..<caseEntity.count
-//        {
-//            print(self.caseEntity[i].caseName)
-//        }
-//        print("fetching coredata finished")
-//        return false
-//    }
-    
-//    func checkIfExistInCoreData(caseID: String) -> Bool
-//    {
-//        let fetchRequest: NSFetchRequest<CaseEntity> = CaseEntity.fetchRequest()
-//        do{
-//            let caseEntity = try CoreDataService.context.fetch(fetchRequest)
-//            self.caseEntity = caseEntity
-//        }catch{
-//            print("Fetch request fails")
-//        }
-//        for i in 0..<caseEntity.count
-//        {
-//            if(caseEntity[i].caseID == caseID)
-//            {
-//                return true
-//            }
-//        }
-//        return false
-//    }
 }

@@ -10,6 +10,9 @@
         <attribute name="caseVideoName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="caseVideoScreenshot" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="CaseVersionEntity" representedClassName="CaseVersionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="caseVersionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="OptionEntity" representedClassName=".OptionEntity" syncable="YES">
         <attribute name="isCorrect" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isSelected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -34,5 +37,6 @@
         <element name="OptionEntity" positionX="144" positionY="-183" width="128" height="120"/>
         <element name="QuestionEntity" positionX="-189" positionY="-177" width="128" height="105"/>
         <element name="TeachersNoteEntity" positionX="-38" positionY="-180" width="128" height="105"/>
+        <element name="CaseVersionEntity" positionX="-153" positionY="-126" width="128" height="60"/>
     </elements>
 </model>
