@@ -30,8 +30,24 @@ class checkAnsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.questionArray = questionArrayPublic!
         // Do any additional setup after loading the view.
+        print("ViewDidLoad: questionArray.count = ")
+        print(questionArray.count)
+        for question in questionArray
+        {
+            for theOption in question.options
+            {
+                if(CoreDataController.updateOptionEntityWithID(optionID: theOption.optionID, isSelect: theOption.isSelect))
+                {
+                    print("Option update success")
+                }
+                else
+                {
+                    print("No option or option update fails")
+                }
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

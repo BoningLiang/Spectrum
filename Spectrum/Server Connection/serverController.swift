@@ -21,8 +21,12 @@ class ServerController: NSObject{
                 do{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
                     {
-                        if let jsonCases = json["cases"] as? [[String:Any]]
+//                        print("json[\"cases\"]")
+//                        print(json["cases"]!)
+                        if let jsonCases = json["cases"]! as? [[String:Any]]
                         {
+//                            print("jsonCases")
+//                            print(jsonCases)
                             for jsonCase in jsonCases
                             {
                                 var resultQuestions:[Question] = []
@@ -34,29 +38,39 @@ class ServerController: NSObject{
                                 let caseType = jsonCase["caseType"] as? String
                                 let caseCoverPic = jsonCase["caseCoverPic"] as? String
                                 let caseVideoScreenshot = jsonCase["caseVideoScreenshot"] as? String
-                                if let teachersNotes = json["teachersNote"] as? [[String:Any]]
+//                                print("json[\"teachersNotes\"]")
+//                                print(json["teachersNotes"]) //nil
+                                
+//                                print(jsonCase.value)
+//                                if let teachersNotes = json["teachersNotes"] as? [[String:Any]]
+                                if let teachersNotes = jsonCase["teachersNotes"] as? [[String: Any]]
                                 {
+                                    print("Teachers notes are: ")
+                                    print(teachersNotes)
                                     for teachersNote in teachersNotes
                                     {
-                                        let noteID = teachersNote["caseID"] as? String
+                                        
+                                        let noteID = teachersNote["noteID"] as? String
                                         let noteVideo = teachersNote["noteVideo"] as? String
                                         let noteCover = teachersNote["noteCover"] as? String
                                         let resultTeachersNote = TeachersNote(
                                             noteID: noteID!,
                                             noteVideo: noteVideo!,
-                                            noteCover: noteCover!)
+                                            noteCover: noteCover!,
+                                            outCaseID: caseID!)
                                         resultTeachersNotes.append(resultTeachersNote)
                                     }
                                 }
-                                if let questions = json["questions"] as? [[String:Any]]
+                                if let questions = jsonCase["questions"] as? [[String:Any]]
                                 {
+                                    print(questions)
                                     for question in questions
                                     {
                                         let questionID = question["questionID"] as? String
-                                        let questionContext = question["questionContext"] as? String
+                                        let questionContent = question["questionContent"] as? String
                                         let explanation = question["explanation"] as? String
                                         var resultJsonOptions:[Option] = []
-                                        if let options = json["options"] as? [[String:Any]]
+                                        if let options = question["options"] as? [[String:Any]]
                                         {
                                             for jsonOption in options
                                             {
@@ -68,16 +82,18 @@ class ServerController: NSObject{
                                                     optionID: optionID!,
                                                     optionContent: optionContent!,
                                                     isSelect: isSelect!,
-                                                    isCorrect: isCorrect!)
+                                                    isCorrect: isCorrect!,
+                                                    outQuestionID: questionID!)
                                                 resultJsonOptions.append(resultJsonOption)
                                             }
                                         }
                                         let resultQuestion = Question(
                                             questionID: questionID!,
-                                            question: questionContext!,
+                                            question: questionContent!,
                                             options: resultJsonOptions,
                                             explanation: explanation,
-                                            expanded: false)
+                                            expanded: false,
+                                            outCaseID: caseID!)
                                         resultQuestions.append(resultQuestion)
                                     }
                                 }

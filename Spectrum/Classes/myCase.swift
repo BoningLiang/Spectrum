@@ -14,25 +14,25 @@ struct TeachersNote {
     var noteVideo: String!
     var noteCover: String!
     
-    init(noteID: String, noteVideo: String, noteCover:String) {
+    init(noteID: String, noteVideo: String, noteCover:String, outCaseID: String) {
         self.noteID = noteID
         self.noteCover = noteCover
         self.noteVideo = noteVideo
+        self.insertDataToCoreData(outCaseID: outCaseID)
     }
     
     func insertDataToCoreData(outCaseID: String)
     {
-        let context = CoreDataService.context
-        let newTeachersNoteEntity = NSEntityDescription.insertNewObject(forEntityName: "TeachersNoteEntity", into: context) as! TeachersNoteEntity
-        
-        newTeachersNoteEntity.noteID = self.noteID
-        newTeachersNoteEntity.noteVideo = self.noteVideo
-        newTeachersNoteEntity.noteCover = self.noteCover
-        newTeachersNoteEntity.outCaseID = outCaseID
-        
-        if(CoreDataController.insertData())
+        if CoreDataController.insertDataToTeachersNoteEntity(
+            noteID: self.noteID,
+            noteVideo: self.noteVideo,
+            noteCover: self.noteCover,
+            outCaseID: outCaseID) {
+            print("Successfully insert teachers note with ID: " + self.noteID)
+        }
+        else
         {
-            print("Successfully insert teachers note")
+            print("Fail insert teachers note with ID: " + self.noteID)
         }
     }
     
@@ -67,16 +67,7 @@ class myCase {
     {
         if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType))
         {
-            for i in 0..<self.teachersNote.count
-            {
-                self.teachersNote[i].insertDataToCoreData(outCaseID: self.caseID)
-            }
-            
-            for i in 0..<self.questions.count
-            {
-                self.questions[i].insertDataToCoreData(outCaseID: self.caseID)
-            }
-            print("insert success.")
+            print("Successfully insert case with ID: " + self.caseID)
         }
     }
 }

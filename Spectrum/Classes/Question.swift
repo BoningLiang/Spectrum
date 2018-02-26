@@ -14,27 +14,30 @@ struct Option {
     var optionContent: String!
     var isSelect: Bool!
     var isCorrect: Bool!
+    var outQuestionID: String!
     
-    init(optionID: String, optionContent: String, isSelect:Bool, isCorrect: Bool) {
+    init(optionID: String, optionContent: String, isSelect:Bool, isCorrect: Bool, outQuestionID: String) {
         self.optionID = optionID
         self.optionContent = optionContent
         self.isSelect = isSelect
         self.isCorrect = isCorrect
+        self.outQuestionID = outQuestionID
+        self.insertDataToCoreData()
     }
     
-    func insertDataToCoreData(outQuestionID:String)
+    func insertDataToCoreData()
     {
-        let newOptionEntity:OptionEntity = OptionEntity(context: CoreDataService.context)
-        
-        newOptionEntity.optionID = self.optionID
-        newOptionEntity.optionContent = self.optionContent
-        newOptionEntity.isSelected = self.isSelect
-        newOptionEntity.isCorrect = self.isCorrect
-        newOptionEntity.outQuestionID = outQuestionID
-        
-        if(CoreDataController.insertData())
+        if CoreDataController.insertDataToOptionEntity(
+            optionID: self.optionID,
+            optionContent: self.optionContent,
+            isCorrect: self.isCorrect,
+            isSelected: self.isSelect,
+            outQuestionID: self.outQuestionID) {
+            print("Successfully insert option with ID: " + self.optionID)
+        }
+        else
         {
-            print("Successfully insert option")
+            print("Fail insert option with ID: " + self.optionID)
         }
     }
 }
@@ -45,64 +48,32 @@ struct Question {
     var options:[Option]!
     var explanation:String!
     var expanded: Bool!
-//    var outCaseID: String!
+    var outCaseID: String!
     var questionEntity = [QuestionEntity]()
     var optionEntity = [OptionEntity]()
     
-    
-    init(questionID: String, question: String, options: [Option], explanation:String!, expanded: Bool) {
+    init(questionID: String, question: String, options: [Option], explanation:String!, expanded: Bool, outCaseID: String) {
         self.questionID = questionID
         self.question = question
         self.options = options
         self.explanation = explanation
         self.expanded = expanded
-        
-//        // QuestionEntity
-//        let questionEntity = QuestionEntity(context: CoreDataService.context)
-//        questionEntity.questionID = self.questionID
-//        questionEntity.questionContent = self.question
-//        CoreDataService.saveContext()
-//        self.questionEntity.append(questionEntity)
-//
-//        //OptionEntity
-//
-//        for i in 0..<options.count
-//        {
-//            let optionEntity = OptionEntity(context: CoreDataService.context)
-//            optionEntity.optionID = questionID + "_" + i.description
-//            optionEntity.optionContent = options[i]
-//            optionEntity.isSelected = false
-//            if(i == correctKeyIndex)
-//            {
-//                optionEntity.isCorrectedKey = true
-//            }
-//            else
-//            {
-//                optionEntity.isCorrectedKey = false
-//            }
-//            optionEntity.outQuestionID = questionID
-//            CoreDataService.saveContext()
-//            self.optionEntity.append(optionEntity)
-//        }
+        self.outCaseID = outCaseID
+        self.insertDataToCoreData(outCaseID: outCaseID)
     }
     
     func insertDataToCoreData(outCaseID:String)
     {
-        let newQuestionEntity:QuestionEntity = QuestionEntity(context: CoreDataService.context)
-        
-        newQuestionEntity.questionID = self.questionID
-        newQuestionEntity.questionContent = self.question
-        newQuestionEntity.explanation = self.explanation
-        newQuestionEntity.outCaseID = outCaseID
-        
-        if(CoreDataController.insertData())
-        {
-            print("Successfully insert question")
+        if CoreDataController.insertDataToQuestionEntity(
+            questionID: self.questionID,
+            questionContent: self.question,
+            explanation: self.explanation,
+            outCaseID: outCaseID) {
+            print("Successfully insert question with ID: " + self.questionID)
         }
-        
-        for i in 0..<self.options.count
+        else
         {
-            self.options[i].insertDataToCoreData(outQuestionID: self.questionID)
+            print("Fail insert question with ID: " + self.questionID)
         }
     }
 }
