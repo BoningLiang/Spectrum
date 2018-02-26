@@ -11,6 +11,17 @@ import Foundation
 import CoreData
 
 
-public class CaseEntity: NSManagedObject {
-
+public class CaseEntity<XEntity>: NSManagedObject {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<CaseEntity> {
+        return NSFetchRequest<CaseEntity>(entityName: "CaseEntity")
+    }
+    
+    @NSManaged public var caseCoverPic: String?
+    @NSManaged public var caseDescription: String?
+    @NSManaged public var caseID: String
+    @NSManaged public var caseName: String
+    @NSManaged public var caseSection: String?
+    @NSManaged public var caseType: String?
+    @NSManaged public var caseVideoName: String?
+    @NSManaged public var caseVideoScreenshot: String?
 }

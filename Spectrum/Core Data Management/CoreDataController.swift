@@ -31,7 +31,7 @@ class CoreDataController: NSObject {
         if(forConstrainCount==0)
         {
             let context = CoreDataService.context
-            let newCaseEntity = NSEntityDescription.insertNewObject(forEntityName: "CaseEntity", into: context) as! CaseEntity
+            let newCaseEntity = NSEntityDescription.insertNewObject(forEntityName: "CaseEntity", into: context) as! CaseEntity<Any>
             
             newCaseEntity.setValue(caseID, forKey: "caseID")
             newCaseEntity.setValue(caseDescription, forKey: "caseDescription")
@@ -190,17 +190,14 @@ class CoreDataController: NSObject {
         }
     }
     
-//    class func selectAllData(data: NSManagedObject) -> [NSObject]
-//    {
-//        let context = CoreDataService.context
-////        var data: [AnyObject]? = nil
-//        do {
-//            data = try context.fetch(NSManagedObject.fetchRequest())
-//            return data! as! [NSObject]
-//        } catch {
-//            return data! as! [NSObject]
-//        }
-//    }
+    class func selectAllXEntity() -> [XEntity]
+    {
+        let fetchRequest: NSFetchRequest<XEntity> = XEntity.fetchRequest()
+        let context = CoreDataService.context
+        var result = [XEntity]()
+        
+        return result
+    }
     
     class func selectAllCaseEntity() -> [CaseEntity]
     {

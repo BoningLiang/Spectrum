@@ -22,7 +22,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     var selectedCategory: String?
     var selectedCategoryRow: Int?
     
-    var caseEntity = [CaseEntity]()
+    var caseEntity = [CaseEntity<Any>]()
     
     @IBOutlet weak var caseNav: UINavigationItem!
     

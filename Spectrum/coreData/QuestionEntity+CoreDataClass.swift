@@ -11,6 +11,13 @@ import Foundation
 import CoreData
 
 
-public class QuestionEntity: NSManagedObject {
-
+public class QuestionEntity<XEntity>: NSManagedObject {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<QuestionEntity> {
+        return NSFetchRequest<QuestionEntity>(entityName: "QuestionEntity")
+    }
+    
+    @NSManaged public var explanation: String?
+    @NSManaged public var outCaseID: String?
+    @NSManaged public var questionContent: String?
+    @NSManaged public var questionID: String?
 }

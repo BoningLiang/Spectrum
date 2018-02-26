@@ -11,6 +11,15 @@ import Foundation
 import CoreData
 
 
-public class OptionEntity: NSManagedObject {
+public class OptionEntity<XEntity>: NSManagedObject {
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<OptionEntity> {
+        return NSFetchRequest<OptionEntity>(entityName: "OptionEntity")
+    }
+    
+    @NSManaged public var isCorrect: Bool
+    @NSManaged public var isSelected: Bool
+    @NSManaged public var optionContent: String?
+    @NSManaged public var optionID: String?
+    @NSManaged public var outQuestionID: String?
 
 }
