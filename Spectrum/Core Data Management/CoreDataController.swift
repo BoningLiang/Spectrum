@@ -31,7 +31,7 @@ class CoreDataController: NSObject {
         if(forConstrainCount==0)
         {
             let context = CoreDataService.context
-            let newCaseEntity = NSEntityDescription.insertNewObject(forEntityName: "CaseEntity", into: context) as! CaseEntity<Any>
+            let newCaseEntity = NSEntityDescription.insertNewObject(forEntityName: "CaseEntity", into: context) as! CaseEntity
             
             newCaseEntity.setValue(caseID, forKey: "caseID")
             newCaseEntity.setValue(caseDescription, forKey: "caseDescription")
@@ -189,15 +189,7 @@ class CoreDataController: NSObject {
             return false
         }
     }
-    
-    class func selectAllXEntity() -> [XEntity]
-    {
-        let fetchRequest: NSFetchRequest<XEntity> = XEntity.fetchRequest()
-        let context = CoreDataService.context
-        var result = [XEntity]()
-        
-        return result
-    }
+
     
     class func selectAllCaseEntity() -> [CaseEntity]
     {
@@ -545,7 +537,7 @@ class CoreDataController: NSObject {
         print("case count: "+caseEntities.count.description)
         for caseEntity in caseEntities
         {
-            let teachersNoteEntities = CoreDataController.selectTeachersNoteWithForeignCaseID(foreignCaseID: caseEntity.caseID)
+            let teachersNoteEntities = CoreDataController.selectTeachersNoteWithForeignCaseID(foreignCaseID: caseEntity.caseID!)
             var resultTeachersNotes:[TeachersNote] = []
             print("teachers notes count: "+teachersNoteEntities.count.description)
             for teachersNoteEntity in teachersNoteEntities
@@ -554,11 +546,11 @@ class CoreDataController: NSObject {
                     noteID: teachersNoteEntity.noteID!,
                     noteVideo: teachersNoteEntity.noteVideo!,
                     noteCover: teachersNoteEntity.noteCover!,
-                    outCaseID: caseEntity.caseID)
+                    outCaseID: caseEntity.caseID!)
                 resultTeachersNotes.append(resultTeachersNote)
             }
             
-            let questionEntities = CoreDataController.selectQuestionWithforeignCaseID(foreignCaseID: caseEntity.caseID)
+            let questionEntities = CoreDataController.selectQuestionWithforeignCaseID(foreignCaseID: caseEntity.caseID!)
             var resultQuestions:[Question] = []
             print("question count: "+questionEntities.count.description)
             for questionEntity in questionEntities
@@ -584,12 +576,12 @@ class CoreDataController: NSObject {
                     options: resultOptions,
                     explanation: questionEntity.explanation,
                     expanded: false,
-                    outCaseID: caseEntity.caseID)
+                    outCaseID: caseEntity.caseID!)
                 resultQuestions.append(resultQuestion)
             }
             let resultCase:myCase = myCase(
-                caseID: caseEntity.caseID,
-                caseName: caseEntity.caseName,
+                caseID: caseEntity.caseID!,
+                caseName: caseEntity.caseName!,
                 caseDescription: caseEntity.caseDescription!,
                 caseVideoName: caseEntity.caseVideoName!,
                 caseType: caseEntity.caseType!,

@@ -29,24 +29,24 @@
 		1715CC5520410151002952BA /* Spectrum-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */; };
 		1715CC5620410151002952BA /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
 		1715CC5920422CAC002952BA /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC5820422CAC002952BA /* CoreDataController.swift */; };
-		1715CC5D20428689002952BA /* TeachersNoteEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC5B20428689002952BA /* TeachersNoteEntity+CoreDataClass.swift */; };
-		1715CC65204288E3002952BA /* CaseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC5F204288E3002952BA /* CaseEntity+CoreDataClass.swift */; };
-		1715CC67204288E3002952BA /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC61204288E3002952BA /* OptionEntity+CoreDataClass.swift */; };
-		1715CC69204288E3002952BA /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC63204288E3002952BA /* QuestionEntity+CoreDataClass.swift */; };
 		17717E332025401C00CF3B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E312025401C00CF3B82 /* Main.storyboard */; };
 		17717E382025401C00CF3B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17717E372025401C00CF3B82 /* Assets.xcassets */; };
 		17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E392025401C00CF3B82 /* LaunchScreen.storyboard */; };
 		177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
+		17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */; };
+		17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */; };
+		17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */; };
+		17C618E02046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D82046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift */; };
+		17C618E12046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D92046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift */; };
+		17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */; };
+		17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */; };
+		17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */; };
 		17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6BCD62043580D00D18CC2 /* serverController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17087C692025D90B001B1CC6 /* theCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theCaseViewController.swift; sourceTree = "<group>"; };
 		1715CC5820422CAC002952BA /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
-		1715CC5B20428689002952BA /* TeachersNoteEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1715CC5F204288E3002952BA /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1715CC61204288E3002952BA /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		1715CC63204288E3002952BA /* QuestionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkQuestionViewController.swift; sourceTree = "<group>"; };
 		1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spectrum-Bridging-Header.h"; sourceTree = "<group>"; };
 		17717E2A2025401C00CF3B82 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +66,14 @@
 		1792F760202C387D008176A0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		17A4FF7E202CEEEC00EC075A /* myCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCase.swift; sourceTree = "<group>"; };
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
+		17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		17C618D82046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17C618D92046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		17F6BCD62043580D00D18CC2 /* serverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverController.swift; sourceTree = "<group>"; };
@@ -145,7 +153,6 @@
 				1715CC0720406393002952BA /* Classes */,
 				1792F75F202C31C3008176A0 /* coreData */,
 				177CAA9F2029423A00B06F46 /* customHeaderView */,
-				1799FFE0203F1D7600B407D1 /* videos */,
 				17717E372025401C00CF3B82 /* Assets.xcassets */,
 				17717E312025401C00CF3B82 /* Main.storyboard */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
@@ -169,20 +176,17 @@
 		1792F75F202C31C3008176A0 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
-				1715CC5F204288E3002952BA /* CaseEntity+CoreDataClass.swift */,
-				1715CC61204288E3002952BA /* OptionEntity+CoreDataClass.swift */,
-				1715CC63204288E3002952BA /* QuestionEntity+CoreDataClass.swift */,
-				1715CC5B20428689002952BA /* TeachersNoteEntity+CoreDataClass.swift */,
+				17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */,
+				17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */,
+				17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */,
+				17C618D82046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift */,
+				17C618D92046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift */,
+				17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */,
+				17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */,
+				17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */,
 				1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */,
 			);
 			path = coreData;
-			sourceTree = "<group>";
-		};
-		1799FFE0203F1D7600B407D1 /* videos */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = videos;
 			sourceTree = "<group>";
 		};
 		17F6BCD52043577200D18CC2 /* Server Connection */ = {
@@ -268,13 +272,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1715CC3220410150002952BA /* Question.swift in Sources */,
-				1715CC69204288E3002952BA /* QuestionEntity+CoreDataClass.swift in Sources */,
 				1715CC3320410150002952BA /* myCase.swift in Sources */,
-				1715CC5D20428689002952BA /* TeachersNoteEntity+CoreDataClass.swift in Sources */,
+				17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */,
 				1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */,
+				17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */,
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
 				1715CC3F20410151002952BA /* myHeaderView.xib in Sources */,
 				1715CC5920422CAC002952BA /* CoreDataController.swift in Sources */,
+				17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */,
 				1715CC4720410151002952BA /* Assets.xcassets in Sources */,
 				1715CC4820410151002952BA /* myCell.swift in Sources */,
 				17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */,
@@ -287,13 +292,16 @@
 				1715CC4F20410151002952BA /* theCaseViewController.swift in Sources */,
 				1715CC5020410151002952BA /* CaseViewController.swift in Sources */,
 				1715CC5120410151002952BA /* CoreDataService.swift in Sources */,
+				17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */,
+				17C618E02046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift in Sources */,
+				17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */,
 				1715CC5220410151002952BA /* Info.plist in Sources */,
 				1715CC5320410151002952BA /* SWRevealViewController.h in Sources */,
 				1715CC5420410151002952BA /* SWRevealViewController.m in Sources */,
-				1715CC67204288E3002952BA /* OptionEntity+CoreDataClass.swift in Sources */,
+				17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */,
 				1715CC5520410151002952BA /* Spectrum-Bridging-Header.h in Sources */,
-				1715CC65204288E3002952BA /* CaseEntity+CoreDataClass.swift in Sources */,
 				1715CC5620410151002952BA /* ProgressViewController.swift in Sources */,
+				17C618E12046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
