@@ -8,9 +8,12 @@
 
 import UIKit
 
+var isLogin:Bool = false
 class AccountTableTableViewController: UITableViewController {
 
+    @IBOutlet weak var loginORprofileCell: UITableViewCell!
     
+    @IBOutlet weak var loginORprofileText: UILabel!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -19,12 +22,20 @@ class AccountTableTableViewController: UITableViewController {
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
 
+        if isLogin {
+            loginORprofileText.text = "Profile"
+        }
+        else{
+            loginORprofileText.text = "Login"
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,6 +52,16 @@ class AccountTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if isLogin {
+            performSegue(withIdentifier: "profileSegue", sender: nil)
+        }
+        else{
+            performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
     }
 
     /*
