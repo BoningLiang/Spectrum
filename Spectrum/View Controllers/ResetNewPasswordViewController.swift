@@ -13,7 +13,7 @@ struct NewPassword {
     var newPassword: String
 }
 
-var public_newPassword: NewPassword = NewPassword(eamil: "", newPassword: "")
+var public_newPassword: NewPassword = NewPassword(email: "", newPassword: "")
 
 class ResetNewPasswordViewController: UIViewController {
 
