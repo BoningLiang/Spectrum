@@ -13,7 +13,7 @@ class CodeVerificationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -22,14 +22,23 @@ class CodeVerificationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func continueAction(_ sender: Any) {
-        if state == "signin"  {
-            performSegue(withIdentifier: "signInSegue", sender: nil)
-        }
-        else if state == "resetpassword" {
-            performSegue(withIdentifier: "resetPasswordSegue", sender: nil)
-        }
+    func checkCode() -> Bool{
+        //todo
+        return true
     }
     
+    @IBAction func continueAction(_ sender: Any) {
+        if checkCode() {
+            if state == "signin"  {
+                performSegue(withIdentifier: "signInSegue", sender: nil)
+            }
+            else if state == "resetpassword" {
+                performSegue(withIdentifier: "resetPasswordSegue", sender: nil)
+            }
+        }
+        else
+        {
+            //todo
+        }
+    }
 }

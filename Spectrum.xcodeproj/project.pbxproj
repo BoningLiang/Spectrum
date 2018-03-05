@@ -48,6 +48,9 @@
 		17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */; };
 		17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */; };
 		17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */; };
+		17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */; };
+		17E5BFBA204C878600F96BC8 /* SuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */; };
+		17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */; };
 		17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6BCD62043580D00D18CC2 /* serverController.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,9 @@
 		17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
+		17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccessRegisterViewController.swift; path = "View Controllers/SuccessRegisterViewController.swift"; sourceTree = "<group>"; };
+		17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetNewPasswordViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		17F6BCD62043580D00D18CC2 /* serverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 			children = (
 				177CAAA4202942BB00B06F46 /* Question.swift */,
 				17A4FF7E202CEEEC00EC075A /* myCase.swift */,
+				17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -144,6 +151,7 @@
 				1706D711204B724700B78425 /* CodeVerificationViewController.swift */,
 				1706D713204B742400B78425 /* RestPasswordViewController.swift */,
 				1706D717204B7C1B00B78425 /* AddFriendViewController.swift */,
+				17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 				177CAA9F2029423A00B06F46 /* customHeaderView */,
 				17717E372025401C00CF3B82 /* Assets.xcassets */,
 				17717E312025401C00CF3B82 /* Main.storyboard */,
+				17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
 				17717E4E20257A3E00CF3B82 /* myCell.swift */,
 				17717E2D2025401C00CF3B82 /* AppDelegate.swift */,
@@ -311,6 +320,7 @@
 				1715CC4C20410151002952BA /* teachersNoteViewController.swift in Sources */,
 				1715CC4D20410151002952BA /* checkAnsViewController.swift in Sources */,
 				1715CC4E20410151002952BA /* checkQuestionViewController.swift in Sources */,
+				17E5BFBA204C878600F96BC8 /* SuccessRegisterViewController.swift in Sources */,
 				1715CC4F20410151002952BA /* theCaseViewController.swift in Sources */,
 				1706D712204B724700B78425 /* CodeVerificationViewController.swift in Sources */,
 				1715CC5020410151002952BA /* CaseViewController.swift in Sources */,
@@ -323,8 +333,10 @@
 				1715CC5220410151002952BA /* Info.plist in Sources */,
 				1715CC5320410151002952BA /* SWRevealViewController.h in Sources */,
 				1715CC5420410151002952BA /* SWRevealViewController.m in Sources */,
+				17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */,
 				17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */,
 				1706D70C204B4E4D00B78425 /* AccountTableTableViewController.swift in Sources */,
+				17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */,
 				1706D710204B58ED00B78425 /* SigninViewController.swift in Sources */,
 				1715CC5520410151002952BA /* Spectrum-Bridging-Header.h in Sources */,
 				1715CC5620410151002952BA /* ProgressViewController.swift in Sources */,

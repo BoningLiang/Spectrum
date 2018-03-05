@@ -11,6 +11,7 @@ import Foundation
 let baseURL = "http://auburn.edu/~bzl0048/spectrum/cases/"
 
 class ServerController: NSObject{
+    
     class func requestData(withRequest request:String, completion: @escaping ([myCase]?) -> ())
     {
         let url = baseURL + request
@@ -21,12 +22,8 @@ class ServerController: NSObject{
                 do{
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
                     {
-//                        print("json[\"cases\"]")
-//                        print(json["cases"]!)
                         if let jsonCases = json["cases"]! as? [[String:Any]]
                         {
-//                            print("jsonCases")
-//                            print(jsonCases)
                             for jsonCase in jsonCases
                             {
                                 var resultQuestions:[Question] = []
@@ -38,15 +35,8 @@ class ServerController: NSObject{
                                 let caseType = jsonCase["caseType"] as? String
                                 let caseCoverPic = jsonCase["caseCoverPic"] as? String
                                 let caseVideoScreenshot = jsonCase["caseVideoScreenshot"] as? String
-//                                print("json[\"teachersNotes\"]")
-//                                print(json["teachersNotes"]) //nil
-                                
-//                                print(jsonCase.value)
-//                                if let teachersNotes = json["teachersNotes"] as? [[String:Any]]
                                 if let teachersNotes = jsonCase["teachersNotes"] as? [[String: Any]]
                                 {
-                                    print("Teachers notes are: ")
-                                    print(teachersNotes)
                                     for teachersNote in teachersNotes
                                     {
                                         
@@ -63,7 +53,6 @@ class ServerController: NSObject{
                                 }
                                 if let questions = jsonCase["questions"] as? [[String:Any]]
                                 {
-                                    print(questions)
                                     for question in questions
                                     {
                                         let questionID = question["questionID"] as? String
