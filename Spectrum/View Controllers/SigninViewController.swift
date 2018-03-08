@@ -20,8 +20,9 @@ struct RegisterUser {
 
 var registerUser: RegisterUser = RegisterUser(username: "", userEmail: "", userPassword: "")
 
-class SigninViewController: UIViewController {
+class SigninViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var heightConstraintOutlet: NSLayoutConstraint!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -33,7 +34,10 @@ class SigninViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var confirmPasswordLabel: UILabel!
     
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet var scrollView: UIScrollView!
     var numberOfReadyItems: Int = 0
+    
     var isUsernameReady: Bool = false
     var isEmailReady: Bool = false
     var isPasswordReady: Bool = false
@@ -45,9 +49,17 @@ class SigninViewController: UIViewController {
         emailLabel.isHidden = true
         passwordLabel.isHidden = true
         confirmPasswordLabel.isHidden = true
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SigninViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
 
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -65,34 +77,34 @@ class SigninViewController: UIViewController {
             registerUser.userPassword = passwordTextField.text!
             performSegue(withIdentifier: "RegisterContinueSegue", sender: nil)
         }
+        else
+        {
+            print("cannot continue")
+        }
     }
     
-    
-    @IBAction func usernameTouchDown(_ sender: Any) {
+    @IBAction func usernameEditingDidBegin(_ sender: Any) {
         if usernameTextField.text == "Username" {
             usernameTextField.text = ""
-            usernameTextField.textColor = UIColor.black
         }
     }
     
-    @IBAction func emailTouchDown(_ sender: Any) {
+    
+    @IBAction func emailEditingDidBegin(_ sender: Any) {
         if emailTextField.text == "Email" {
             emailTextField.text = ""
-            emailTextField.textColor = UIColor.black
         }
     }
     
-    @IBAction func passwordTouchDown(_ sender: Any) {
+    @IBAction func passwordEditingDidBegin(_ sender: Any) {
         if passwordTextField.text == "Password" {
             passwordTextField.text = ""
-            passwordTextField.textColor = UIColor.black
         }
     }
     
-    @IBAction func confirmPasswordTouchDown(_ sender: Any) {
+    @IBAction func confirmPasswordEditingDidBegin(_ sender: Any) {
         if confirmPasswordTextField.text == "Confirm Password" {
             confirmPasswordTextField.text = ""
-            confirmPasswordTextField.textColor = UIColor.black
         }
     }
     
@@ -101,7 +113,9 @@ class SigninViewController: UIViewController {
         if usernameTextField.text == "" {
             self.isUsernameReady = false
             usernameTextField.text = "Username"
-            usernameTextField.textColor = UIColor.lightGray
+        }
+        else if usernameTextField.text == "Username"{
+            
         }
         else
         {
@@ -131,8 +145,10 @@ class SigninViewController: UIViewController {
     @IBAction func emailEditingDidEnd(_ sender: Any) {
         if emailTextField.text == "" {
             emailTextField.text = "Email"
-            emailTextField.textColor = UIColor.lightGray
             self.isEmailReady = false
+        }
+        else if emailTextField.text == "Email"{
+            
         }
         else if UserRegister.checkEmail(userEmail: emailTextField.text!){
             emailLabel.isHidden = true
@@ -147,8 +163,10 @@ class SigninViewController: UIViewController {
     @IBAction func passwordEditingDidEnd(_ sender: Any) {
         if passwordTextField.text == "" {
             passwordTextField.text = "Password"
-            passwordTextField.textColor = UIColor.lightGray
             self.isPasswordReady = false
+        }
+        else if passwordTextField.text == "Password"{
+            
         }
         else if UserRegister.checkPassword(userPassword: passwordTextField.text!){
             passwordLabel.isHidden = true
@@ -163,8 +181,10 @@ class SigninViewController: UIViewController {
     @IBAction func confirmPasswordEditingDidEnd(_ sender: Any) {
         if confirmPasswordTextField.text == "" {
             confirmPasswordTextField.text = "Confirm Password"
-            confirmPasswordTextField.textColor = UIColor.lightGray
             self.isConfirmPasswordReady = false
+        }
+        else if confirmPasswordTextField.text == "Confirm Password"{
+            
         }
         else if passwordTextField.text == confirmPasswordTextField.text{
             confirmPasswordLabel.isHidden = true
@@ -174,6 +194,22 @@ class SigninViewController: UIViewController {
             confirmPasswordLabel.isHidden = false
             self.isConfirmPasswordReady = false
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        heightConstraintOutlet.constant = 270
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        heightConstraintOutlet.constant = 20
     }
     
 }
