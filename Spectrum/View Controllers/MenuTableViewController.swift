@@ -34,7 +34,7 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 7
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,11 +44,21 @@ class MenuTableViewController: UITableViewController {
         }
         else if indexPath[1] == 1
         {
-            performSegue(withIdentifier: "MenuProgressSegue", sender: self)
+            if(loginuser.isLogin){
+                performSegue(withIdentifier: "MenuProgressSegue", sender: self)
+            }
+            else{
+                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
+            }
         }
         else if indexPath[1] == 2
         {
-            performSegue(withIdentifier: "MenuCaseSelectSegue", sender: self)
+            if(loginuser.isLogin){
+                performSegue(withIdentifier: "MenuCaseSelectSegue", sender: self)
+            }
+            else{
+                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
+            }
         }
         else if indexPath[1] == 3
         {
@@ -56,7 +66,20 @@ class MenuTableViewController: UITableViewController {
         }
         else if indexPath[1] == 4
         {
-            performSegue(withIdentifier: "MenuMessageSegue", sender: self)
+            if(loginuser.isLogin){
+                performSegue(withIdentifier: "MenuDiscussionSegue", sender: self)
+            }
+            else{
+                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
+            }
+        }
+        else if indexPath[1] == 5
+        {
+            performSegue(withIdentifier: "MenuTeamSegue", sender: self)
+        }
+        else if indexPath[1] == 6
+        {
+            performSegue(withIdentifier: "MenuAboutSegue", sender: self)
         }
     }
     

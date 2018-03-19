@@ -22,11 +22,12 @@ class AccountTableTableViewController: UITableViewController {
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
 
-        if isLogin {
+        if loginuser.isLogin {
             loginORprofileText.text = "Profile"
         }
         else{
             loginORprofileText.text = "Login"
+            performSegue(withIdentifier: "loginSegue", sender: self)
         }
         
         // Uncomment the following line to preserve selection between presentations
@@ -56,7 +57,7 @@ class AccountTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if isLogin {
+        if loginuser.isLogin {
             performSegue(withIdentifier: "profileSegue", sender: nil)
         }
         else{

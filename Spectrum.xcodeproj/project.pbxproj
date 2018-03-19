@@ -14,6 +14,9 @@
 		1706D714204B742400B78425 /* RestPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706D713204B742400B78425 /* RestPasswordViewController.swift */; };
 		1706D716204B75EF00B78425 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706D715204B75EF00B78425 /* MessagesViewController.swift */; };
 		1706D718204B7C1B00B78425 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1706D717204B7C1B00B78425 /* AddFriendViewController.swift */; };
+		170CDF7A205F65800015BC1A /* DiscussionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CDF79205F65800015BC1A /* DiscussionsTableViewCell.swift */; };
+		170CDF7E205F7D600015BC1A /* DiscussionReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */; };
+		170CDF80205F7D8C0015BC1A /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CDF7F205F7D8C0015BC1A /* ReplyTableViewCell.swift */; };
 		1715CC3220410150002952BA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177CAAA4202942BB00B06F46 /* Question.swift */; };
 		1715CC3320410150002952BA /* myCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4FF7E202CEEEC00EC075A /* myCase.swift */; };
 		1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */; };
@@ -36,11 +39,17 @@
 		1715CC5520410151002952BA /* Spectrum-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */; };
 		1715CC5620410151002952BA /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */; };
 		1715CC5920422CAC002952BA /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715CC5820422CAC002952BA /* CoreDataController.swift */; };
+		17341709205C080F00EF9496 /* NewTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17341708205C080F00EF9496 /* NewTopicViewController.swift */; };
+		1734170B205C0A0200EF9496 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734170A205C0A0200EF9496 /* UserController.swift */; };
 		17717E332025401C00CF3B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E312025401C00CF3B82 /* Main.storyboard */; };
 		17717E382025401C00CF3B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17717E372025401C00CF3B82 /* Assets.xcassets */; };
 		17717E3B2025401C00CF3B82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17717E392025401C00CF3B82 /* LaunchScreen.storyboard */; };
 		177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177CAAA22029429700B06F46 /* myHeaderView.xib */; };
 		17B9D7702051C1FF00967B1E /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B9D76F2051C1FF00967B1E /* MenuTableViewController.swift */; };
+		17BA7934205F3F40001DE971 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7933205F3F40001DE971 /* AboutViewController.swift */; };
+		17BA7936205F3F50001DE971 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7935205F3F50001DE971 /* TeamsViewController.swift */; };
+		17BA7938205F4F01001DE971 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7937205F4F01001DE971 /* ProfileViewController.swift */; };
+		17BA793A205F5059001DE971 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */; };
 		17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */; };
 		17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */; };
 		17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */; };
@@ -64,7 +73,12 @@
 		1706D715204B75EF00B78425 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		1706D717204B7C1B00B78425 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		17087C692025D90B001B1CC6 /* theCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theCaseViewController.swift; sourceTree = "<group>"; };
+		170CDF79205F65800015BC1A /* DiscussionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsTableViewCell.swift; sourceTree = "<group>"; };
+		170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiscussionReplyViewController.swift; path = "Spectrum/View Controllers/DiscussionReplyViewController.swift"; sourceTree = "<group>"; };
+		170CDF7F205F7D8C0015BC1A /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		1715CC5820422CAC002952BA /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		17341708205C080F00EF9496 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewTopicViewController.swift; path = "Spectrum/View Controllers/NewTopicViewController.swift"; sourceTree = SOURCE_ROOT; };
+		1734170A205C0A0200EF9496 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		173C9741202A1FA100C00A38 /* checkQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkQuestionViewController.swift; sourceTree = "<group>"; };
 		1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Spectrum-Bridging-Header.h"; sourceTree = "<group>"; };
 		17717E2A2025401C00CF3B82 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +98,10 @@
 		1792F760202C387D008176A0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		17A4FF7E202CEEEC00EC075A /* myCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCase.swift; sourceTree = "<group>"; };
 		17B9D76F2051C1FF00967B1E /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		17BA7933205F3F40001DE971 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		17BA7935205F3F50001DE971 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		17BA7937205F4F01001DE971 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
 		17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -119,6 +137,8 @@
 			children = (
 				177CAAA4202942BB00B06F46 /* Question.swift */,
 				17A4FF7E202CEEEC00EC075A /* myCase.swift */,
+				17341708205C080F00EF9496 /* NewTopicViewController.swift */,
+				1734170A205C0A0200EF9496 /* UserController.swift */,
 				17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */,
 			);
 			path = Classes;
@@ -155,6 +175,9 @@
 				1706D717204B7C1B00B78425 /* AddFriendViewController.swift */,
 				17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */,
 				17B9D76F2051C1FF00967B1E /* MenuTableViewController.swift */,
+				17BA7933205F3F40001DE971 /* AboutViewController.swift */,
+				17BA7935205F3F50001DE971 /* TeamsViewController.swift */,
+				17BA7937205F4F01001DE971 /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -162,6 +185,7 @@
 		17717E212025401C00CF3B82 = {
 			isa = PBXGroup;
 			children = (
+				170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */,
 				17717E2C2025401C00CF3B82 /* Spectrum */,
 			);
 			sourceTree = "<group>";
@@ -178,6 +202,7 @@
 		17717E2C2025401C00CF3B82 /* Spectrum */ = {
 			isa = PBXGroup;
 			children = (
+				17BA793B205F5065001DE971 /* Cells */,
 				17F6BCD52043577200D18CC2 /* Server Connection */,
 				1715CC5A204275FE002952BA /* View Controllers */,
 				1715CC5720422C89002952BA /* Core Data Management */,
@@ -189,7 +214,6 @@
 				17717E312025401C00CF3B82 /* Main.storyboard */,
 				17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
-				17717E4E20257A3E00CF3B82 /* myCell.swift */,
 				17717E2D2025401C00CF3B82 /* AppDelegate.swift */,
 				17717E3C2025401C00CF3B82 /* Info.plist */,
 				1745DB4D202F4C110027F5B4 /* Spectrum-Bridging-Header.h */,
@@ -220,6 +244,17 @@
 				1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */,
 			);
 			path = coreData;
+			sourceTree = "<group>";
+		};
+		17BA793B205F5065001DE971 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */,
+				17717E4E20257A3E00CF3B82 /* myCell.swift */,
+				170CDF79205F65800015BC1A /* DiscussionsTableViewCell.swift */,
+				170CDF7F205F7D8C0015BC1A /* ReplyTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		17F6BCD52043577200D18CC2 /* Server Connection */ = {
@@ -307,17 +342,25 @@
 				1715CC3220410150002952BA /* Question.swift in Sources */,
 				1715CC3320410150002952BA /* myCase.swift in Sources */,
 				17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */,
+				17BA7934205F3F40001DE971 /* AboutViewController.swift in Sources */,
 				1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */,
+				170CDF80205F7D8C0015BC1A /* ReplyTableViewCell.swift in Sources */,
 				17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */,
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
 				1715CC3F20410151002952BA /* myHeaderView.xib in Sources */,
+				17BA7938205F4F01001DE971 /* ProfileViewController.swift in Sources */,
+				17BA793A205F5059001DE971 /* ProfileTableViewCell.swift in Sources */,
 				1715CC5920422CAC002952BA /* CoreDataController.swift in Sources */,
 				17B9D7702051C1FF00967B1E /* MenuTableViewController.swift in Sources */,
 				1706D718204B7C1B00B78425 /* AddFriendViewController.swift in Sources */,
+				170CDF7E205F7D600015BC1A /* DiscussionReplyViewController.swift in Sources */,
+				170CDF7A205F65800015BC1A /* DiscussionsTableViewCell.swift in Sources */,
+				17BA7936205F3F50001DE971 /* TeamsViewController.swift in Sources */,
 				17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */,
 				1715CC4720410151002952BA /* Assets.xcassets in Sources */,
 				1715CC4820410151002952BA /* myCell.swift in Sources */,
 				17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */,
+				1734170B205C0A0200EF9496 /* UserController.swift in Sources */,
 				1715CC4920410151002952BA /* AppDelegate.swift in Sources */,
 				1715CC4A20410151002952BA /* ViewController.swift in Sources */,
 				1715CC4B20410151002952BA /* descriptionViewController.swift in Sources */,
@@ -329,6 +372,7 @@
 				1706D712204B724700B78425 /* CodeVerificationViewController.swift in Sources */,
 				1715CC5020410151002952BA /* CaseViewController.swift in Sources */,
 				1715CC5120410151002952BA /* CoreDataService.swift in Sources */,
+				17341709205C080F00EF9496 /* NewTopicViewController.swift in Sources */,
 				1706D70E204B52BE00B78425 /* LoginViewController.swift in Sources */,
 				17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */,
 				1706D716204B75EF00B78425 /* MessagesViewController.swift in Sources */,

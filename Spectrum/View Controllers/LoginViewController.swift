@@ -8,19 +8,21 @@
 
 import UIKit
 
-struct LoginUser {
-    var username: String
-    var userPassword: String
-    var isLogin: Bool
-    
-    init(username: String, userPassword: String) {
-        self.username = username
-        self.userPassword = userPassword
-        self.isLogin = false
-    }
-}
+//struct LoginUser {
+//    var username: String
+//    var userPassword: String
+//    var isLogin: Bool
+//
+//    init(username: String, userPassword: String) {
+//        self.username = username
+//        self.userPassword = userPassword
+//        self.isLogin = false
+//    }
+//}
+//
+//var loginUser: LoginUser = LoginUser(username: "", userPassword: "")
 
-var loginUser: LoginUser = LoginUser(username: "", userPassword: "")
+var loginuser: UserController = UserController();
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -89,31 +91,46 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func loginSpectrum(username: String, password: String) -> Bool
+    func loginSpectrum(username: String, userPassword: String)
     {
-        return true
+        let url = baseUrl+"/SpectrumServer/API/Login/?username="+username+"&password="+userPassword;
+        let request = URLRequest(url: URL(string: url)!)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else { return }
+            do{
+                let result = try JSONDecoder().decode(LoginResult.self, from: data)
+                DispatchQueue.main.async {
+                    if result.result>0{
+                        loginuser.isLogin = true
+                        
+                        self.performSegue(withIdentifier: "loginSegue", sender: self)
+                        print("LoginViewController(): Success to login.")
+                    }else{
+                        loginuser.isLogin = false
+                        print("LoginViewController(): Fail to login.")
+                    }
+                }
+            }catch{
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
         usernameTextField.endEditing(true)
         passwordTextField.endEditing(true)
         if isUsernameReady && isPasswordReady {
-            loginUser.username = usernameTextField.text!
-            loginUser.userPassword = passwordTextField.text!
-            if(loginSpectrum(username: loginUser.username, password: loginUser.userPassword)){
-                performSegue(withIdentifier: "loginSegue", sender: self)
-                print("login")
-            }
-            else{
-                print("LoginViewController(): Fail to login.")
-            }
-            
+            loginuser.username = usernameTextField.text!
+            loginuser.userPassword = passwordTextField.text!
+            loginSpectrum(username: loginuser.username!, userPassword: loginuser.userPassword!)
         }
         else
         {
             print("LoginViewController(): Missing username or password, cannot login")
         }
     }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         usernameTextField.resignFirstResponder()
