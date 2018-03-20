@@ -119,7 +119,8 @@ class SigninViewController: UIViewController, UITextFieldDelegate {
         }
         else
         {
-            let url = "http://auburn.edu/~bzl0048/SpectrumServer/API/Register/checkUsername/?username="+usernameTextField.text!
+            
+            let url = baseUrl + "/SpectrumServer/API/Register/checkUsername/?username="+usernameTextField.text!
             let request = URLRequest(url: URL(string: url)!)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 guard let data = data else { return }

@@ -22,24 +22,24 @@ struct Option {
         self.isSelect = isSelect
         self.isCorrect = isCorrect
         self.outQuestionID = outQuestionID
-        self.insertDataToCoreData()
+//        self.insertDataToCoreData()
     }
     
-    func insertDataToCoreData()
-    {
-        if CoreDataController.insertDataToOptionEntity(
-            optionID: self.optionID,
-            optionContent: self.optionContent,
-            isCorrect: self.isCorrect,
-            isSelected: self.isSelect,
-            outQuestionID: self.outQuestionID) {
-            print("Successfully insert option with ID: " + self.optionID)
-        }
-        else
-        {
-            print("Fail insert option with ID: " + self.optionID)
-        }
-    }
+//    func insertDataToCoreData()
+//    {
+//        if CoreDataController.insertDataToOptionEntity(
+//            optionID: self.optionID,
+//            optionContent: self.optionContent,
+//            isCorrect: self.isCorrect,
+//            isSelected: self.isSelect,
+//            outQuestionID: self.outQuestionID) {
+//            print("Successfully insert option with ID: " + self.optionID)
+//        }
+//        else
+//        {
+//            print("Fail insert option with ID: " + self.optionID)
+//        }
+//    }
 }
 
 struct Question {
@@ -59,21 +59,21 @@ struct Question {
         self.explanation = explanation
         self.expanded = expanded
         self.outCaseID = outCaseID
-        self.insertDataToCoreData(outCaseID: outCaseID)
+//        self.insertDataToCoreData(outCaseID: outCaseID)
     }
     
-    func insertDataToCoreData(outCaseID:String)
-    {
-        if CoreDataController.insertDataToQuestionEntity(
-            questionID: self.questionID,
-            questionContent: self.question,
-            explanation: self.explanation,
-            outCaseID: outCaseID) {
-            print("Successfully insert question with ID: " + self.questionID)
-        }
-        else
-        {
-            print("Fail insert question with ID: " + self.questionID)
-        }
-    }
+//    func insertDataToCoreData(outCaseID:String)
+//    {
+//        if CoreDataController.insertDataToQuestionEntity(
+//            questionID: self.questionID,
+//            questionContent: self.question,
+//            explanation: self.explanation,
+//            outCaseID: outCaseID) {
+//            print("Successfully insert question with ID: " + self.questionID)
+//        }
+//        else
+//        {
+//            print("Fail insert question with ID: " + self.questionID)
+//        }
+//    }
 }

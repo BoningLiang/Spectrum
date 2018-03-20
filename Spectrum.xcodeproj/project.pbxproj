@@ -61,6 +61,9 @@
 		17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */; };
 		17E5BFBA204C878600F96BC8 /* SuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */; };
 		17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */; };
+		17F374952060908A001EA93F /* QuizHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F374942060908A001EA93F /* QuizHistoryViewController.swift */; };
+		17F37497206094A6001EA93F /* QuizAttemptsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F37496206094A6001EA93F /* QuizAttemptsTableViewCell.swift */; };
+		17F374992060981A001EA93F /* TakeQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F374982060981A001EA93F /* TakeQuizViewController.swift */; };
 		17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6BCD62043580D00D18CC2 /* serverController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,7 +77,7 @@
 		1706D717204B7C1B00B78425 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		17087C692025D90B001B1CC6 /* theCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theCaseViewController.swift; sourceTree = "<group>"; };
 		170CDF79205F65800015BC1A /* DiscussionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionsTableViewCell.swift; sourceTree = "<group>"; };
-		170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DiscussionReplyViewController.swift; path = "Spectrum/View Controllers/DiscussionReplyViewController.swift"; sourceTree = "<group>"; };
+		170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscussionReplyViewController.swift; sourceTree = "<group>"; };
 		170CDF7F205F7D8C0015BC1A /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		1715CC5820422CAC002952BA /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		17341708205C080F00EF9496 /* NewTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewTopicViewController.swift; path = "Spectrum/View Controllers/NewTopicViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -116,6 +119,9 @@
 		17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetNewPasswordViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		17F374942060908A001EA93F /* QuizHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHistoryViewController.swift; sourceTree = "<group>"; };
+		17F37496206094A6001EA93F /* QuizAttemptsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuizAttemptsTableViewCell.swift; path = Spectrum/Cells/QuizAttemptsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		17F374982060981A001EA93F /* TakeQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeQuizViewController.swift; sourceTree = "<group>"; };
 		17F6BCD62043580D00D18CC2 /* serverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serverController.swift; sourceTree = "<group>"; };
 		17FFFB16203FE8B400C40983 /* teachersNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teachersNoteViewController.swift; sourceTree = "<group>"; };
 		17FFFB18203FF14600C40983 /* descriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = descriptionViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 		1715CC5A204275FE002952BA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				17F374982060981A001EA93F /* TakeQuizViewController.swift */,
+				170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */,
 				17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */,
 				17717E2F2025401C00CF3B82 /* ViewController.swift */,
 				17FFFB18203FF14600C40983 /* descriptionViewController.swift */,
@@ -178,6 +186,8 @@
 				17BA7933205F3F40001DE971 /* AboutViewController.swift */,
 				17BA7935205F3F50001DE971 /* TeamsViewController.swift */,
 				17BA7937205F4F01001DE971 /* ProfileViewController.swift */,
+				17F374942060908A001EA93F /* QuizHistoryViewController.swift */,
+				17F37496206094A6001EA93F /* QuizAttemptsTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -185,7 +195,6 @@
 		17717E212025401C00CF3B82 = {
 			isa = PBXGroup;
 			children = (
-				170CDF7D205F7D600015BC1A /* DiscussionReplyViewController.swift */,
 				17717E2C2025401C00CF3B82 /* Spectrum */,
 			);
 			sourceTree = "<group>";
@@ -346,6 +355,7 @@
 				1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */,
 				170CDF80205F7D8C0015BC1A /* ReplyTableViewCell.swift in Sources */,
 				17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */,
+				17F37497206094A6001EA93F /* QuizAttemptsTableViewCell.swift in Sources */,
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
 				1715CC3F20410151002952BA /* myHeaderView.xib in Sources */,
 				17BA7938205F4F01001DE971 /* ProfileViewController.swift in Sources */,
@@ -359,6 +369,7 @@
 				17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */,
 				1715CC4720410151002952BA /* Assets.xcassets in Sources */,
 				1715CC4820410151002952BA /* myCell.swift in Sources */,
+				17F374952060908A001EA93F /* QuizHistoryViewController.swift in Sources */,
 				17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */,
 				1734170B205C0A0200EF9496 /* UserController.swift in Sources */,
 				1715CC4920410151002952BA /* AppDelegate.swift in Sources */,
@@ -381,6 +392,7 @@
 				1715CC5220410151002952BA /* Info.plist in Sources */,
 				1715CC5320410151002952BA /* SWRevealViewController.h in Sources */,
 				1715CC5420410151002952BA /* SWRevealViewController.m in Sources */,
+				17F374992060981A001EA93F /* TakeQuizViewController.swift in Sources */,
 				17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */,
 				17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */,
 				1706D70C204B4E4D00B78425 /* AccountTableTableViewController.swift in Sources */,

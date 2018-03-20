@@ -18,23 +18,23 @@ struct TeachersNote {
         self.noteID = noteID
         self.noteCover = noteCover
         self.noteVideo = noteVideo
-        self.insertDataToCoreData(outCaseID: outCaseID)
+//        self.insertDataToCoreData(outCaseID: outCaseID)
     }
     
-    func insertDataToCoreData(outCaseID: String)
-    {
-        if CoreDataController.insertDataToTeachersNoteEntity(
-            noteID: self.noteID,
-            noteVideo: self.noteVideo,
-            noteCover: self.noteCover,
-            outCaseID: outCaseID) {
-            print("Successfully insert teachers note with ID: " + self.noteID)
-        }
-        else
-        {
-            print("Fail insert teachers note with ID: " + self.noteID)
-        }
-    }
+//    func insertDataToCoreData(outCaseID: String)
+//    {
+//        if CoreDataController.insertDataToTeachersNoteEntity(
+//            noteID: self.noteID,
+//            noteVideo: self.noteVideo,
+//            noteCover: self.noteCover,
+//            outCaseID: outCaseID) {
+//            print("Successfully insert teachers note with ID: " + self.noteID)
+//        }
+//        else
+//        {
+//            print("Fail insert teachers note with ID: " + self.noteID)
+//        }
+//    }
     
 }
 
@@ -60,14 +60,14 @@ class myCase {
         self.questions = questions
         self.teachersNote = teachersNote
         self.caseVideoScreenshot = caseVideoScreenshot
-        self.insertDataToCoreData()
+//        self.insertDataToCoreData()
     }
     
-    func insertDataToCoreData()
-    {
-        if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType))
-        {
-            print("Successfully insert case with ID: " + self.caseID)
-        }
-    }
+//    func insertDataToCoreData()
+//    {
+//        if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType))
+//        {
+//            print("Successfully insert case with ID: " + self.caseID)
+//        }
+//    }
 }

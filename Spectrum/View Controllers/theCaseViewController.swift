@@ -114,9 +114,7 @@ class theCaseViewController: UIViewController {
         }
     }
     
-    @IBAction func checkAnswerAction(_ sender: Any) {
-        questionArrayPublic = self.questionArray2
-    }
+    
     
     @IBAction func aboutCaseButtonAction(_ sender: Any) {
         
@@ -125,19 +123,6 @@ class theCaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.questionArray2.removeAll()
-        self.questionArray2 = (casePublic?.questions)!
-        
-        selectIndexPath = IndexPath(row:-1, section:-1)
-        let nib = UINib(nibName: "myHeaderView", bundle: nil)
-        self.questionTableView.register(nib, forHeaderFooterViewReuseIdentifier: "myHeaderView")
-        
-        self.questionTableView.dataSource = self
-        self.questionTableView.delegate = self
-        self.questionTableView.estimatedRowHeight = 300
-        self.questionTableView.rowHeight = UITableViewAutomaticDimension
-        
         self.videoCoverImage.image = UIImage(named: (casePublic?.caseVideoScreenshot)!)
     }
 
@@ -146,89 +131,20 @@ class theCaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-
-}
-
-extension theCaseViewController: UITableViewDataSource, UITableViewDelegate, myHeaderViewDelegate
-{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return questionArray2.count
+    @IBAction func TeachersNoteButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "TeachersNoteSegue", sender: self)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionArray2[section].options.count
+    @IBAction func AttemptHistoryButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "quizHistorySegue", sender: self)
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+    @IBAction func TakeQuizButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "takeQuizSegue", sender: self)
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if(questionArray[indexPath.section].expanded)
-//        {
-//            return 44
-//        }else {
-//            return 0
-//        }
-//    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "myHeaderView") as! myHeaderView
-        headerView.customInit(header: questionArray2[section].question, section: section, delegate: self)
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "optionCell")
-        cell?.textLabel?.text = questionArray2[indexPath.section].options[indexPath.row].optionContent
-        if(self.questionArray2[indexPath.section].options[indexPath.row].isSelect)
-        {
-            cell?.accessoryType = (indexPath == selectIndexPath) ? .checkmark:.checkmark
-        }
-        else
-        {
-            cell?.accessoryType = (indexPath == selectIndexPath) ? .checkmark:.none
-        }
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return questionArray2[section].question
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectIndexPath = indexPath
-        tableView.beginUpdates()
-        if self.questionArray2[indexPath.section].options[indexPath.row].isSelect
-        {
-            self.questionArray2[indexPath.section].options[indexPath.row].isSelect = false
-        }
-        else
-        {
-            self.questionArray2[indexPath.section].options[indexPath.row].isSelect = true
-            for c in 0..<self.questionArray2[indexPath.section].options.count
-            {
-                if c != indexPath.row
-                {
-                    self.questionArray2[indexPath.section].options[c].isSelect = false
-                    print(c.description + self.questionArray2[indexPath.section].options[c].isSelect.description)
-                }
-            }
-        }
-//        tableView.reloadRows(at: [indexPath], with: .automatic)
-        tableView.reloadSections([indexPath.section], with: .automatic)
-        tableView.endUpdates()
-    }
-    
-    func toggleSection(header: myHeaderView, section: Int) {
-        self.questionTableView.beginUpdates()
-        self.questionTableView.reloadSections([section], with: .automatic)
-        self.questionTableView.endUpdates()
+    @IBAction func unwindSegueSubmitAttemptQuiz(_ sender: UIStoryboardSegue) {
+        
     }
     
 }
