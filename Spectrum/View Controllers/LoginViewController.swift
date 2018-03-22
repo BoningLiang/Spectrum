@@ -59,6 +59,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func passwordTextFieldEditingDidBegin(_ sender: Any) {
         if self.passwordTextField.text == "Password" {
+            self.passwordTextField.isSecureTextEntry = true
             self.passwordTextField.text = "";
         }
     }
@@ -76,6 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func passwordTextFieldEditingDidEnd(_ sender: Any) {
         if (self.passwordTextField.text?.isEmpty)! {
             self.passwordTextField.text = "Password";
+            self.passwordTextField.isSecureTextEntry = false
             isUsernameReady = false
         }else{
             isPasswordReady = true

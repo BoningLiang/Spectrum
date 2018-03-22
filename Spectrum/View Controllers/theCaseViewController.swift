@@ -19,9 +19,6 @@ class theCaseViewController: UIViewController {
     
     @IBOutlet weak var videoCoverImage: UIImageView!
     
-    
-    var questionArray2: [Question] = []
-    
 //    var questionArray3 = [
 //        Question(
 //            questionID: "1",

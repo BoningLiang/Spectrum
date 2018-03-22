@@ -10,6 +10,13 @@ import UIKit
 
 class QuizAttemptsTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var attemptNumberLabel: UILabel!
+    
+    @IBOutlet weak var gradeLabel: UILabel!
+    
+    @IBOutlet weak var attemptTimeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

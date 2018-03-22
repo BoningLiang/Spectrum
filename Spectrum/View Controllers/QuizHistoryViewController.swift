@@ -8,11 +8,18 @@
 
 import UIKit
 
-class QuizHistoryViewController: UIViewController {
+class resultAttemptSummary: Decodable{
+    var attemptID: String
+    var grade: String
+    var time: String
+}
 
+class QuizHistoryViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -24,12 +31,14 @@ class QuizHistoryViewController: UIViewController {
 
 extension QuizHistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizAttemptsCell", for: indexPath) as! QuizAttemptsTableViewCell
-        
+        cell.attemptNumberLabel.text = "#" + "1"
+        cell.gradeLabel.text = "Submitted: "
+        cell.attemptTimeLabel.text = "Mon Mar 2019 19:20:00"
         return cell
     }
 }

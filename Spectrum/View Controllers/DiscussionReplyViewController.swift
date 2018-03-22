@@ -59,16 +59,28 @@ class DiscussionReplyViewController: UIViewController {
     @IBOutlet weak var newReplyTextField: UITextField!
     
     var resultReplies: [ResultReply] = [ResultReply()]
+    
+    var refreshControl: UIRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+        self.tableView.addSubview(refreshControl)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SigninViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func refreshData()
+    {
+        self.getAllReplies()
+        refreshControl.endRefreshing()
     }
     
     @objc func dismissKeyboard()

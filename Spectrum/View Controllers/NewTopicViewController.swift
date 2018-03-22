@@ -14,8 +14,8 @@ class Result: Decodable{
 
 class NewTopicViewController: UIViewController {
 
-    var newTopic: String = "";
-    var newTopicContent: String = "";
+    var newTopic: String = ""
+    var newTopicContent: String = ""
     
     @IBOutlet weak var newTopicTextField: UITextField!
     
@@ -57,6 +57,7 @@ class NewTopicViewController: UIViewController {
                     let result = try JSONDecoder().decode(Result.self, from: data)
                     DispatchQueue.main.async {
                         if result.result > 0{
+                            self.performSegue(withIdentifier: "unwindSuccessSendNewTopic", sender: self)
                             print("success")
                         }else{
                             print("fails")

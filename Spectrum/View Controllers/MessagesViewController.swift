@@ -59,11 +59,18 @@ class MessagesViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var discussionData: [ResultDiscussion] = [ResultDiscussion()]
+    var refreshControl: UIRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
+        self.tableView.addSubview(refreshControl)
+        
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
@@ -73,6 +80,12 @@ class MessagesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getAllDiscussions()
+    }
+    
+    @objc func refreshData()
+    {
+        self.getAllDiscussions()
+        refreshControl.endRefreshing()
     }
     
     func getAllDiscussions()
@@ -102,6 +115,10 @@ class MessagesViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func unwindSuccessSendNewTopicSegue(_ sender: UIStoryboardSegue){
+    
     }
 
 }

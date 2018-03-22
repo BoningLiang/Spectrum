@@ -187,7 +187,6 @@
 				17BA7935205F3F50001DE971 /* TeamsViewController.swift */,
 				17BA7937205F4F01001DE971 /* ProfileViewController.swift */,
 				17F374942060908A001EA93F /* QuizHistoryViewController.swift */,
-				17F37496206094A6001EA93F /* QuizAttemptsTableViewCell.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -261,6 +260,7 @@
 				17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */,
 				17717E4E20257A3E00CF3B82 /* myCell.swift */,
 				170CDF79205F65800015BC1A /* DiscussionsTableViewCell.swift */,
+				17F37496206094A6001EA93F /* QuizAttemptsTableViewCell.swift */,
 				170CDF7F205F7D8C0015BC1A /* ReplyTableViewCell.swift */,
 			);
 			path = Cells;

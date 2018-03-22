@@ -52,7 +52,8 @@ class TakeQuizViewController: UIViewController {
             let base = baseUrl+"/SpectrumServer/API/NewAttempt?"
             var _url: String = ""
             var count = 0
-            let parUserID = "userName=" + loginuser.username!
+            let parUserName = "userName=" + loginuser.username!
+            let parCaseID = "&caseID=" + (casePublic?.caseID)!
             for singleQuestion in self.questionArray2
             {
                 for singleOption in singleQuestion.options
@@ -65,7 +66,7 @@ class TakeQuizViewController: UIViewController {
                 }
             }
             
-            let url = base + parUserID + _url
+            let url = base + parUserName + parCaseID + _url
             print(url)
             let request = URLRequest(url: URL(string: url)!)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

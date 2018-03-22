@@ -98,6 +98,7 @@ class SigninViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func passwordEditingDidBegin(_ sender: Any) {
         if passwordTextField.text == "Password" {
+            passwordTextField.isSecureTextEntry = true
             passwordTextField.text = ""
         }
     }
@@ -105,6 +106,7 @@ class SigninViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmPasswordEditingDidBegin(_ sender: Any) {
         if confirmPasswordTextField.text == "Confirm Password" {
             confirmPasswordTextField.text = ""
+            confirmPasswordTextField.isSecureTextEntry = true
         }
     }
     
@@ -164,6 +166,7 @@ class SigninViewController: UIViewController, UITextFieldDelegate {
     @IBAction func passwordEditingDidEnd(_ sender: Any) {
         if passwordTextField.text == "" {
             passwordTextField.text = "Password"
+            passwordTextField.isSecureTextEntry = false
             self.isPasswordReady = false
         }
         else if passwordTextField.text == "Password"{
@@ -182,6 +185,7 @@ class SigninViewController: UIViewController, UITextFieldDelegate {
     @IBAction func confirmPasswordEditingDidEnd(_ sender: Any) {
         if confirmPasswordTextField.text == "" {
             confirmPasswordTextField.text = "Confirm Password"
+            confirmPasswordTextField.isSecureTextEntry = false
             self.isConfirmPasswordReady = false
         }
         else if confirmPasswordTextField.text == "Confirm Password"{
