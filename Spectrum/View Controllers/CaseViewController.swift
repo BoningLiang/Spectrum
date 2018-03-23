@@ -39,7 +39,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     
     var currentCaseData: [myCase] = []
     
-    var caseDataFromCoreData: [myCase] = []
+//    var caseDataFromCoreData: [myCase] = []
     var caseDataFromAUServer: [myCase] = []
     
     var caseDataFromServerSimplify: [String: String] = [:]
@@ -74,13 +74,13 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     {
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
-        ServerController.requestData(withRequest: "sample2.json") { (results:[myCase]?) in
+        ServerController.requestData(withRequest: loginuser.username!) { (results:[myCase]?) in
             if let resultCaseData = results {
-                self.caseDataFromServer = resultCaseData
                 DispatchQueue.main.async {
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
                         UIApplication.shared.endIgnoringInteractionEvents()
-                        self.caseDataFromCoreData = CoreDataController.getAllCasesFromCoreData()
+                        self.caseDataFromServer = resultCaseData
+//                        self.caseDataFromCoreData = CoreDataController.getAllCasesFromCoreData()
                         self.retrieveData(typeOfCase: "1")
                         self.caseTableView.reloadData()
                         self.activityIndicator.stopAnimating()
@@ -148,11 +148,11 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
     func retrieveData(typeOfCase: String)
     {
         self.currentCaseData.removeAll()
-        for i in 0..<caseDataFromCoreData.count
+        for i in 0..<caseDataFromServer.count
         {
-            if(caseDataFromCoreData[i].caseType == typeOfCase)
+            if(caseDataFromServer[i].caseType == typeOfCase)
             {
-                self.currentCaseData.append(caseDataFromCoreData[i])
+                self.currentCaseData.append(caseDataFromServer[i])
             }
         }
     }
@@ -179,16 +179,9 @@ extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPicker
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "NormalCell", for: indexPath) as! myCell
-//        let post = data[indexPath.row]
         let post = currentCaseData[indexPath.row].caseCoverPic
         cell.myCellImage.image = UIImage(named: post!)
-//        cell.myCellLabel.text = "Todo Case Study Life Experience"
-//        print("hello label")
         cell.myCellLabel.text = currentCaseData[indexPath.row].caseName
-//        print("hello label 1")
-//        print(currentCaseData[indexPath.row])
-//        print("hello label 2")
-
         return cell
     }
 
@@ -200,7 +193,6 @@ extension CaseViewController: UITableViewDataSource,UITableViewDelegate,UIPicker
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "toTheCaseSegue", sender: self)
         casePublic = self.currentCaseData[indexPath.row]
-//        caseVideoPublic = self.currentCaseData[indexPath]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
