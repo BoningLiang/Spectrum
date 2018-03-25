@@ -1199,7 +1199,7 @@
             </objects>
             <point key="canvasLocation" x="4584.8000000000002" y="-3332.3838080959522"/>
         </scene>
-        <!--New Topic-->
+        <!--New Discussion-->
         <scene sceneID="6ug-Ba-oHW">
             <objects>
                 <viewController id="kBE-gA-bob" customClass="NewTopicViewController" customModule="Spectrum" customModuleProvider="target" sceneMemberID="viewController">
@@ -1208,7 +1208,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boT-sP-EoM">
-                                <rect key="frame" x="75" y="79" width="280" height="30"/>
+                                <rect key="frame" x="67" y="79" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1219,8 +1219,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBp-dJ-Fzi">
-                                <rect key="frame" x="20" y="84" width="41.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBp-dJ-Fzi">
+                                <rect key="frame" x="20" y="84" width="33.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1249,10 +1249,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rc9-hA-UFa"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Topic" id="r7z-fa-82D">
+                    <navigationItem key="navigationItem" title="New Discussion" id="r7z-fa-82D">
                         <barButtonItem key="rightBarButtonItem" title="Send" id="Ga8-hO-PE0"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="navItem" destination="r7z-fa-82D" id="2aB-QV-WqG"/>
                         <outlet property="newTopicContentTextField" destination="o8i-L7-kTA" id="bvq-du-i99"/>
                         <outlet property="newTopicTextField" destination="boT-sP-EoM" id="j0f-jP-GIS"/>
                         <outlet property="sendButton" destination="Ga8-hO-PE0" id="iP5-8H-KRJ"/>

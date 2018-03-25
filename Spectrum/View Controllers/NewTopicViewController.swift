@@ -21,13 +21,18 @@ class NewTopicViewController: UIViewController {
     
     @IBOutlet weak var newTopicContentTextField: UITextView!
     
+    @IBOutlet weak var navItem: UINavigationItem!
     
     @IBOutlet weak var sendButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         sendButton.action = #selector(SendAction)
-        
+        self.navItem.leftBarButtonItem?.title = "Cancel"
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navItem.leftBarButtonItem?.title = "Cancel"
     }
     
     override func didReceiveMemoryWarning() {

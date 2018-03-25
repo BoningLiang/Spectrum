@@ -58,6 +58,8 @@
 		17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */; };
 		17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */; };
 		17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */; };
+		17D0E1F12067F04D00E6C39C /* SpectrumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */; };
+		17D0E1FF2067F05600E6C39C /* SpectrumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E1FE2067F05600E6C39C /* SpectrumUITests.swift */; };
 		17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */; };
 		17E5BFBA204C878600F96BC8 /* SuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */; };
 		17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */; };
@@ -66,6 +68,23 @@
 		17F374992060981A001EA93F /* TakeQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F374982060981A001EA93F /* TakeQuizViewController.swift */; };
 		17F6BCD72043580D00D18CC2 /* serverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F6BCD62043580D00D18CC2 /* serverController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17D0E1F32067F04D00E6C39C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17717E222025401C00CF3B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17717E292025401C00CF3B82;
+			remoteInfo = Spectrum;
+		};
+		17D0E2012067F05600E6C39C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17717E222025401C00CF3B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17717E292025401C00CF3B82;
+			remoteInfo = Spectrum;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1706D70B204B4E4D00B78425 /* AccountTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +133,12 @@
 		17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumTests.swift; sourceTree = "<group>"; };
+		17D0E1F22067F04D00E6C39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D0E1FC2067F05600E6C39C /* SpectrumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D0E1FE2067F05600E6C39C /* SpectrumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumUITests.swift; sourceTree = "<group>"; };
+		17D0E2002067F05600E6C39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccessRegisterViewController.swift; path = "View Controllers/SuccessRegisterViewController.swift"; sourceTree = "<group>"; };
 		17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetNewPasswordViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +154,20 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		17717E272025401C00CF3B82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D0E1EB2067F04D00E6C39C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D0E1F92067F05600E6C39C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				17717E2C2025401C00CF3B82 /* Spectrum */,
+				17D0E1EF2067F04D00E6C39C /* SpectrumTests */,
+				17D0E1FD2067F05600E6C39C /* SpectrumUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				17717E2A2025401C00CF3B82 /* Spectrum.app */,
+				17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */,
+				17D0E1FC2067F05600E6C39C /* SpectrumUITests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -266,6 +309,24 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		17D0E1EF2067F04D00E6C39C /* SpectrumTests */ = {
+			isa = PBXGroup;
+			children = (
+				17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */,
+				17D0E1F22067F04D00E6C39C /* Info.plist */,
+			);
+			path = SpectrumTests;
+			sourceTree = "<group>";
+		};
+		17D0E1FD2067F05600E6C39C /* SpectrumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				17D0E1FE2067F05600E6C39C /* SpectrumUITests.swift */,
+				17D0E2002067F05600E6C39C /* Info.plist */,
+			);
+			path = SpectrumUITests;
+			sourceTree = "<group>";
+		};
 		17F6BCD52043577200D18CC2 /* Server Connection */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +355,42 @@
 			productReference = 17717E2A2025401C00CF3B82 /* Spectrum.app */;
 			productType = "com.apple.product-type.application";
 		};
+		17D0E1ED2067F04D00E6C39C /* SpectrumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D0E1F52067F04D00E6C39C /* Build configuration list for PBXNativeTarget "SpectrumTests" */;
+			buildPhases = (
+				17D0E1EA2067F04D00E6C39C /* Sources */,
+				17D0E1EB2067F04D00E6C39C /* Frameworks */,
+				17D0E1EC2067F04D00E6C39C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D0E1F42067F04D00E6C39C /* PBXTargetDependency */,
+			);
+			name = SpectrumTests;
+			productName = SpectrumTests;
+			productReference = 17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17D0E1FB2067F05600E6C39C /* SpectrumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D0E2032067F05600E6C39C /* Build configuration list for PBXNativeTarget "SpectrumUITests" */;
+			buildPhases = (
+				17D0E1F82067F05600E6C39C /* Sources */,
+				17D0E1F92067F05600E6C39C /* Frameworks */,
+				17D0E1FA2067F05600E6C39C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D0E2022067F05600E6C39C /* PBXTargetDependency */,
+			);
+			name = SpectrumUITests;
+			productName = SpectrumUITests;
+			productReference = 17D0E1FC2067F05600E6C39C /* SpectrumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -308,6 +405,16 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+					};
+					17D0E1ED2067F04D00E6C39C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 17717E292025401C00CF3B82;
+					};
+					17D0E1FB2067F05600E6C39C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 17717E292025401C00CF3B82;
 					};
 				};
 			};
@@ -325,6 +432,8 @@
 			projectRoot = "";
 			targets = (
 				17717E292025401C00CF3B82 /* Spectrum */,
+				17D0E1ED2067F04D00E6C39C /* SpectrumTests */,
+				17D0E1FB2067F05600E6C39C /* SpectrumUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -338,6 +447,20 @@
 				17717E382025401C00CF3B82 /* Assets.xcassets in Resources */,
 				177CAAA32029429700B06F46 /* myHeaderView.xib in Resources */,
 				17717E332025401C00CF3B82 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D0E1EC2067F04D00E6C39C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D0E1FA2067F05600E6C39C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +528,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17D0E1EA2067F04D00E6C39C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D0E1F12067F04D00E6C39C /* SpectrumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D0E1F82067F05600E6C39C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D0E1FF2067F05600E6C39C /* SpectrumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17D0E1F42067F04D00E6C39C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17717E292025401C00CF3B82 /* Spectrum */;
+			targetProxy = 17D0E1F32067F04D00E6C39C /* PBXContainerItemProxy */;
+		};
+		17D0E2022067F05600E6C39C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17717E292025401C00CF3B82 /* Spectrum */;
+			targetProxy = 17D0E2012067F05600E6C39C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		17717E312025401C00CF3B82 /* Main.storyboard */ = {
@@ -569,6 +721,68 @@
 			};
 			name = Release;
 		};
+		17D0E1F62067F04D00E6C39C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2A5PD76DX;
+				INFOPLIST_FILE = SpectrumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = boningliang.SpectrumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spectrum.app/Spectrum";
+			};
+			name = Debug;
+		};
+		17D0E1F72067F04D00E6C39C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2A5PD76DX;
+				INFOPLIST_FILE = SpectrumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = boningliang.SpectrumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Spectrum.app/Spectrum";
+			};
+			name = Release;
+		};
+		17D0E2042067F05600E6C39C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2A5PD76DX;
+				INFOPLIST_FILE = SpectrumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = boningliang.SpectrumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Spectrum;
+			};
+			name = Debug;
+		};
+		17D0E2052067F05600E6C39C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J2A5PD76DX;
+				INFOPLIST_FILE = SpectrumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = boningliang.SpectrumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Spectrum;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -586,6 +800,24 @@
 			buildConfigurations = (
 				17717E402025401C00CF3B82 /* Debug */,
 				17717E412025401C00CF3B82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D0E1F52067F04D00E6C39C /* Build configuration list for PBXNativeTarget "SpectrumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D0E1F62067F04D00E6C39C /* Debug */,
+				17D0E1F72067F04D00E6C39C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D0E2032067F05600E6C39C /* Build configuration list for PBXNativeTarget "SpectrumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D0E2042067F05600E6C39C /* Debug */,
+				17D0E2052067F05600E6C39C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
