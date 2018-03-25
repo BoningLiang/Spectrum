@@ -36,4 +36,11 @@ class UserRegister {
         let pred = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return pred.evaluate(with: userEmail)
     }
+    
+    class func checkCode(code: String) -> Bool
+    {
+        let codeRegex = "[1-9][0-9]{5}"
+        let pred = NSPredicate(format: "SELF MATCHES %@", codeRegex)
+        return pred.evaluate(with: code)
+    }
 }

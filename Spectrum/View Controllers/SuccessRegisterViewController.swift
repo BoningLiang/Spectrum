@@ -21,7 +21,7 @@ class SuccessRegisterViewController: UIViewController {
 //        self.navigationItem.backBarButtonItem?.isEnabled = false
         // Do any additional setup after loading the view.
         
-        let url = "http://localhost/SpectrumServer/API/Register/signup/?username="+registerUser.username+"&password="+registerUser.userPassword+"&email="+registerUser.userEmail
+        let url = baseUrl+"/SpectrumServer/API/Register/signup/?username="+registerUser.username+"&password="+registerUser.userPassword+"&email="+registerUser.userEmail
         
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

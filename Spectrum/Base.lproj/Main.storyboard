@@ -693,6 +693,9 @@
                                     <constraint firstAttribute="width" constant="50" id="aWy-VY-pJW"/>
                                 </constraints>
                                 <state key="normal" title="resend"/>
+                                <connections>
+                                    <action selector="reSendCodeAction:" destination="dvW-hr-olp" eventType="touchUpInside" id="QTP-i2-7us"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUW-Z5-twc">
                                 <rect key="frame" x="60" y="177" width="255" height="30"/>
@@ -702,25 +705,25 @@
                                     <action selector="continueAction:" destination="dvW-hr-olp" eventType="touchUpInside" id="2cq-ui-4Cq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Please input 0000, just for test!)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fs-ig-pmt">
-                                <rect key="frame" x="30" y="237" width="315" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeN-Qr-4uN">
+                                <rect key="frame" x="16" y="152" width="343" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2dH-sy-5F6" firstAttribute="trailing" secondItem="1fs-ig-pmt" secondAttribute="trailing" constant="30" id="1YL-sU-7uQ"/>
                             <constraint firstItem="WUW-Z5-twc" firstAttribute="top" secondItem="3qz-GK-hIe" secondAttribute="bottom" constant="29" id="4Zu-r7-xsb"/>
                             <constraint firstItem="2dH-sy-5F6" firstAttribute="trailing" secondItem="kgq-s8-rbt" secondAttribute="trailing" constant="50" id="Asa-Nb-R7d"/>
                             <constraint firstItem="3qz-GK-hIe" firstAttribute="centerY" secondItem="TXZ-Tl-Rp6" secondAttribute="centerY" id="Bv1-Tl-ZTc"/>
-                            <constraint firstItem="1fs-ig-pmt" firstAttribute="leading" secondItem="2dH-sy-5F6" secondAttribute="leading" constant="30" id="C2g-Ul-MtR"/>
                             <constraint firstItem="zRC-hK-g7k" firstAttribute="leading" secondItem="2dH-sy-5F6" secondAttribute="leading" constant="16" id="Ecm-tF-2t5"/>
                             <constraint firstItem="zRC-hK-g7k" firstAttribute="top" secondItem="2dH-sy-5F6" secondAttribute="top" constant="20" id="H2h-nd-l0f"/>
                             <constraint firstItem="WUW-Z5-twc" firstAttribute="leading" secondItem="2dH-sy-5F6" secondAttribute="leading" constant="60" id="PlD-n8-Xrr"/>
+                            <constraint firstItem="2dH-sy-5F6" firstAttribute="trailing" secondItem="FeN-Qr-4uN" secondAttribute="trailing" constant="16" id="SJP-qr-bbp"/>
+                            <constraint firstItem="FeN-Qr-4uN" firstAttribute="leading" secondItem="2dH-sy-5F6" secondAttribute="leading" constant="16" id="cPr-lb-W21"/>
                             <constraint firstItem="TXZ-Tl-Rp6" firstAttribute="top" secondItem="zRC-hK-g7k" secondAttribute="bottom" constant="18" id="eR1-uu-zN4"/>
-                            <constraint firstItem="1fs-ig-pmt" firstAttribute="top" secondItem="WUW-Z5-twc" secondAttribute="bottom" constant="30" id="mK6-x0-DeU"/>
+                            <constraint firstItem="FeN-Qr-4uN" firstAttribute="top" secondItem="TXZ-Tl-Rp6" secondAttribute="bottom" constant="8" id="efU-Wk-NK8"/>
                             <constraint firstItem="2dH-sy-5F6" firstAttribute="trailing" secondItem="WUW-Z5-twc" secondAttribute="trailing" constant="60" id="nfw-M9-apY"/>
                             <constraint firstItem="3qz-GK-hIe" firstAttribute="leading" secondItem="TXZ-Tl-Rp6" secondAttribute="trailing" id="rd3-8y-HTt"/>
                             <constraint firstItem="TXZ-Tl-Rp6" firstAttribute="leading" secondItem="2dH-sy-5F6" secondAttribute="leading" constant="16" id="vIc-9d-Adu"/>
@@ -730,6 +733,9 @@
                         <viewLayoutGuide key="safeArea" id="2dH-sy-5F6"/>
                     </view>
                     <connections>
+                        <outlet property="codeTextField" destination="3qz-GK-hIe" id="gZn-6f-qXP"/>
+                        <outlet property="msgLabel" destination="FeN-Qr-4uN" id="xna-V4-4uy"/>
+                        <outlet property="reSendButton" destination="kgq-s8-rbt" id="lYt-D6-5ZD"/>
                         <segue destination="jKl-eA-fOW" kind="show" identifier="resetPasswordSegue" id="uuf-y1-w2R"/>
                         <segue destination="koC-tv-Jgz" kind="show" identifier="signInSegue" action="showDetailViewController:sender:" id="fM6-yi-O6m"/>
                     </connections>
