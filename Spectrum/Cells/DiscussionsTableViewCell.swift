@@ -14,6 +14,15 @@ class DiscussionsTableViewCell: UITableViewCell {
     @IBOutlet weak var discussionDateTime: UILabel!
     @IBOutlet weak var discussionTitle: UILabel!
     
+    @IBOutlet weak var likeButton: UIButton!
+    
+    @IBOutlet weak var dislikeButton: UIButton!
+    
+    @IBOutlet weak var likeLabel: UILabel!
+    
+    @IBOutlet weak var dislikeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

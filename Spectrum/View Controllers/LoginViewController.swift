@@ -30,22 +30,56 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     @IBOutlet weak var heightConstraintOutlet: NSLayoutConstraint!
     
     var isUsernameReady: Bool = false
     var isPasswordReady: Bool = false
     
+    var activityIndicator = UIActivityIndicatorView()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SigninViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        let borderColor: CGColor = UIColor(red:0.01, green:0.14, blue:0.30, alpha:1.0).cgColor
+        
+        usernameTextField.layer.borderWidth = 1
+        usernameTextField.layer.borderColor = borderColor
+        
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = borderColor
+        
+        loginButton.layer.borderWidth = 1
+        loginButton.layer.borderColor = borderColor
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        
+        self.view.addSubview(activityIndicator)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     @IBAction func usernameTextFieldTouchDown(_ sender: Any) {
         
@@ -102,13 +136,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             do{
                 let result = try JSONDecoder().decode(LoginResult.self, from: data)
                 DispatchQueue.main.async {
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    self.activityIndicator.stopAnimating()
                     if result.result>0{
                         loginuser.isLogin = true
-                        
                         self.performSegue(withIdentifier: "loginSegue", sender: self)
                         print("LoginViewController(): Success to login.")
                     }else{
                         loginuser.isLogin = false
+                        let alertView = UIAlertController(title: "Login Failure", message: "Please check your username and password", preferredStyle: .alert)
+                        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            print("Press OK")
+                        })
+                        alertView.addAction(ok)
+                        self.present(alertView, animated: true, completion: nil)
                         print("LoginViewController(): Fail to login.")
                     }
                 }
@@ -120,6 +161,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
         usernameTextField.endEditing(true)
         passwordTextField.endEditing(true)
         if isUsernameReady && isPasswordReady {
@@ -129,6 +172,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         else
         {
+            UIApplication.shared.endIgnoringInteractionEvents()
+            self.activityIndicator.stopAnimating()
             print("LoginViewController(): Missing username or password, cannot login")
         }
     }
@@ -145,7 +190,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        heightConstraintOutlet.constant = 65
+        heightConstraintOutlet.constant = 90
     }
     
 }

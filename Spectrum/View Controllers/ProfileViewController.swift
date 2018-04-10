@@ -50,17 +50,25 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getProfile()
-        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAvatarImageAction))
+        avatarImage.isUserInteractionEnabled = true
+        avatarImage.addGestureRecognizer(tapGestureRecognizer)
         self.tableView.dataSource = self
         
         // Do any additional setup after loading the view.
     }
     
+    
+    @objc func tapAvatarImageAction(){
+        self.performSegue(withIdentifier: "EditAvatarSegue", sender: self)
+    }
+    
+    
+    
     func getProfile()
     {
         if (loginuser.isLogin)
         {
-            //http://localhost/SpectrumServer/API/User/?username=bzl0048&password=bzl0048&t=profile
             let base = baseUrl+"/SpectrumServer/API/User/?"
             let parameterUrl = "username="+loginuser.username!+"&password="+loginuser.userPassword!+"&t=profile"
             let url = base+parameterUrl
@@ -94,16 +102,24 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
-        let tableViewData: [String: String] = userProfile.getTableViewData()
-        let spaceString = ": "
-        cell.theItem.text = userProfile.tableViewDataList[indexPath.item] + spaceString + tableViewData[userProfile.tableViewDataList[indexPath.item]]!
-        return cell
+        
+        if (indexPath.row == tableView.numberOfRows(inSection: tableView.numberOfSections - 1) - 1) {
+            print("1: ", indexPath.row)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath) as! LogoutTableViewCell
+            return cell
+        }
+        else
+        {
+            print("2: ", indexPath.row)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
+            let tableViewData: [String: String] = userProfile.getTableViewData()
+            let spaceString = ": "
+            cell.theItem.text = userProfile.tableViewDataList[indexPath.item] + spaceString + tableViewData[userProfile.tableViewDataList[indexPath.item]]!
+            return cell
+        }
     }
-    
-    
 }

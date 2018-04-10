@@ -50,6 +50,7 @@
 		17BA7936205F3F50001DE971 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7935205F3F50001DE971 /* TeamsViewController.swift */; };
 		17BA7938205F4F01001DE971 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7937205F4F01001DE971 /* ProfileViewController.swift */; };
 		17BA793A205F5059001DE971 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */; };
+		17BCF4D92076AA820049CEAF /* editAvatarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BCF4D82076AA820049CEAF /* editAvatarTableViewController.swift */; };
 		17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */; };
 		17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */; };
 		17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */; };
@@ -58,8 +59,14 @@
 		17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */; };
 		17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */; };
 		17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */; };
+		17CA32FA206FC4F2002A61CE /* firstFloorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */; };
 		17D0E1F12067F04D00E6C39C /* SpectrumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */; };
-		17D0E1FF2067F05600E6C39C /* SpectrumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E1FE2067F05600E6C39C /* SpectrumUITests.swift */; };
+		17D0E207206818D500E6C39C /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E206206818D500E6C39C /* Caching.swift */; };
+		17D0E20E2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E20C2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift */; };
+		17D0E20F2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E20D2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift */; };
+		17D0E211206832C900E6C39C /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */; };
+		17D0E2132069C1A200E6C39C /* customManageCaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */; };
+		17D0E2152069C28300E6C39C /* manageCaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */; };
 		17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */; };
 		17E5BFBA204C878600F96BC8 /* SuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */; };
 		17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */; };
@@ -71,13 +78,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		17D0E1F32067F04D00E6C39C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 17717E222025401C00CF3B82 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17717E292025401C00CF3B82;
-			remoteInfo = Spectrum;
-		};
-		17D0E2012067F05600E6C39C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17717E222025401C00CF3B82 /* Project object */;
 			proxyType = 1;
@@ -124,6 +124,7 @@
 		17BA7935205F3F50001DE971 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		17BA7937205F4F01001DE971 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		17BCF4D82076AA820049CEAF /* editAvatarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editAvatarTableViewController.swift; sourceTree = "<group>"; };
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
 		17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -133,14 +134,18 @@
 		17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = firstFloorTableViewCell.swift; path = Spectrum/Cells/firstFloorTableViewCell.swift; sourceTree = "<group>"; };
 		17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumTests.swift; sourceTree = "<group>"; };
 		17D0E1F22067F04D00E6C39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17D0E1FC2067F05600E6C39C /* SpectrumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		17D0E1FE2067F05600E6C39C /* SpectrumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumUITests.swift; sourceTree = "<group>"; };
-		17D0E2002067F05600E6C39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D0E206206818D500E6C39C /* Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
+		17D0E20C2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginUserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		17D0E20D2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginUserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customManageCaseTableViewCell.swift; sourceTree = "<group>"; };
+		17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageCaseTableViewController.swift; sourceTree = "<group>"; };
 		17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
-		17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccessRegisterViewController.swift; path = "View Controllers/SuccessRegisterViewController.swift"; sourceTree = "<group>"; };
+		17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRegisterViewController.swift; sourceTree = "<group>"; };
 		17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetNewPasswordViewController.swift; sourceTree = "<group>"; };
 		17F176882025C595006FC4E3 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		17F1768A2025C5A8006FC4E3 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -167,13 +172,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D0E1F92067F05600E6C39C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -182,9 +180,9 @@
 			children = (
 				177CAAA4202942BB00B06F46 /* Question.swift */,
 				17A4FF7E202CEEEC00EC075A /* myCase.swift */,
-				17341708205C080F00EF9496 /* NewTopicViewController.swift */,
 				1734170A205C0A0200EF9496 /* UserController.swift */,
 				17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */,
+				17D0E206206818D500E6C39C /* Caching.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -224,8 +222,11 @@
 				17B9D76F2051C1FF00967B1E /* MenuTableViewController.swift */,
 				17BA7933205F3F40001DE971 /* AboutViewController.swift */,
 				17BA7935205F3F50001DE971 /* TeamsViewController.swift */,
+				17341708205C080F00EF9496 /* NewTopicViewController.swift */,
+				17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */,
 				17BA7937205F4F01001DE971 /* ProfileViewController.swift */,
-				17F374942060908A001EA93F /* QuizHistoryViewController.swift */,
+				17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */,
+				17BCF4D82076AA820049CEAF /* editAvatarTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -233,9 +234,9 @@
 		17717E212025401C00CF3B82 = {
 			isa = PBXGroup;
 			children = (
+				17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */,
 				17717E2C2025401C00CF3B82 /* Spectrum */,
 				17D0E1EF2067F04D00E6C39C /* SpectrumTests */,
-				17D0E1FD2067F05600E6C39C /* SpectrumUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,7 +245,6 @@
 			children = (
 				17717E2A2025401C00CF3B82 /* Spectrum.app */,
 				17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */,
-				17D0E1FC2067F05600E6C39C /* SpectrumUITests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -263,7 +263,6 @@
 				177CAA9F2029423A00B06F46 /* customHeaderView */,
 				17717E372025401C00CF3B82 /* Assets.xcassets */,
 				17717E312025401C00CF3B82 /* Main.storyboard */,
-				17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */,
 				17717E392025401C00CF3B82 /* LaunchScreen.storyboard */,
 				17717E2D2025401C00CF3B82 /* AppDelegate.swift */,
 				17717E3C2025401C00CF3B82 /* Info.plist */,
@@ -275,6 +274,7 @@
 		177CAA9F2029423A00B06F46 /* customHeaderView */ = {
 			isa = PBXGroup;
 			children = (
+				17F374942060908A001EA93F /* QuizHistoryViewController.swift */,
 				177CAAA02029427100B06F46 /* myHeaderView.swift */,
 				177CAAA22029429700B06F46 /* myHeaderView.xib */,
 			);
@@ -284,6 +284,8 @@
 		1792F75F202C31C3008176A0 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
+				17D0E20C2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift */,
+				17D0E20D2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift */,
 				17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */,
 				17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */,
 				17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */,
@@ -300,7 +302,9 @@
 		17BA793B205F5065001DE971 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */,
 				17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */,
+				17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */,
 				17717E4E20257A3E00CF3B82 /* myCell.swift */,
 				170CDF79205F65800015BC1A /* DiscussionsTableViewCell.swift */,
 				17F37496206094A6001EA93F /* QuizAttemptsTableViewCell.swift */,
@@ -316,15 +320,6 @@
 				17D0E1F22067F04D00E6C39C /* Info.plist */,
 			);
 			path = SpectrumTests;
-			sourceTree = "<group>";
-		};
-		17D0E1FD2067F05600E6C39C /* SpectrumUITests */ = {
-			isa = PBXGroup;
-			children = (
-				17D0E1FE2067F05600E6C39C /* SpectrumUITests.swift */,
-				17D0E2002067F05600E6C39C /* Info.plist */,
-			);
-			path = SpectrumUITests;
 			sourceTree = "<group>";
 		};
 		17F6BCD52043577200D18CC2 /* Server Connection */ = {
@@ -373,24 +368,6 @@
 			productReference = 17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		17D0E1FB2067F05600E6C39C /* SpectrumUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 17D0E2032067F05600E6C39C /* Build configuration list for PBXNativeTarget "SpectrumUITests" */;
-			buildPhases = (
-				17D0E1F82067F05600E6C39C /* Sources */,
-				17D0E1F92067F05600E6C39C /* Frameworks */,
-				17D0E1FA2067F05600E6C39C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				17D0E2022067F05600E6C39C /* PBXTargetDependency */,
-			);
-			name = SpectrumUITests;
-			productName = SpectrumUITests;
-			productReference = 17D0E1FC2067F05600E6C39C /* SpectrumUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -407,11 +384,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					17D0E1ED2067F04D00E6C39C = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 17717E292025401C00CF3B82;
-					};
-					17D0E1FB2067F05600E6C39C = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 17717E292025401C00CF3B82;
@@ -433,7 +405,6 @@
 			targets = (
 				17717E292025401C00CF3B82 /* Spectrum */,
 				17D0E1ED2067F04D00E6C39C /* SpectrumTests */,
-				17D0E1FB2067F05600E6C39C /* SpectrumUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -457,13 +428,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D0E1FA2067F05600E6C39C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -474,10 +438,13 @@
 				1715CC3220410150002952BA /* Question.swift in Sources */,
 				1715CC3320410150002952BA /* myCase.swift in Sources */,
 				17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */,
+				17CA32FA206FC4F2002A61CE /* firstFloorTableViewCell.swift in Sources */,
 				17BA7934205F3F40001DE971 /* AboutViewController.swift in Sources */,
 				1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */,
 				170CDF80205F7D8C0015BC1A /* ReplyTableViewCell.swift in Sources */,
+				17D0E2152069C28300E6C39C /* manageCaseTableViewController.swift in Sources */,
 				17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */,
+				17D0E20E2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift in Sources */,
 				17F37497206094A6001EA93F /* QuizAttemptsTableViewCell.swift in Sources */,
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
 				1715CC3F20410151002952BA /* myHeaderView.xib in Sources */,
@@ -487,6 +454,7 @@
 				17B9D7702051C1FF00967B1E /* MenuTableViewController.swift in Sources */,
 				1706D718204B7C1B00B78425 /* AddFriendViewController.swift in Sources */,
 				170CDF7E205F7D600015BC1A /* DiscussionReplyViewController.swift in Sources */,
+				17D0E2132069C1A200E6C39C /* customManageCaseTableViewCell.swift in Sources */,
 				170CDF7A205F65800015BC1A /* DiscussionsTableViewCell.swift in Sources */,
 				17BA7936205F3F50001DE971 /* TeamsViewController.swift in Sources */,
 				17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */,
@@ -509,9 +477,13 @@
 				17341709205C080F00EF9496 /* NewTopicViewController.swift in Sources */,
 				1706D70E204B52BE00B78425 /* LoginViewController.swift in Sources */,
 				17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */,
+				17BCF4D92076AA820049CEAF /* editAvatarTableViewController.swift in Sources */,
+				17D0E20F2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift in Sources */,
 				1706D716204B75EF00B78425 /* MessagesViewController.swift in Sources */,
+				17D0E211206832C900E6C39C /* LogoutTableViewCell.swift in Sources */,
 				17C618E02046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift in Sources */,
 				17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */,
+				17D0E207206818D500E6C39C /* Caching.swift in Sources */,
 				1715CC5220410151002952BA /* Info.plist in Sources */,
 				1715CC5320410151002952BA /* SWRevealViewController.h in Sources */,
 				1715CC5420410151002952BA /* SWRevealViewController.m in Sources */,
@@ -536,14 +508,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		17D0E1F82067F05600E6C39C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17D0E1FF2067F05600E6C39C /* SpectrumUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -551,11 +515,6 @@
 			isa = PBXTargetDependency;
 			target = 17717E292025401C00CF3B82 /* Spectrum */;
 			targetProxy = 17D0E1F32067F04D00E6C39C /* PBXContainerItemProxy */;
-		};
-		17D0E2022067F05600E6C39C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 17717E292025401C00CF3B82 /* Spectrum */;
-			targetProxy = 17D0E2012067F05600E6C39C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -627,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -678,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -753,36 +712,6 @@
 			};
 			name = Release;
 		};
-		17D0E2042067F05600E6C39C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2A5PD76DX;
-				INFOPLIST_FILE = SpectrumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = boningliang.SpectrumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Spectrum;
-			};
-			name = Debug;
-		};
-		17D0E2052067F05600E6C39C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J2A5PD76DX;
-				INFOPLIST_FILE = SpectrumUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = boningliang.SpectrumUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Spectrum;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -809,15 +738,6 @@
 			buildConfigurations = (
 				17D0E1F62067F04D00E6C39C /* Debug */,
 				17D0E1F72067F04D00E6C39C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		17D0E2032067F05600E6C39C /* Build configuration list for PBXNativeTarget "SpectrumUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17D0E2042067F05600E6C39C /* Debug */,
-				17D0E2052067F05600E6C39C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

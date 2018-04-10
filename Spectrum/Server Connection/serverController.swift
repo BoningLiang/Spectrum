@@ -14,9 +14,8 @@ class ServerController: NSObject{
     
     class func requestData(withRequest request:String, completion: @escaping ([myCase]?) -> ())
     {
-//        let url = "http://auburn.edu/~bzl0048/spectrum/cases/sample2.json"
         let url = baseUrl + "/SpectrumServer/API/case/?userName="+request
-//        let url = baseUrl + "/SpectrumServer/API/case/sample.json"
+        
         print(url)
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in

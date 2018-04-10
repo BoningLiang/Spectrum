@@ -40,40 +40,67 @@ class NewTopicViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func encodeEmoji(_ s: String) -> String {
+        let data = s.data(using: .nonLossyASCII, allowLossyConversion: true)!
+        return String(data: data, encoding: .utf8)!
+    }
+    
+    func decodeEmoji(_ s: String) -> String? {
+        let data = s.data(using: .utf8)!
+        return String(data: data, encoding: .nonLossyASCII)
+    }
+    
+    
     @objc func SendAction() {
         
         if loginuser.isLogin
         {
-//            http://localhost/SpectrumServer/API/NewTopic/?topic=test%20topic&content=test%20content&userID=1
-            let base = "http://localhost/SpectrumServer/API/NewTopic/?"
+            let base = baseUrl+"/SpectrumServer/API/NewTopic/?"
             
-            let argTopic = "topic="+self.newTopicTextField.text!
-            let argTopicContent = "&content="+self.newTopicContentTextField.text!
-            let argUserName = "&userName="+loginuser.username!
-            let arg = argTopic + argTopicContent + argUserName
-            let url = base + arg
+            var newTopicTitleString = self.newTopicTextField.text!.trimmingCharacters(in: NSCharacterSet.whitespaces)
             
-            print(url)
+            newTopicTitleString = encodeEmoji(newTopicTitleString)
             
-            let request = URLRequest(url: URL(string: url)!)
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                guard let data = data else { return }
-                do{
-                    let result = try JSONDecoder().decode(Result.self, from: data)
-                    DispatchQueue.main.async {
-                        if result.result > 0{
-                            self.performSegue(withIdentifier: "unwindSuccessSendNewTopic", sender: self)
-                            print("success")
-                        }else{
-                            print("fails")
-                            // to do // jump to the login page
-                        }
-                    }
-                }catch{
-                    print(error.localizedDescription)
-                }
+            var newTopicContentString = self.newTopicContentTextField.text!.trimmingCharacters(in: NSCharacterSet.whitespaces)
+            
+            newTopicContentString = encodeEmoji(newTopicContentString)
+            
+            if newTopicTitleString.isEmpty || newTopicContentString.isEmpty {
+                print("NewTopicViewController: SendAction(): Missing title or content.")
             }
-            task.resume()
+            else{
+                let argTopicTitle = "topic=" + newTopicTitleString
+                let argTopicContent = "&content=" + newTopicContentString
+                let argUserName = "&userName="+loginuser.username!.trimmingCharacters(in: NSCharacterSet.whitespaces)
+                
+                let arg = argTopicTitle + argTopicContent + argUserName
+                var url = base + arg
+                
+                url = url.replacingOccurrences(of: " ", with: "%20")
+                url = url.replacingOccurrences(of: "\\", with: "%5C")
+//                print(url)
+                let urlURL:URL = URL(string: url)!
+                let request = URLRequest(url: urlURL)
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+                    do{
+                        let result = try JSONDecoder().decode(Result.self, from: data)
+                        DispatchQueue.main.async {
+                            if result.result > 0{
+                                self.performSegue(withIdentifier: "unwindSuccessSendNewTopic", sender: self)
+                                print("success")
+                            }else{
+                                print("fails")
+                                // to do // jump to the login page
+                            }
+                        }
+                    }catch{
+                        print(error.localizedDescription)
+                    }
+                }
+                task.resume()
+            }
+            
         }
     }
 }

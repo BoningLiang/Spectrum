@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auburnLogo" translatesAutoresizingMaskIntoConstraints="NO" id="jYt-wk-YeZ">
-                                <rect key="frame" x="2" y="268" width="371" height="100"/>
+                                <rect key="frame" x="2" y="283.5" width="371" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="foO-3F-XDT"/>
                                 </constraints>
@@ -27,8 +27,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.011615765280000001" green="0.14084929230000001" blue="0.30286639929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jYt-wk-YeZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="248" id="Eur-vG-dSU"/>
+                            <constraint firstItem="jYt-wk-YeZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FiK-Bp-H8c"/>
                             <constraint firstItem="jYt-wk-YeZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="NDm-7K-VfX"/>
+                            <constraint firstItem="jYt-wk-YeZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OTR-R0-dAu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jYt-wk-YeZ" secondAttribute="trailing" constant="2" id="wsU-i1-GVE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

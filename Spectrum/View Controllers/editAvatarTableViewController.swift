@@ -1,18 +1,23 @@
 //
-//  MenuTableViewController.swift
+//  editAvatarTableViewController.swift
 //  Spectrum
 //
-//  Created by Boning Liang on 3/8/18.
+//  Created by Boning Liang on 4/5/18.
 //  Copyright © 2018 Boning Liang. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class editAvatarTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,6 +30,10 @@ class MenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,64 +43,55 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 4
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            // Take a photo
+            
+        }
+        else if indexPath.row == 2 {
+            // Select a photo from alubum
+            let myImagePickerController = UIImagePickerController()
+            myImagePickerController.delegate = self
+            myImagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            self.present(myImagePickerController, animated: true, completion: nil)
+        }
+        else if indexPath.row == 3 {
+            // Save photo
+            
+        }
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath[1] == 0
-        {
-            performSegue(withIdentifier: "MenuHomeSegue", sender: self)
-        }
-        else if indexPath[1] == 1
-        {
-            if(loginuser.isLogin){
-                performSegue(withIdentifier: "MenuProgressSegue", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-            }
-        }
-        else if indexPath[1] == 2
-        {
-            if(loginuser.isLogin){
-                performSegue(withIdentifier: "MenuCaseSelectSegue", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-            }
-        }
-        else if indexPath[1] == 3
-        {
-            performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-        }
-        else if indexPath[1] == 4
-        {
-            if(loginuser.isLogin){
-                performSegue(withIdentifier: "MenuDiscussionSegue", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-            }
-        }
-        else if indexPath[1] == 5
-        {
-            performSegue(withIdentifier: "MenuTeamSegue", sender: self)
-        }
-        else if indexPath[1] == 6
-        {
-            performSegue(withIdentifier: "MenuAboutSegue", sender: self)
-        }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
-        else if indexPath[1] == 7
-        {
-            performSegue(withIdentifier: "MenuManageCaseSegue", sender: self)
-        }
         
-        else if indexPath[1] == 8
-        {
-            performSegue(withIdentifier: "MenuContactUsSegue", sender: self)
+        
+        self.imageView.layer.borderWidth = 1
+        self.imageView.clipsToBounds = true
+        self.imageView.layer.masksToBounds = false
+        self.imageView.layer.borderColor = UIColor.blue.cgColor
+        self.imageView.layer.cornerRadius = self.imageView.frame.width/2.0
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == indexPath.first {
+            return self.imageView.frame.width
+        }
+        else{
+            return 60
         }
     }
+    
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 400
+//    }
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -138,6 +138,14 @@ class MenuTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

@@ -61,6 +61,8 @@ class MessagesViewController: UIViewController {
     var discussionData: [ResultDiscussion] = [ResultDiscussion()]
     var refreshControl: UIRefreshControl = UIRefreshControl()
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -74,12 +76,29 @@ class MessagesViewController: UIViewController {
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
-//        getAllDiscussions()
-        // Do any additional setup after loading the view.
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        
+        self.view.addSubview(activityIndicator)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         getAllDiscussions()
+    }
+    
+    
+    func encodeEmoji(_ s: String) -> String {
+        let data = s.data(using: .nonLossyASCII, allowLossyConversion: true)!
+        return String(data: data, encoding: .utf8)!
+    }
+    
+    func decodeEmoji(_ s: String) -> String? {
+        let data = s.data(using: .utf8)!
+        return String(data: data, encoding: .nonLossyASCII)
     }
     
     @objc func refreshData()
@@ -92,10 +111,13 @@ class MessagesViewController: UIViewController {
     {
         if (loginuser.isLogin)
         {
-            //http://localhost/SpectrumServer/API/AllTopics"
+            UIApplication.shared.beginIgnoringInteractionEvents()
+            self.activityIndicator.startAnimating()
             let url = baseUrl+"/SpectrumServer/API/AllTopics"
             
             let request = URLRequest(url: URL(string: url)!)
+            
+            
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 guard let data = data else { return }
                 do{
@@ -103,8 +125,12 @@ class MessagesViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.discussionData = result
                         self.tableView.reloadData()
+                        UIApplication.shared.endIgnoringInteractionEvents()
+                        self.activityIndicator.stopAnimating()
                     }
                 }catch{
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    self.activityIndicator.stopAnimating()
                     print(error.localizedDescription)
                 }
             }
@@ -125,25 +151,67 @@ class MessagesViewController: UIViewController {
 
 extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if discussionData.count>0 {
+            if discussionData[0].topicNumberOfDislikes == "topicNumberOfDislikes"{
+                return 0
+            }
+        }
         return discussionData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiscussionCell", for: indexPath) as! DiscussionsTableViewCell
         
-        cell.discussionTitle.text = discussionData[indexPath.item].topicTitle
-        cell.discussionContent.text = discussionData[indexPath.item].topicContent
-        cell.discussionDateTime.text = discussionData[indexPath.item].topicDateTime
+        cell.discussionTitle.text = decodeEmoji(discussionData[indexPath.row].topicTitle)
+        cell.discussionContent.text = decodeEmoji(discussionData[indexPath.row].topicContent)
+        cell.discussionDateTime.text = discussionData[indexPath.row].topicDateTime
+        cell.likeLabel.text = discussionData[indexPath.row].topicNumberOfLikes
+        cell.dislikeLabel.text = discussionData[indexPath.row].topicNumberOfDislikes
+        
+        cell.likeButton.tag = indexPath.row
+        cell.dislikeButton.tag = indexPath.row
+        
+        cell.likeButton.addTarget(self, action: #selector(likeAction), for: .touchUpInside)
+        cell.dislikeButton.addTarget(self, action: #selector(dislikeAction), for: .touchUpInside)
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+    @objc func likeAction(sender: UIButton){
+        
+        if sender.alpha<1 {
+            self.handleLikeOrDislike(sender: sender, n: 1)
+        }
+        else if sender.alpha == 1{
+            self.handleLikeOrDislike(sender: sender, n: 0.3)
+        }
     }
     
+    @objc func dislikeAction(sender: UIButton){
+        if sender.alpha<1 {
+            self.handleLikeOrDislike(sender: sender, n: 1)
+        }
+        else if sender.alpha == 1{
+            self.handleLikeOrDislike(sender: sender, n: 0.3)
+        }
+    }
+    
+    func handleLikeOrDislike(sender: UIButton, n: CGFloat){
+        sender.alpha = n
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 60.0
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         publicTopicID = discussionData[indexPath.item].topicID
+        publicTopicID = discussionData[indexPath.item].topicID
+        
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
     

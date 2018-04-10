@@ -210,11 +210,18 @@ class SigninViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        heightConstraintOutlet.constant = 270
+        
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraintOutlet.constant = 270
+        }
+        
+//        heightConstraintOutlet.constant = 270
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        heightConstraintOutlet.constant = 20
+        UIView.animate(withDuration: 0.5) {
+            self.heightConstraintOutlet.constant = 20
+        }
     }
     
 }

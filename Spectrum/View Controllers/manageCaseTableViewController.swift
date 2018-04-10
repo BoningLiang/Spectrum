@@ -1,18 +1,20 @@
 //
-//  MenuTableViewController.swift
+//  manageCaseTableViewController.swift
 //  Spectrum
 //
-//  Created by Boning Liang on 3/8/18.
+//  Created by Boning Liang on 3/26/18.
 //  Copyright © 2018 Boning Liang. All rights reserved.
 //
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class manageCaseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,70 +31,14 @@ class MenuTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return 0
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath[1] == 0
-        {
-            performSegue(withIdentifier: "MenuHomeSegue", sender: self)
-        }
-        else if indexPath[1] == 1
-        {
-            if(loginuser.isLogin){
-                performSegue(withIdentifier: "MenuProgressSegue", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-            }
-        }
-        else if indexPath[1] == 2
-        {
-            if(loginuser.isLogin){
-                performSegue(withIdentifier: "MenuCaseSelectSegue", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-            }
-        }
-        else if indexPath[1] == 3
-        {
-            performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-        }
-        else if indexPath[1] == 4
-        {
-            if(loginuser.isLogin){
-                performSegue(withIdentifier: "MenuDiscussionSegue", sender: self)
-            }
-            else{
-                performSegue(withIdentifier: "MenuAccountSegue", sender: self)
-            }
-        }
-        else if indexPath[1] == 5
-        {
-            performSegue(withIdentifier: "MenuTeamSegue", sender: self)
-        }
-        else if indexPath[1] == 6
-        {
-            performSegue(withIdentifier: "MenuAboutSegue", sender: self)
-        }
-        
-        else if indexPath[1] == 7
-        {
-            performSegue(withIdentifier: "MenuManageCaseSegue", sender: self)
-        }
-        
-        else if indexPath[1] == 8
-        {
-            performSegue(withIdentifier: "MenuContactUsSegue", sender: self)
-        }
-    }
-    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -138,6 +84,14 @@ class MenuTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

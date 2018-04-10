@@ -8,11 +8,14 @@
 
 import UIKit
 
-let baseUrl = "http://localhost"
-//let baseUrl = "http://auburn.edu/~bzl0048"
+//let baseUrl = "http://localhost"
+//let baseUrl = "http://spectrum.free.ngrok.cc"
+let baseUrl = "http://auburn.edu/~bzl0048"
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var testImageView: UIImageView!
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -24,6 +27,16 @@ class ViewController: UIViewController {
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
+        
+        let url = "http://wp.auburn.edu/sustainability/wp-content/uploads/2014/07/AU-wordmark.png"
+        
+        BLCache.downloadImage(url: URL(string: url)!) { (image, error) in
+            DispatchQueue.main.async{
+                self.testImageView.image = image
+            }
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

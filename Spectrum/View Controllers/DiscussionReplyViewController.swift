@@ -16,7 +16,54 @@ import UIKit
 //"replyDateTime":"2018-03-19 01:00:33",
 //"replyUserAvatar":"default_avatar"}]
 
-
+class ResultFirstFloor: Decodable{
+    var topicID: String?
+    var topicOwnerUserID: String?
+    var topicOwnerUserDisplayName: String?
+    var topicOwnerUserAvatar: String?
+    var topicTitle: String?
+    var topicContent: String?
+    var topicDateTime: String?
+    var topicNumberOfReplies: String?
+    var topicNumberOfLikes: String?
+    var topicNumberOfDislikes: String?
+    
+    init() {
+        self.topicID = ""
+        self.topicOwnerUserID = ""
+        self.topicOwnerUserDisplayName = ""
+        self.topicOwnerUserAvatar = ""
+        self.topicTitle = ""
+        self.topicContent = ""
+        self.topicDateTime = ""
+        self.topicNumberOfReplies = ""
+        self.topicNumberOfLikes = ""
+        self.topicNumberOfDislikes = ""
+    }
+    
+    init(topicID: String,
+         topicOwnerUserID: String,
+         topicOwnerUserDisplayName: String,
+         topicOwnerUserAvatar: String,
+         topicTitle: String,
+         topicContent: String,
+         topicDateTime: String,
+         topicNumberOfReplies: String,
+         topicNumberOfLikes: String,
+         topicNumberOfDislikes: String) {
+        self.topicID = topicID
+        self.topicOwnerUserID = topicOwnerUserID
+        self.topicOwnerUserDisplayName = topicOwnerUserDisplayName
+        self.topicOwnerUserAvatar = topicOwnerUserAvatar
+        self.topicTitle = topicTitle
+        self.topicTitle = topicTitle
+        self.topicDateTime = topicDateTime
+        self.topicNumberOfReplies = topicNumberOfReplies
+        self.topicNumberOfLikes = topicNumberOfLikes
+        self.topicNumberOfDislikes = topicNumberOfDislikes
+    }
+    
+}
 
 class ResultReply: Decodable {
     var replyID: String
@@ -34,7 +81,6 @@ class ResultReply: Decodable {
         self.replyContent = ""
         self.replyDateTime = ""
     }
-    
     init(topicReplyID: String,
          userID: String,
          userDisplayName: String,
@@ -59,11 +105,22 @@ class DiscussionReplyViewController: UIViewController {
     @IBOutlet weak var newReplyTextField: UITextField!
     
     var resultReplies: [ResultReply] = [ResultReply()]
+    var resultFirstFloor: ResultFirstFloor = ResultFirstFloor()
     
     var refreshControl: UIRefreshControl = UIRefreshControl()
     
+    var activityIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = .gray
+        
+        self.view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
         
         self.refreshControl.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         
@@ -73,6 +130,8 @@ class DiscussionReplyViewController: UIViewController {
         self.tableView.addSubview(refreshControl)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SigninViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -112,7 +171,6 @@ class DiscussionReplyViewController: UIViewController {
     {
         if (loginuser.isLogin)
         {
-//            http://localhost/SpectrumServer/API/Topic/?topicID=1
             let url = baseUrl+"/SpectrumServer/API/Topic?topicID=" + publicTopicID
             
             let request = URLRequest(url: URL(string: url)!)
@@ -122,7 +180,8 @@ class DiscussionReplyViewController: UIViewController {
                     let result = try JSONDecoder().decode([ResultReply].self, from: data)
                     DispatchQueue.main.async {
                         self.resultReplies = result
-                        self.tableView.reloadData()
+                        self.getFirstFloor()
+                        self.activityIndicator.stopAnimating()
                     }
                 }catch{
                     print(error.localizedDescription)
@@ -131,20 +190,56 @@ class DiscussionReplyViewController: UIViewController {
             task.resume()
         }
     }
+    
+    func getFirstFloor(){
+        if(loginuser.isLogin){
+            let topicID = "topicID=" + publicTopicID
+            let t = "&t=firstFloor"
+            let url = baseUrl+"/SpectrumServer/API/Topic?"+topicID+t
+            print(url)
+            let request = URLRequest(url: URL(string: url)!)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data else { return }
+                do{
+                    let result = try JSONDecoder().decode(ResultFirstFloor.self, from: data)
+                    DispatchQueue.main.async {
+                        self.resultFirstFloor = result
+                        self.tableView.reloadData()
+                    }
+                }catch{
+                    print("getFirstFloor():" + error.localizedDescription)
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    func encodeEmoji(_ s: String) -> String {
+        let data = s.data(using: .nonLossyASCII, allowLossyConversion: true)!
+        return String(data: data, encoding: .utf8)!
+    }
+    
+    func decodeEmoji(_ s: String) -> String? {
+        let data = s.data(using: .utf8)!
+        return String(data: data, encoding: .nonLossyASCII)
+    }
+    
     @IBAction func newReplyButtonAction(_ sender: Any) {
         let newContent = self.newReplyTextField.text?.trimmingCharacters(in: NSCharacterSet.whitespaces)
         if newContent != "" {
             if (loginuser.isLogin)
             {
-                //http://localhost/SpectrumServer/API/ReplyTopic/?topicID=1&content=hello&userName=bzl0048
                 let base = baseUrl+"/SpectrumServer/API/ReplyTopic?"
                 
                 let parTopicID = "topicID=" + publicTopicID
                 let parContent = "&content=" + newContent!
                 let parUserID = "&userName=" + loginuser.username!
                 
-                let url = base + parTopicID + parContent + parUserID
-                print(url)
+                var url = base + parTopicID + parContent + parUserID
+                url = url.replacingOccurrences(of: " ", with: "%20")
+                url = url.replacingOccurrences(of: "\\", with: "%5C")
+//                print(url)
+
                 let request = URLRequest(url: URL(string: url)!)
                 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                     guard let data = data else { return }
@@ -178,21 +273,38 @@ class DiscussionReplyViewController: UIViewController {
 
 extension DiscussionReplyViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.resultReplies.count
+        return self.resultReplies.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as! ReplyTableViewCell
         
-        let resultReply: ResultReply = self.resultReplies[indexPath.item]
         
-        cell.avatarImage.image = UIImage(named: resultReply.replyUserAvatar)
+        if indexPath.row == indexPath.first {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyHeaderCell", for: indexPath) as! firstFloorTableViewCell
+            
+            cell.avatarImage.image = UIImage(named: self.resultFirstFloor.topicOwnerUserAvatar!)
+            
+            cell.displayNameLabel.text = self.resultFirstFloor.topicOwnerUserDisplayName
+            cell.replyTime.text = self.resultFirstFloor.topicDateTime
+            cell.contentLabel.text = decodeEmoji(self.resultFirstFloor.topicContent!)
+            cell.titleLabel.text = decodeEmoji(self.resultFirstFloor.topicTitle!)
+            return cell
+        }
+        else{
         
-        cell.displayNameLabel.text = resultReply.replyUserDisplayName
-        cell.replyTime.text = resultReply.replyDateTime
-        cell.contentLabel.text = resultReply.replyContent
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as! ReplyTableViewCell
+            
+            let resultReply: ResultReply = self.resultReplies[indexPath.row-1]
+            
+            cell.avatarImage.image = UIImage(named: resultReply.replyUserAvatar)
+            
+            cell.displayNameLabel.text = resultReply.replyUserDisplayName
+            cell.replyTime.text = resultReply.replyDateTime
+            cell.contentLabel.text = decodeEmoji(resultReply.replyContent)
         
-        return cell
+            return cell
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

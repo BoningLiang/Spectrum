@@ -10,6 +10,14 @@
         <attribute name="caseVideoName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="caseVideoScreenshot" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="LoginUserEntity" representedClassName="LoginUserEntity" syncable="YES">
+        <attribute name="userAvatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userIsLogin" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="OptionEntity" representedClassName=".OptionEntity" syncable="YES">
         <attribute name="isCorrect" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="isSelected" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
@@ -30,9 +38,10 @@
         <attribute name="outCaseID" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CaseEntity" positionX="-362" positionY="-180" width="128" height="163"/>
+        <element name="CaseEntity" positionX="-362" positionY="-180" width="128" height="165"/>
         <element name="OptionEntity" positionX="144" positionY="-183" width="128" height="120"/>
         <element name="QuestionEntity" positionX="-189" positionY="-177" width="128" height="105"/>
         <element name="TeachersNoteEntity" positionX="-38" positionY="-180" width="128" height="105"/>
+        <element name="LoginUserEntity" positionX="-153" positionY="-126" width="128" height="135"/>
     </elements>
 </model>
