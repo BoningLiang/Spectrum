@@ -131,6 +131,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     {
         let url = baseUrl+"/SpectrumServer/API/Login/?username="+username+"&password="+userPassword;
         let request = URLRequest(url: URL(string: url)!)
+        print(url)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else { return }
             do{
@@ -154,7 +155,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }catch{
-                print(error.localizedDescription)
+                print("loginSpectrum(): ", error.localizedDescription)
             }
         }
         task.resume()

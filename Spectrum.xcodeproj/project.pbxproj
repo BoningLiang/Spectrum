@@ -134,7 +134,7 @@
 		17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = firstFloorTableViewCell.swift; path = Spectrum/Cells/firstFloorTableViewCell.swift; sourceTree = "<group>"; };
+		17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstFloorTableViewCell.swift; sourceTree = "<group>"; };
 		17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumTests.swift; sourceTree = "<group>"; };
 		17D0E1F22067F04D00E6C39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,7 +234,6 @@
 		17717E212025401C00CF3B82 = {
 			isa = PBXGroup;
 			children = (
-				17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */,
 				17717E2C2025401C00CF3B82 /* Spectrum */,
 				17D0E1EF2067F04D00E6C39C /* SpectrumTests */,
 			);
@@ -302,6 +301,7 @@
 		17BA793B205F5065001DE971 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */,
 				17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */,
 				17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */,
 				17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */,
