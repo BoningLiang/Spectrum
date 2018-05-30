@@ -21,6 +21,7 @@ class ResultDiscussion: Decodable {
     var topicNumberOfReplies: String
     var topicNumberOfLikes: String
     var topicNumberOfDislikes: String
+    var topicIsLike: String?
     
     init() {
         self.topicID = "topicID"
@@ -31,6 +32,7 @@ class ResultDiscussion: Decodable {
         self.topicNumberOfReplies = "topicNumberOfReplies"
         self.topicNumberOfLikes = "topicNumberOfLikes"
         self.topicNumberOfDislikes = "topicNumberOfDislikes"
+        self.topicIsLike = ""
     }
     
     init(topicID: String,
@@ -40,7 +42,8 @@ class ResultDiscussion: Decodable {
          topicDateTime: String,
          topicNumberOfReplies: String,
          topicNumberOfLikes: String,
-         topicNumberOfDislikes: String) {
+         topicNumberOfDislikes: String,
+         topicIsLike: String) {
         self.topicID = topicID
         self.topicTitle = topicTitle
         self.topicContent = topicContent
@@ -49,6 +52,7 @@ class ResultDiscussion: Decodable {
         self.topicNumberOfReplies = topicNumberOfReplies
         self.topicNumberOfLikes = topicNumberOfLikes
         self.topicNumberOfDislikes = topicNumberOfDislikes
+        self.topicIsLike = topicIsLike
     }
 }
 
@@ -113,8 +117,9 @@ class MessagesViewController: UIViewController {
         {
             UIApplication.shared.beginIgnoringInteractionEvents()
             self.activityIndicator.startAnimating()
-            let url = baseUrl+"/SpectrumServer/API/AllTopics"
             
+            let url = baseUrl+"/SpectrumServer/API/AllTopics?userName=" + loginuser.username!
+            print(url)
             let request = URLRequest(url: URL(string: url)!)
             
             
@@ -172,6 +177,18 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.likeButton.tag = indexPath.row
         cell.dislikeButton.tag = indexPath.row
+        
+        print("discussionData[indexPath.row].topicIsLike: ",discussionData[indexPath.row].topicIsLike)
+        if discussionData[indexPath.row].topicIsLike == "1" {
+            cell.dislikeButton.alpha = 0.3
+            cell.likeButton.alpha = 1
+        } else if discussionData[indexPath.row].topicIsLike == "0" {
+            cell.dislikeButton.alpha = 1
+            cell.likeButton.alpha = 0.3
+        } else{
+            cell.dislikeButton.alpha = 0.3
+            cell.likeButton.alpha = 0.3
+        }
         
         cell.likeButton.addTarget(self, action: #selector(likeAction), for: .touchUpInside)
         cell.dislikeButton.addTarget(self, action: #selector(dislikeAction), for: .touchUpInside)
