@@ -1,4 +1,4 @@
 # Todo list
 
--upload avatar photo
+-like or dislike button
 -
