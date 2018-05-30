@@ -284,6 +284,23 @@ extension DiscussionReplyViewController: UITableViewDataSource, UITableViewDeleg
             
             cell.avatarImage.image = UIImage(named: self.resultFirstFloor.topicOwnerUserAvatar!)
             
+            
+            let myCloudiary = Cloudiary()
+            if self.resultFirstFloor.topicOwnerUserAvatar=="default_avatar"{
+                cell.avatarImage.image = UIImage(named: self.resultFirstFloor.topicOwnerUserAvatar!)
+            }else{
+                let avatar_url = myCloudiary.getCloudiaryURL(imageName: self.resultFirstFloor.topicOwnerUserAvatar!)
+                
+                BLCache.downloadImage(url: URL(string: avatar_url)!) { (image, error) in
+                    DispatchQueue.main.async{
+                        cell.avatarImage.image = image
+                    }
+                }
+            }
+            
+            
+            
+            
             cell.displayNameLabel.text = self.resultFirstFloor.topicOwnerUserDisplayName
             cell.replyTime.text = self.resultFirstFloor.topicDateTime
             cell.contentLabel.text = decodeEmoji(self.resultFirstFloor.topicContent!)
@@ -296,7 +313,20 @@ extension DiscussionReplyViewController: UITableViewDataSource, UITableViewDeleg
             
             let resultReply: ResultReply = self.resultReplies[indexPath.row-1]
             
-            cell.avatarImage.image = UIImage(named: resultReply.replyUserAvatar)
+            
+            let myCloudiary = Cloudiary()
+            
+            if resultReply.replyUserAvatar=="default_avatar"{
+                cell.avatarImage.image = UIImage(named: resultReply.replyUserAvatar)
+            }else{
+                let avatar_url = myCloudiary.getCloudiaryURL(imageName: resultReply.replyUserAvatar)
+                
+                BLCache.downloadImage(url: URL(string: avatar_url)!) { (image, error) in
+                    DispatchQueue.main.async{
+                        cell.avatarImage.image = image
+                    }
+                }
+            }
             
             cell.displayNameLabel.text = resultReply.replyUserDisplayName
             cell.replyTime.text = resultReply.replyDateTime

@@ -189,7 +189,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }catch {
                 print("imageUploadRequest(): ", error.localizedDescription)
-                print("imageUploadRequest(): ", String.init(data: data, encoding: .utf8))
+//                print("imageUploadRequest(): ", String.init(data: data, encoding: .utf8))
             }
         }
         task.resume()

@@ -67,6 +67,7 @@
 		17D0E211206832C900E6C39C /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */; };
 		17D0E2132069C1A200E6C39C /* customManageCaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */; };
 		17D0E2152069C28300E6C39C /* manageCaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */; };
+		17DD0D6E207FF88800E06378 /* CloudiaryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DD0D6D207FF88800E06378 /* CloudiaryClass.swift */; };
 		17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */; };
 		17E5BFBA204C878600F96BC8 /* SuccessRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */; };
 		17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */; };
@@ -144,6 +145,7 @@
 		17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customManageCaseTableViewCell.swift; sourceTree = "<group>"; };
 		17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageCaseTableViewController.swift; sourceTree = "<group>"; };
+		17DD0D6D207FF88800E06378 /* CloudiaryClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudiaryClass.swift; sourceTree = "<group>"; };
 		17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		17E5BFB9204C878600F96BC8 /* SuccessRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessRegisterViewController.swift; sourceTree = "<group>"; };
 		17E5BFBD204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetNewPasswordViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				1734170A205C0A0200EF9496 /* UserController.swift */,
 				17E5BFB7204C1E7600F96BC8 /* UserRegister.swift */,
 				17D0E206206818D500E6C39C /* Caching.swift */,
+				17DD0D6D207FF88800E06378 /* CloudiaryClass.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				1706D716204B75EF00B78425 /* MessagesViewController.swift in Sources */,
 				17D0E211206832C900E6C39C /* LogoutTableViewCell.swift in Sources */,
 				17C618E02046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift in Sources */,
+				17DD0D6E207FF88800E06378 /* CloudiaryClass.swift in Sources */,
 				17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */,
 				17D0E207206818D500E6C39C /* Caching.swift in Sources */,
 				1715CC5220410151002952BA /* Info.plist in Sources */,

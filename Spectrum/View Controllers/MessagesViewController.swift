@@ -166,6 +166,7 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.discussionTitle.text = decodeEmoji(discussionData[indexPath.row].topicTitle)
         cell.discussionContent.text = decodeEmoji(discussionData[indexPath.row].topicContent)
         cell.discussionDateTime.text = discussionData[indexPath.row].topicDateTime
+        
         cell.likeLabel.text = discussionData[indexPath.row].topicNumberOfLikes
         cell.dislikeLabel.text = discussionData[indexPath.row].topicNumberOfDislikes
         
