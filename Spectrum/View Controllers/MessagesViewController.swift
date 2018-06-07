@@ -168,12 +168,16 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DiscussionCell", for: indexPath) as! DiscussionsTableViewCell
         
+        cell.topicID = Int(discussionData[indexPath.row].topicID)
+        
         cell.discussionTitle.text = decodeEmoji(discussionData[indexPath.row].topicTitle)
         cell.discussionContent.text = decodeEmoji(discussionData[indexPath.row].topicContent)
         cell.discussionDateTime.text = discussionData[indexPath.row].topicDateTime
         
         cell.likeLabel.text = discussionData[indexPath.row].topicNumberOfLikes
+        cell.numberOfLikes = Int(discussionData[indexPath.row].topicNumberOfLikes)
         cell.dislikeLabel.text = discussionData[indexPath.row].topicNumberOfDislikes
+        cell.numberOfDislikes = Int(discussionData[indexPath.row].topicNumberOfDislikes)
         
         cell.likeButton.tag = indexPath.row
         cell.dislikeButton.tag = indexPath.row
@@ -189,36 +193,12 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
             cell.dislikeButton.alpha = 0.3
             cell.likeButton.alpha = 0.3
         }
-        
-        cell.likeButton.addTarget(self, action: #selector(likeAction), for: .touchUpInside)
-        cell.dislikeButton.addTarget(self, action: #selector(dislikeAction), for: .touchUpInside)
+        let topicID = discussionData[indexPath.row].topicID
+        cell.tag = Int(topicID)!
         
         return cell
     }
-    
-    @objc func likeAction(sender: UIButton){
-        
-        if sender.alpha<1 {
-            self.handleLikeOrDislike(sender: sender, n: 1)
-        }
-        else if sender.alpha == 1{
-            self.handleLikeOrDislike(sender: sender, n: 0.3)
-        }
-    }
-    
-    @objc func dislikeAction(sender: UIButton){
-        if sender.alpha<1 {
-            self.handleLikeOrDislike(sender: sender, n: 1)
-        }
-        else if sender.alpha == 1{
-            self.handleLikeOrDislike(sender: sender, n: 0.3)
-        }
-    }
-    
-    func handleLikeOrDislike(sender: UIButton, n: CGFloat){
-        sender.alpha = n
-    }
-    
+
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 60.0
 //    }

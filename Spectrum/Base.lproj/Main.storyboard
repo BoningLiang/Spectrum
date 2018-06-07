@@ -1403,6 +1403,9 @@
                                                         <constraint firstAttribute="width" constant="25" id="pV6-ys-lRD"/>
                                                     </constraints>
                                                     <state key="normal" image="Thumb_dislike"/>
+                                                    <connections>
+                                                        <action selector="dislikeButtonAction:" destination="Z0u-LO-mcd" eventType="touchUpInside" id="R6Z-hb-oJq"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avZ-Tc-cdI">
                                                     <rect key="frame" x="294.5" y="151" width="10.5" height="21"/>
@@ -1423,6 +1426,9 @@
                                                         <constraint firstAttribute="height" constant="25" id="sTp-3A-4j3"/>
                                                     </constraints>
                                                     <state key="normal" image="Thumb_like"/>
+                                                    <connections>
+                                                        <action selector="likeButtonAction:" destination="Z0u-LO-mcd" eventType="touchUpInside" id="TBD-9d-osy"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
