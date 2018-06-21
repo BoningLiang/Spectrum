@@ -59,7 +59,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         
         createCategoryPicker()
         createToolBar()
-        retrieveData(typeOfCase: "1")
+        retrieveData(caseChapter: "1")
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(revealViewController().panGestureRecognizer())
@@ -81,7 +81,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
                         UIApplication.shared.endIgnoringInteractionEvents()
                         self.caseDataFromServer = resultCaseData
 //                        self.caseDataFromCoreData = CoreDataController.getAllCasesFromCoreData()
-                        self.retrieveData(typeOfCase: "1")
+                        self.retrieveData(caseChapter: "1")
                         self.caseTableView.reloadData()
                         self.activityIndicator.stopAnimating()
                     })
@@ -134,7 +134,7 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
 //            self.data = LifeCaseData
 //        }
         let selectedRow: Int = selectedCategoryRow!+1
-        retrieveData(typeOfCase: selectedRow.description)
+        retrieveData(caseChapter: selectedRow.description)
         caseTableView.reloadData()
         caseNav.title = selectedCategory
     }
@@ -145,12 +145,12 @@ class CaseViewController: UIViewController, UITextFieldDelegate{
         self.view.endEditing(true)
     }
 
-    func retrieveData(typeOfCase: String)
+    func retrieveData(caseChapter: String)
     {
         self.currentCaseData.removeAll()
         for i in 0..<caseDataFromServer.count
         {
-            if(caseDataFromServer[i].caseType == typeOfCase)
+            if(caseDataFromServer[i].caseChapter == caseChapter)
             {
                 self.currentCaseData.append(caseDataFromServer[i])
             }

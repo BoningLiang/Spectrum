@@ -97,7 +97,13 @@ class theCaseViewController: UIViewController {
     
     @IBAction func playButtonAction(_ sender: Any)
     {
-        if let videoURL = URL(string: baseVideoURL + casePublic!.caseVideoName + ".mp4")
+        var videoName = casePublic!.caseVideoName
+        if (videoName?.endsWith(string: ".mp4"))! {
+            // do nothing
+        }else{
+            videoName = videoName! + ".mp4"
+        }
+        if let videoURL = URL(string: baseVideoURL + videoName!)
 //        if let path=Bundle.main.path(forResource: casePublic!.caseVideoName, ofType:"mp4")
         {
             let video = AVPlayer(url: videoURL)
@@ -144,4 +150,10 @@ class theCaseViewController: UIViewController {
         
     }
     
+}
+
+extension String{
+    func endsWith(string: String) -> Bool{
+        return self.hasSuffix(string)
+    }
 }

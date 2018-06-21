@@ -22,7 +22,7 @@ extension CaseEntity {
     @NSManaged public var caseID: String?
     @NSManaged public var caseName: String?
     @NSManaged public var caseSection: String?
-    @NSManaged public var caseType: String?
+    @NSManaged public var caseChapter: String?
     @NSManaged public var caseVideoName: String?
     @NSManaged public var caseVideoScreenshot: String?
 

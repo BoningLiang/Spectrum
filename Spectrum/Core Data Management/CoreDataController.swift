@@ -24,7 +24,7 @@ class CoreDataController: NSObject {
         }
     }
     
-    class func insertDataToCaseEntity(caseID: String, caseSection: String, caseVideoName: String, caseName: String, caseDescription: String, caseCoverPic: String, caseVideoScreenshot: String, caseType: String) -> Bool {
+    class func insertDataToCaseEntity(caseID: String, caseSection: String, caseVideoName: String, caseName: String, caseDescription: String, caseCoverPic: String, caseVideoScreenshot: String, caseChapter: String) -> Bool {
         
         print("found "+CoreDataController.selectCaseWithID(id: "1").count.description+"case(s)")
         let forConstrainCount = CoreDataController.selectCaseWithID(id: caseID).count
@@ -37,8 +37,8 @@ class CoreDataController: NSObject {
             newCaseEntity.setValue(caseDescription, forKey: "caseDescription")
             newCaseEntity.setValue(caseCoverPic, forKey: "caseCoverPic")
             newCaseEntity.setValue(caseName, forKey: "caseName")
-            newCaseEntity.setValue(caseType, forKey: "caseType")
-            newCaseEntity.setValue(caseType, forKey: "caseSection")
+            newCaseEntity.setValue(caseChapter, forKey: "caseChapter")
+            newCaseEntity.setValue(caseChapter, forKey: "caseSection")
             newCaseEntity.setValue(caseVideoName, forKey: "caseVideoName")
             newCaseEntity.setValue(caseVideoScreenshot, forKey: "caseVideoScreenshot")
             
@@ -584,7 +584,7 @@ class CoreDataController: NSObject {
                 caseName: caseEntity.caseName!,
                 caseDescription: caseEntity.caseDescription!,
                 caseVideoName: caseEntity.caseVideoName!,
-                caseType: caseEntity.caseType!,
+                caseChapter: caseEntity.caseChapter!,
                 caseCoverPic: caseEntity.caseCoverPic!,
                 caseVideoScreenshot: caseEntity.caseVideoScreenshot!,
                 teachersNote: resultTeachersNotes,

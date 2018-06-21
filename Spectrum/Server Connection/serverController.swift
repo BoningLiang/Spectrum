@@ -15,8 +15,6 @@ class ServerController: NSObject{
     class func requestData(withRequest request:String, completion: @escaping ([myCase]?) -> ())
     {
         let url = baseUrl + "/SpectrumServer/API/case/?userName="+request
-        
-        print(url)
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
             var AllCases: [myCase] = []
@@ -34,7 +32,7 @@ class ServerController: NSObject{
                                     let caseName = jsonCase["caseName"] as? String
                                     let caseDescription = jsonCase["caseDescription"] as? String
                                     let caseVideoName = jsonCase["caseVideoName"] as? String
-                                    let caseType = jsonCase["caseType"] as? String
+                                    let caseChapter = jsonCase["caseChapter"] as? String
                                     let caseCoverPic = jsonCase["caseCoverPic"] as? String
                                     let caseVideoScreenshot = jsonCase["caseVideoScreenshot"] as? String
                                     if let teachersNotes = jsonCase["teachersNotes"] as? [[String: Any]]{
@@ -67,7 +65,7 @@ class ServerController: NSObject{
                                             resultQuestions.append(resultQuestion)
                                         }
                                     }
-                                    let resultCase = myCase(caseID: caseID!,caseName: caseName!,caseDescription: caseDescription!,caseVideoName: caseVideoName!,caseType: caseType!,caseCoverPic: caseCoverPic!,caseVideoScreenshot: caseVideoScreenshot!,
+                                    let resultCase = myCase(caseID: caseID!,caseName: caseName!,caseDescription: caseDescription!,caseVideoName: caseVideoName!,caseChapter: caseChapter!,caseCoverPic: caseCoverPic!,caseVideoScreenshot: caseVideoScreenshot!,
                                                             teachersNote: resultTeachersNotes,questions: resultQuestions)
                                     AllCases.append(resultCase)
                                 }

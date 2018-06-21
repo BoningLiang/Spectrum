@@ -43,19 +43,21 @@ class myCase {
     var caseName: String!
     var caseDescription: String!
     var caseVideoName: String!
-    var caseType: String!
+//    var caseChapter: String!
+    var caseChapter: String!
+    
     var caseCoverPic: String!
     var caseVideoScreenshot: String!
     var teachersNote: [TeachersNote]
     var questions: [Question]!
 
     
-    init(caseID: String, caseName:String, caseDescription: String, caseVideoName: String, caseType: String, caseCoverPic: String,caseVideoScreenshot: String, teachersNote: [TeachersNote], questions: [Question]) {
+    init(caseID: String, caseName:String, caseDescription: String, caseVideoName: String, caseChapter: String, caseCoverPic: String,caseVideoScreenshot: String, teachersNote: [TeachersNote], questions: [Question]) {
         self.caseID = caseID
         self.caseName = caseName
         self.caseDescription = caseDescription
         self.caseVideoName = caseVideoName
-        self.caseType = caseType
+        self.caseChapter = caseChapter
         self.caseCoverPic = caseCoverPic
         self.questions = questions
         self.teachersNote = teachersNote
@@ -65,7 +67,7 @@ class myCase {
     
 //    func insertDataToCoreData()
 //    {
-//        if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseType, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseType: self.caseType))
+//        if(CoreDataController.insertDataToCaseEntity(caseID: self.caseID, caseSection: self.caseChapter, caseVideoName: self.caseVideoName, caseName: self.caseName, caseDescription: self.caseDescription, caseCoverPic: self.caseCoverPic, caseVideoScreenshot: self.caseVideoScreenshot, caseChapter: self.caseChapter))
 //        {
 //            print("Successfully insert case with ID: " + self.caseID)
 //        }
