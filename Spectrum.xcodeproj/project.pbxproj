@@ -51,19 +51,11 @@
 		17BA7938205F4F01001DE971 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7937205F4F01001DE971 /* ProfileViewController.swift */; };
 		17BA793A205F5059001DE971 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */; };
 		17BCF4D92076AA820049CEAF /* editAvatarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BCF4D82076AA820049CEAF /* editAvatarTableViewController.swift */; };
-		17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */; };
-		17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */; };
-		17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */; };
-		17C618E02046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D82046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift */; };
-		17C618E12046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618D92046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift */; };
-		17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */; };
-		17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */; };
-		17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */; };
 		17CA32FA206FC4F2002A61CE /* firstFloorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */; };
+		17CB27E220DD92C6005FE213 /* LoginSessionEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB27E020DD92C6005FE213 /* LoginSessionEntity+CoreDataClass.swift */; };
+		17CB27E320DD92C6005FE213 /* LoginSessionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CB27E120DD92C6005FE213 /* LoginSessionEntity+CoreDataProperties.swift */; };
 		17D0E1F12067F04D00E6C39C /* SpectrumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */; };
 		17D0E207206818D500E6C39C /* Caching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E206206818D500E6C39C /* Caching.swift */; };
-		17D0E20E2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E20C2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift */; };
-		17D0E20F2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E20D2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift */; };
 		17D0E211206832C900E6C39C /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */; };
 		17D0E2132069C1A200E6C39C /* customManageCaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */; };
 		17D0E2152069C28300E6C39C /* manageCaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */; };
@@ -127,21 +119,13 @@
 		17BA7939205F5059001DE971 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		17BCF4D82076AA820049CEAF /* editAvatarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editAvatarTableViewController.swift; sourceTree = "<group>"; };
 		17BE1779203B5C16004B6F31 /* checkAnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkAnsViewController.swift; sourceTree = "<group>"; };
-		17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		17C618D82046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		17C618D92046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeachersNoteEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17CA32F9206FC4F2002A61CE /* firstFloorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstFloorTableViewCell.swift; sourceTree = "<group>"; };
+		17CB27E020DD92C6005FE213 /* LoginSessionEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LoginSessionEntity+CoreDataClass.swift"; path = "../../LoginSessionEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		17CB27E120DD92C6005FE213 /* LoginSessionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "LoginSessionEntity+CoreDataProperties.swift"; path = "../../LoginSessionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17D0E1EE2067F04D00E6C39C /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D0E1F02067F04D00E6C39C /* SpectrumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumTests.swift; sourceTree = "<group>"; };
 		17D0E1F22067F04D00E6C39C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D0E206206818D500E6C39C /* Caching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caching.swift; sourceTree = "<group>"; };
-		17D0E20C2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginUserEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		17D0E20D2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginUserEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		17D0E210206832C900E6C39C /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		17D0E2122069C1A200E6C39C /* customManageCaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customManageCaseTableViewCell.swift; sourceTree = "<group>"; };
 		17D0E2142069C28300E6C39C /* manageCaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageCaseTableViewController.swift; sourceTree = "<group>"; };
@@ -286,16 +270,8 @@
 		1792F75F202C31C3008176A0 /* coreData */ = {
 			isa = PBXGroup;
 			children = (
-				17D0E20C2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift */,
-				17D0E20D2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift */,
-				17C618D52046A6BF003F142A /* OptionEntity+CoreDataClass.swift */,
-				17C618D62046A6BF003F142A /* OptionEntity+CoreDataProperties.swift */,
-				17C618D72046A6BF003F142A /* QuestionEntity+CoreDataClass.swift */,
-				17C618D82046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift */,
-				17C618D92046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift */,
-				17C618DA2046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift */,
-				17C618DB2046A6BF003F142A /* CaseEntity+CoreDataClass.swift */,
-				17C618DC2046A6BF003F142A /* CaseEntity+CoreDataProperties.swift */,
+				17CB27E020DD92C6005FE213 /* LoginSessionEntity+CoreDataClass.swift */,
+				17CB27E120DD92C6005FE213 /* LoginSessionEntity+CoreDataProperties.swift */,
 				1792F717202C12F2008176A0 /* DataModel.xcdatamodeld */,
 			);
 			path = coreData;
@@ -440,14 +416,12 @@
 			files = (
 				1715CC3220410150002952BA /* Question.swift in Sources */,
 				1715CC3320410150002952BA /* myCase.swift in Sources */,
-				17C618DF2046A6BF003F142A /* QuestionEntity+CoreDataClass.swift in Sources */,
 				17CA32FA206FC4F2002A61CE /* firstFloorTableViewCell.swift in Sources */,
 				17BA7934205F3F40001DE971 /* AboutViewController.swift in Sources */,
 				1715CC3D20410151002952BA /* DataModel.xcdatamodeld in Sources */,
+				17CB27E220DD92C6005FE213 /* LoginSessionEntity+CoreDataClass.swift in Sources */,
 				170CDF80205F7D8C0015BC1A /* ReplyTableViewCell.swift in Sources */,
 				17D0E2152069C28300E6C39C /* manageCaseTableViewController.swift in Sources */,
-				17C618E32046A6BF003F142A /* CaseEntity+CoreDataClass.swift in Sources */,
-				17D0E20E2068314800E6C39C /* LoginUserEntity+CoreDataClass.swift in Sources */,
 				17F37497206094A6001EA93F /* QuizAttemptsTableViewCell.swift in Sources */,
 				1715CC3E20410151002952BA /* myHeaderView.swift in Sources */,
 				1715CC3F20410151002952BA /* myHeaderView.xib in Sources */,
@@ -457,10 +431,10 @@
 				17B9D7702051C1FF00967B1E /* MenuTableViewController.swift in Sources */,
 				1706D718204B7C1B00B78425 /* AddFriendViewController.swift in Sources */,
 				170CDF7E205F7D600015BC1A /* DiscussionReplyViewController.swift in Sources */,
+				17CB27E320DD92C6005FE213 /* LoginSessionEntity+CoreDataProperties.swift in Sources */,
 				17D0E2132069C1A200E6C39C /* customManageCaseTableViewCell.swift in Sources */,
 				170CDF7A205F65800015BC1A /* DiscussionsTableViewCell.swift in Sources */,
 				17BA7936205F3F50001DE971 /* TeamsViewController.swift in Sources */,
-				17C618E42046A6BF003F142A /* CaseEntity+CoreDataProperties.swift in Sources */,
 				1715CC4720410151002952BA /* Assets.xcassets in Sources */,
 				1715CC4820410151002952BA /* myCell.swift in Sources */,
 				17F374952060908A001EA93F /* QuizHistoryViewController.swift in Sources */,
@@ -479,28 +453,22 @@
 				1715CC5120410151002952BA /* CoreDataService.swift in Sources */,
 				17341709205C080F00EF9496 /* NewTopicViewController.swift in Sources */,
 				1706D70E204B52BE00B78425 /* LoginViewController.swift in Sources */,
-				17C618DE2046A6BF003F142A /* OptionEntity+CoreDataProperties.swift in Sources */,
 				17BCF4D92076AA820049CEAF /* editAvatarTableViewController.swift in Sources */,
-				17D0E20F2068314800E6C39C /* LoginUserEntity+CoreDataProperties.swift in Sources */,
 				1706D716204B75EF00B78425 /* MessagesViewController.swift in Sources */,
 				17D0E211206832C900E6C39C /* LogoutTableViewCell.swift in Sources */,
-				17C618E02046A6BF003F142A /* QuestionEntity+CoreDataProperties.swift in Sources */,
 				17DD0D6E207FF88800E06378 /* CloudiaryClass.swift in Sources */,
-				17C618DD2046A6BF003F142A /* OptionEntity+CoreDataClass.swift in Sources */,
 				17D0E207206818D500E6C39C /* Caching.swift in Sources */,
 				1715CC5220410151002952BA /* Info.plist in Sources */,
 				1715CC5320410151002952BA /* SWRevealViewController.h in Sources */,
 				1715CC5420410151002952BA /* SWRevealViewController.m in Sources */,
 				17F374992060981A001EA93F /* TakeQuizViewController.swift in Sources */,
 				17E5BFBE204C9C4C00F96BC8 /* ResetNewPasswordViewController.swift in Sources */,
-				17C618E22046A6BF003F142A /* TeachersNoteEntity+CoreDataProperties.swift in Sources */,
 				1706D70C204B4E4D00B78425 /* AccountTableTableViewController.swift in Sources */,
 				17E5BFB8204C1E7600F96BC8 /* UserRegister.swift in Sources */,
 				1706D710204B58ED00B78425 /* SigninViewController.swift in Sources */,
 				1715CC5520410151002952BA /* Spectrum-Bridging-Header.h in Sources */,
 				1715CC5620410151002952BA /* ProgressViewController.swift in Sources */,
 				1706D714204B742400B78425 /* RestPasswordViewController.swift in Sources */,
-				17C618E12046A6BF003F142A /* TeachersNoteEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

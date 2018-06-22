@@ -8,6 +8,17 @@
 
 import UIKit
 
+class GetOptionSubmitionResult: Decodable
+{
+    var recordID: String?
+    var quizID: String?
+    var optionID: String?
+    var isSelect: Bool?
+    
+    init() {
+        
+    }
+}
 
 
 class checkAnsViewController: UIViewController {
@@ -28,30 +39,90 @@ class checkAnsViewController: UIViewController {
     
     @IBOutlet weak var lastQuestionButton: UIButton!
     
+    var getSubmitionsData: GetOptionSubmitionResult = GetOptionSubmitionResult()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.questionArray = questionArrayPublic!
+        
+        self.initFunc()
+//        self.questionArray = questionArrayPublic!
+        
+//        self.questionArray = (casePublic?.questions)!
         // Do any additional setup after loading the view.
-        print("ViewDidLoad: questionArray.count = ")
-        print(questionArray.count)
-        for question in questionArray
+//        print("ViewDidLoad: questionArray.count = ", questionArray.count)
+        
+        
+        
+//        for question in questionArray
+//        {
+//            for theOption in question.options
+//            {
+//                if(CoreDataController.updateOptionEntityWithID(optionID: theOption.optionID, isSelect: theOption.isSelect))
+//                {
+//                    print("Option update success")
+//                }
+//                else
+//                {
+//                    print("No option or option update fails")
+//                }
+//            }
+//        }
+    }
+    
+    func updateAttemptQuestionArray() {
+//        self.questionArray[0].options[0].optionID
+        let url = baseUrl+"/SpectrumServer/API/GetOptionRecord/?quizID="+publicQuizID.description+"&optionID="
+        
+        for i in 0..<self.questionArray.count
         {
-            for theOption in question.options
+            for j in 0..<self.questionArray[i].options.count
             {
-                if(CoreDataController.updateOptionEntityWithID(optionID: theOption.optionID, isSelect: theOption.isSelect))
-                {
-                    print("Option update success")
+//                self.questionArray[i].options[j].isSelect
+                // select recordID, quizID, optionID, isSelect from spectrum_option_quiz_records where quizID = 1 and optionID = 1;
+                let optionID = self.questionArray[i].options[j].optionID
+                let url2 = url + optionID!
+                print("checkAnsViewController: ", url2)
+                let request = URLRequest(url: URL(string: url2)!)
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+                    do{
+                        let result = try JSONDecoder().decode(GetOptionSubmitionResult.self, from: data)
+                        DispatchQueue.main.async {
+                            self.getSubmitionsData = result
+                            if Int(self.getSubmitionsData.quizID!)! == publicQuizID {
+                                print("updateAttemptQuestionArray(): i & j ", i, " ",j)
+                                self.questionArray[i].options[j].isSelect = self.getSubmitionsData.isSelect
+                            }
+//                            if i == self.questionArray.count-1 && j == self.questionArray[i].options.count - 1 {
+                                self.refreshInitData()
+//                            }
+                        }
+                    }catch{
+                        do{
+                            let result = try JSONDecoder().decode(Result.self, from: data)
+                            print("BL Error: ", result)
+                        }catch{
+                            print("checkAnsViewController: ", error.localizedDescription)
+                        }
+                    }
                 }
-                else
-                {
-                    print("No option or option update fails")
-                }
+                task.resume()
             }
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.questionArray = questionArrayPublic!
+//        self.questionArray = questionArrayPublic!
+        
+    }
+
+    
+    func initQuestionArray(){
+        self.questionArray = (casePublic?.questions)!
+        self.updateAttemptQuestionArray();
+    }
+    
+    func refreshInitData(){
         questionLabel.text = self.questionArray[0].question
         explanationLabel.text = self.questionArray[0].explanation
         resultLabel.text = "Your Answer: Correct!"
@@ -84,6 +155,12 @@ class checkAnsViewController: UIViewController {
             self.previousQuestionButton.isHidden = true
             self.lastQuestionButton.isHidden = true
         }
+    }
+    
+    func initFunc()
+    {
+        self.initQuestionArray()
+        self.refreshInitData()
     }
     
     @IBAction func firstButtonAction(_ sender: Any) {

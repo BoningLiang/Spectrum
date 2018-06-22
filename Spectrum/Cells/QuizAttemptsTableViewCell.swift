@@ -17,6 +17,8 @@ class QuizAttemptsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var attemptTimeLabel: UILabel!
     
+    var quizID: Int?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

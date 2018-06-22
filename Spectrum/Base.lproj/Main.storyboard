@@ -631,17 +631,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGM-MD-fB6">
-                                                    <rect key="frame" x="10" y="10" width="300" height="23"/>
+                                                    <rect key="frame" x="16" y="11" width="288" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vGM-MD-fB6" firstAttribute="top" secondItem="mky-me-qsm" secondAttribute="top" constant="10" id="WWc-b1-Cj5"/>
-                                                <constraint firstAttribute="bottom" secondItem="vGM-MD-fB6" secondAttribute="bottom" constant="10" id="bST-Yf-yHk"/>
-                                                <constraint firstAttribute="trailing" secondItem="vGM-MD-fB6" secondAttribute="trailing" constant="10" id="pRa-ej-VbD"/>
-                                                <constraint firstItem="vGM-MD-fB6" firstAttribute="leading" secondItem="mky-me-qsm" secondAttribute="leading" constant="10" id="z9M-1A-EIb"/>
+                                                <constraint firstItem="vGM-MD-fB6" firstAttribute="bottom" secondItem="mky-me-qsm" secondAttribute="bottomMargin" id="6G0-De-4mG"/>
+                                                <constraint firstItem="vGM-MD-fB6" firstAttribute="top" secondItem="mky-me-qsm" secondAttribute="topMargin" id="Tb7-RE-5yD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vGM-MD-fB6" secondAttribute="trailing" id="gmZ-8g-32d"/>
+                                                <constraint firstItem="vGM-MD-fB6" firstAttribute="leading" secondItem="mky-me-qsm" secondAttribute="leadingMargin" id="xmJ-FV-XVd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="02y-1r-yhz">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="02y-1r-yhz" id="MMW-bU-X3X">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVf-Dt-6xg">
+                                                    <rect key="frame" x="16" y="11" width="288" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="PVf-Dt-6xg" firstAttribute="leading" secondItem="MMW-bU-X3X" secondAttribute="leadingMargin" id="OAv-Ai-Xc1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PVf-Dt-6xg" secondAttribute="trailing" id="Q9n-r4-AHH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PVf-Dt-6xg" secondAttribute="bottom" id="Rxv-wd-Bb2"/>
+                                                <constraint firstItem="PVf-Dt-6xg" firstAttribute="top" secondItem="MMW-bU-X3X" secondAttribute="topMargin" id="do9-cu-IbJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1930,7 +1952,7 @@
                     <navigationItem key="navigationItem" title="Case Studies" id="wIQ-3E-1gc">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="B6c-VI-1dC"/>
                         <barButtonItem key="rightBarButtonItem" style="done" id="Ab3-CC-Jhv">
-                            <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Other" textAlignment="right" minimumFontSize="17" id="Vxd-IK-agV">
+                            <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Chapters" textAlignment="right" minimumFontSize="17" id="Vxd-IK-agV">
                                 <rect key="frame" x="221" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2067,26 +2089,6 @@
                                         <connections>
                                             <outlet property="theItem" destination="Nli-KA-Dgt" id="f17-4e-eWc"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogoutCell" id="VgS-RZ-mTa" customClass="LogoutTableViewCell" customModule="Spectrum" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VgS-RZ-mTa" id="D4E-ch-n2s">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPd-M6-x4F">
-                                                    <rect key="frame" x="20" y="10" width="280" height="23.5"/>
-                                                    <state key="normal" title="Log out"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="hPd-M6-x4F" firstAttribute="leading" secondItem="D4E-ch-n2s" secondAttribute="leading" constant="20" id="GzO-ac-EZl"/>
-                                                <constraint firstAttribute="trailing" secondItem="hPd-M6-x4F" secondAttribute="trailing" constant="20" id="Lew-9p-t3f"/>
-                                                <constraint firstAttribute="bottom" secondItem="hPd-M6-x4F" secondAttribute="bottom" constant="10" id="dlZ-oX-LQG"/>
-                                                <constraint firstItem="hPd-M6-x4F" firstAttribute="top" secondItem="D4E-ch-n2s" secondAttribute="top" constant="10" id="gbM-dn-1rH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2519,7 +2521,7 @@
                     <navigationItem key="navigationItem" title="Quiz Attempts" id="DXr-Yb-0DB"/>
                     <connections>
                         <outlet property="tableView" destination="EZS-Iu-IWB" id="9pF-r3-f6h"/>
-                        <segue destination="m3K-9j-Bjj" kind="show" id="9sJ-iD-zK0"/>
+                        <segue destination="m3K-9j-Bjj" kind="show" identifier="toAttemptSegue" id="9sJ-iD-zK0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JP-Tx-o8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2694,7 +2696,7 @@
         <image name="play_icon" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g3e-OY-OXW"/>
+        <segue reference="9uF-ny-1Qa"/>
         <segue reference="UHA-bi-53W"/>
         <segue reference="yso-vb-fRd"/>
     </inferredMetricsTieBreakers>

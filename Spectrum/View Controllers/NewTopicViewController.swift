@@ -9,7 +9,7 @@
 import UIKit
 
 class Result: Decodable{
-    var result: Int
+    var result: Int?
 }
 
 class NewTopicViewController: UIViewController {
@@ -86,7 +86,7 @@ class NewTopicViewController: UIViewController {
                     do{
                         let result = try JSONDecoder().decode(Result.self, from: data)
                         DispatchQueue.main.async {
-                            if result.result > 0{
+                            if result.result! > 0{
                                 self.performSegue(withIdentifier: "unwindSuccessSendNewTopic", sender: self)
                                 print("success")
                             }else{

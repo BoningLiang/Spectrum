@@ -289,25 +289,25 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (indexPath.row == tableView.numberOfRows(inSection: tableView.numberOfSections - 1) - 1) {
-            print("1: ", indexPath.row)
-            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath) as! LogoutTableViewCell
-            return cell
-        }
-        else
-        {
-            print("2: ", indexPath.row)
+//        if (indexPath.row == tableView.numberOfRows(inSection: tableView.numberOfSections - 1) - 1) {
+//            print("1: ", indexPath.row)
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "LogoutCell", for: indexPath) as! LogoutTableViewCell
+//            return cell
+//        }
+//        else
+//        {
+//            print("1: ", indexPath.row)
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileCell", for: indexPath) as! ProfileTableViewCell
             let tableViewData: [String: String] = userProfile.getTableViewData()
             let spaceString = ": "
             cell.theItem.text = userProfile.tableViewDataList[indexPath.item] + spaceString + tableViewData[userProfile.tableViewDataList[indexPath.item]]!
             return cell
-        }
+//        }
     }
 }
 

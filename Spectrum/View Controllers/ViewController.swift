@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //let baseUrl = "http://localhost"
 //let baseUrl = "http://spectrum.free.ngrok.cc"
@@ -34,6 +35,31 @@ class ViewController: UIViewController {
             DispatchQueue.main.async{
                 self.testImageView.image = image
             }
+        }
+        
+        
+        let fetchLoginSessionRequest:NSFetchRequest<LoginSessionEntity> = LoginSessionEntity.fetchRequest()
+        
+        do {
+            let loginSessionEntity = try CoreDataService.context.fetch(fetchLoginSessionRequest)
+            if loginSessionEntity.count>0 {
+                
+                print("ViewController: ViewDidLoad(): main page: ")
+                
+                for i in 0..<loginSessionEntity.count{
+                    print("username ",i," ", loginSessionEntity[i].username ?? "username is null")
+                    print("isLogin ",i," ", loginSessionEntity[i].isLogin)
+                    print("password ",i," ", loginSessionEntity[i].password ?? "password is null")
+                }
+                
+                let lastIndex = loginSessionEntity.count-1
+                
+                loginuser.username = loginSessionEntity[lastIndex].username
+                loginuser.isLogin = loginSessionEntity[lastIndex].isLogin
+                loginuser.userPassword = loginSessionEntity[lastIndex].password
+            }
+        } catch {
+            print("ViewController: viewDidLoad(): error")
         }
         
         

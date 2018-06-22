@@ -49,8 +49,8 @@ struct Question {
     var explanation:String!
     var expanded: Bool!
     var outCaseID: String!
-    var questionEntity = [QuestionEntity]()
-    var optionEntity = [OptionEntity]()
+//    var questionEntity = [QuestionEntity]()
+//    var optionEntity = [OptionEntity]()
     
     init(questionID: String, question: String, options: [Option], explanation:String!, expanded: Bool, outCaseID: String) {
         self.questionID = questionID

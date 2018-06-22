@@ -56,7 +56,7 @@ class CodeVerificationViewController: UIViewController {
             do{
                 let result = try JSONDecoder().decode(Result.self, from: data)
                 DispatchQueue.main.async {
-                    if result.result>0{
+                    if result.result! > 0{
                         print("code send success")
                     }else{
                         
@@ -94,7 +94,7 @@ class CodeVerificationViewController: UIViewController {
                 do{
                     let result = try JSONDecoder().decode(Result.self, from: data)
                     DispatchQueue.main.async {
-                        if result.result>0{
+                        if result.result! > 0{
                             if state == "signin"  {
                                 self.performSegue(withIdentifier: "signInSegue", sender: nil)
                             }

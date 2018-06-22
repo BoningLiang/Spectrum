@@ -247,7 +247,7 @@ class DiscussionReplyViewController: UIViewController {
                         print(data)
                         let result = try JSONDecoder().decode(Result.self, from: data)
                         DispatchQueue.main.async {
-                            if(result.result>0)
+                            if(result.result! > 0)
                             {
                                 self.newReplyTextField.text = ""
                                 self.dismissKeyboard()

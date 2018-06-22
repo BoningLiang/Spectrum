@@ -75,19 +75,18 @@ class TakeQuizViewController: UIViewController {
                     print(data)
                     let result = try JSONDecoder().decode(Result.self, from: data)
                     DispatchQueue.main.async {
-                        if(result.result>0)
+                        if(result.result! > 0)
                         {
                             self.performSegue(withIdentifier: "unwindSubmitAttemptSegue", sender: self)
-                            
-                            print("success submit new attempt quiz")
+                            print("TakeQuizViewController: SubmitAction(): success submit new attempt quiz")
                         }
                         else
                         {
-                            print("fail to submit new attempt")
+                            print("TakeQuizViewController: SubmitAction(): fail to submit new attempt")
                         }
                     }
                 }catch{
-                    print(error.localizedDescription)
+                    print("TakeQuizViewController: SubmitAction(): ", error.localizedDescription)
                 }
             }
             task.resume()

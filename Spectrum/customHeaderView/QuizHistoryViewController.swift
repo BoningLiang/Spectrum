@@ -8,6 +8,8 @@
 
 import UIKit
 
+var publicQuizID: Int = 0
+
 class resultAttemptSummary: Decodable{
     var attemptID: String
     var grade: String
@@ -32,9 +34,12 @@ class QuizHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = self
         
-        let url = baseUrl+"/SpectrumServer/API/GetAttempts/?username="+registerUser.username+"&caseID="+(casePublic?.caseID)!
+        self.tableView.delegate = self
+        
+        let url = baseUrl+"/SpectrumServer/API/GetAttempts/?username="+loginuser.username!+"&caseID="+(casePublic?.caseID)!
+        
+        print("QuizHistoryViewController: ", url)
         
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -43,7 +48,10 @@ class QuizHistoryViewController: UIViewController {
                 let result = try JSONDecoder().decode([GetAttemptsResult].self, from: data)
                 DispatchQueue.main.async {
                     self.getAttemptsData = result
-                    self.tableView.reloadData()
+                    if self.getAttemptsData.count>0{
+                        self.tableView.dataSource = self
+                        self.tableView.reloadData()
+                    }
                 }
             }catch{
                 do{
@@ -65,9 +73,9 @@ class QuizHistoryViewController: UIViewController {
     }
 }
 
-extension QuizHistoryViewController: UITableViewDataSource {
+extension QuizHistoryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.getAttemptsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,9 +84,18 @@ extension QuizHistoryViewController: UITableViewDataSource {
 //        cell.gradeLabel.text = "Submitted: "
 //        cell.attemptTimeLabel.text = "Mon Mar 2019 19:20:00"
         
-        cell.attemptTimeLabel.text = "#" + indexPath.row.description
+        cell.attemptNumberLabel.text = "#" + (indexPath.row+1).description
         cell.gradeLabel.alpha = 0
-        cell.attemptTimeLabel.text = self.getAttemptsData[indexPath.row].attemptTime
+        cell.attemptTimeLabel.text = "Submitted: " + self.getAttemptsData[indexPath.row].attemptTime!
+        cell.quizID = Int(self.getAttemptsData[indexPath.row].quizID!)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = self.tableView.cellForRow(at: indexPath) as! QuizAttemptsTableViewCell
+        publicQuizID = cell.quizID!
+        
+        self.performSegue(withIdentifier: "toAttemptSegue", sender: self)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var isLogin:Bool = false
 class AccountTableTableViewController: UITableViewController {
@@ -37,6 +38,16 @@ class AccountTableTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if loginuser.isLogin {
+            loginORprofileText.text = "Profile"
+        }
+        else{
+            loginORprofileText.text = "Login"
+            self.tableView.reloadData()
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,16 +63,63 @@ class AccountTableTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        if loginuser.isLogin{
+            return 2
+        }else{
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if loginuser.isLogin {
-            performSegue(withIdentifier: "profileSegue", sender: nil)
+        if indexPath.row == 0{
+            if loginuser.isLogin {
+                performSegue(withIdentifier: "profileSegue", sender: nil)
+            }
+            else{
+                performSegue(withIdentifier: "loginSegue", sender: nil)
+            }
         }
-        else{
-            performSegue(withIdentifier: "loginSegue", sender: nil)
+        if indexPath.row == 1{
+            if loginuser.isLogin {
+                // log out
+                let fetchRequest: NSFetchRequest<LoginSessionEntity> = LoginSessionEntity.fetchRequest()
+                var loginSessionResult = [LoginSessionEntity]()
+                let context = CoreDataService.context
+                var subPredicates = [NSPredicate]()
+                let predicate = NSPredicate(format: "username == %@", loginuser.username!)
+                subPredicates.append(predicate)
+                if subPredicates.count>0 {
+                    let compoundPredicates = NSCompoundPredicate.init(type: .and, subpredicates: subPredicates)
+                    fetchRequest.predicate = compoundPredicates
+                }
+                do {
+                    print("AccountTableTableViewController: tableView() update login session entity...")
+                    loginSessionResult = try context.fetch(fetchRequest)
+                }catch{
+                    
+                    print("AccountTableTableViewController: false 1")
+                }
+                if loginSessionResult.count>0{
+                    let managedObject = loginSessionResult[0]
+                    managedObject.setValue(false, forKey: "isLogin")
+                    do{
+                        try context.save()
+                        print("AccountTableTableViewController(): update login session entity success")
+                        // true
+                    } catch{
+                        print("AccountTableTableViewController(): false 1")
+                        // false
+                    }
+                }
+                
+                
+                loginuser.isLogin = false
+                
+                CoreDataService.saveContext()
+                performSegue(withIdentifier: "loginSegue", sender: nil)
+                
+            }
         }
     }
 

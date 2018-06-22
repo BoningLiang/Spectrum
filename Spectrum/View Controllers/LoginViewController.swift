@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //struct LoginUser {
 //    var username: String
@@ -39,10 +40,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicator = UIActivityIndicatorView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let fetchLoginSessionRequest:NSFetchRequest<LoginSessionEntity> = LoginSessionEntity.fetchRequest()
+
+        do {
+            let loginSessionEntity = try CoreDataService.context.fetch(fetchLoginSessionRequest)
+            if loginSessionEntity.count>0 {
+                self.usernameTextField.text = loginSessionEntity[loginSessionEntity.count-1].username
+                self.checkUsernameTextField()
+            }
+        } catch {
+            print("LoginViewController: viewDidLoad(): error")
+        }
+        
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -139,10 +151,78 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 DispatchQueue.main.async {
                     UIApplication.shared.endIgnoringInteractionEvents()
                     self.activityIndicator.stopAnimating()
-                    if result.result>0{
+                    if result.result>0
+                    {
                         loginuser.isLogin = true
+                        
+//                        let dateFormatter = DateIntervalFormatter()
+//                        dateFormatter.dateFormat = "dd:MM:yyy hh:mm:ss"
+                        
+                        
+//                        let fetchRequest: NSFetchRequest<LoginSessionEntity> = LoginSessionEntity.fetchRequest()
+//                        var loginSessionResult = [LoginSessionEntity]()
+//                        let context = CoreDataService.context
+//                        var subPredicates = [NSPredicate]()
+//                        let predicate = NSPredicate(format: "username == %@", username)
+//                        subPredicates.append(predicate)
+//                        if subPredicates.count>0 {
+//                            let compoundPredicates = NSCompoundPredicate.init(type: .and, subpredicates: subPredicates)
+//                            fetchRequest.predicate = compoundPredicates
+//                        }
+//                        do {
+//                            print("update login session entity...")
+//                            loginSessionResult = try context.fetch(fetchRequest)
+//                        }catch{
+//
+//                            print("loginSpectrum(): false 1")
+//                        }
+//                        if loginSessionResult.count>0{
+//                            let managedObject = loginSessionResult[0]
+//                            managedObject.setValue(true, forKey: "isLogin")
+//                            do{
+//                                try context.save()
+//                                print("loginSpectrum(): update login session entity success")
+//                                // true
+//                            } catch{
+//                                print("loginSpectrum(): false 1")
+//                                // false
+//                            }
+//                        }
+//                        else if loginSessionResult.count == 0 {
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "dd:MM:yyy hh:mm:ss"
+                        
+                        
+                        let fetchLoginSessionRequest:NSFetchRequest<LoginSessionEntity> = LoginSessionEntity.fetchRequest()
+                        
+                        do {
+                            let loginSessionEntity = try CoreDataService.context.fetch(fetchLoginSessionRequest)
+                            if loginSessionEntity.count>0 {
+                                
+                                loginSessionEntity[0].username = username
+                                loginSessionEntity[0].isLogin = true
+                                loginSessionEntity[0].password = userPassword
+                                loginSessionEntity[0].lastLoginTime = dateFormatter.string(from: Date())
+                                CoreDataService.saveContext()
+                            }
+                            else{
+                                let loginSessionEntity = LoginSessionEntity(context: CoreDataService.context)
+                                loginSessionEntity.username = username
+                                loginSessionEntity.password = userPassword
+                                loginSessionEntity.lastLoginTime = dateFormatter.string(from: Date())
+                                loginSessionEntity.isLogin = true
+                                CoreDataService.saveContext()
+                                
+                                print("loginSpectrum(): success add an new entity")
+                            }
+                        } catch {
+                            print("")
+                        }
+//                        }
+                        
                         self.performSegue(withIdentifier: "loginSegue", sender: self)
                         print("LoginViewController(): Success to login.")
+                        
                     }else{
                         loginuser.isLogin = false
                         let alertView = UIAlertController(title: "Login Failure", message: "Please check your username and password", preferredStyle: .alert)
@@ -188,6 +268,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         heightConstraintOutlet.constant = 270
+    }
+    
+    func checkUsernameTextField() {
+        if (self.usernameTextField.text?.isEmpty)!
+        {
+            self.usernameTextField.text = "Username";
+            isUsernameReady = false
+        }
+        else{
+            if self.usernameTextField.text == "Username"{
+                isUsernameReady = false
+            }
+            isUsernameReady = true
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
